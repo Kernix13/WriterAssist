@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
   <!-- change file names to writerassist.css and writerassist.js -->
@@ -16,16 +15,9 @@
 <body>
 
   <header class="header">
-    <a id="skip-nav" class="screenreader-text" href="#main-content">
-      Skip to Content
-    </a>
     <nav class="primary-nav">
       <div class="logo">
-        <!-- User can enter a small image below, image below is 72x48 px -->
-        <!-- <img class="photo" src="https://everyguitarchord.com/wp-content/uploads/2019/06/trace-bitmap2-teal.png"
-          alt="photo"> -->
         <span>Writing Assistant</span>
-
       </div>
       <ul role="list" class="nav-list">
         <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
@@ -41,145 +33,14 @@
   <main>
     <div class="container">
 
-      <button id="accordian2" class="accordian2" title="Click to open and close">Add Emails</button>
-      <div id="panel2" class="panel panel2-inactive">
-        <div class="form-group">
-
-          <label for="jimsmith">
-            <input type="checkbox" id="jimsmith" name="email" value="jim.smith@bigmonkeys.com" class="email"
-              tabindex="-1">Jim Smith
-          </label>
-
-          <label for="superman">
-            <input type="checkbox" id="superman" name="email" value="superman@thedailyplanet.com" class="email"
-              tabindex="-1">Clark
-            Kent
-          </label>
-
-          <label for="mysteryperson">
-            <input type="checkbox" id="mysteryperson" name="email" value="mystery.person@somebody.org" class="email"
-              tabindex="-1">Jane Smith
-          </label>
-
-          <label for="homersimpson">
-            <input type="checkbox" id="homersimpson" name="email" value="susan_simpson@springfield.com" class="email"
-              tabindex="-1">Susan Simpson
-          </label>
-
-          <label for="attillathehun">
-            <input type="checkbox" id="attillathehun" name="email" value="alfred@raidersrus.net" class="email"
-              tabindex="-1">Al Fred
-          </label>
-
-          <label for="somebody">
-            <input type="checkbox" id="somebody" name="email" value="sam.smith@somebody.co.uk" class="email"
-              tabindex="-1">Sam Smith
-          </label>
-
-          <label for="jimkernix">
-            <input type="checkbox" id="jimkernix" name="email" value="boris1@movies.com" class="email"
-              tabindex="-1">Boris Karlof
-          </label>
-
-          <label for="gregkernix">
-            <input type="checkbox" id="gregkernix" name="email" value="ivana@itchy.org" class="email"
-              tabindex="-1">Illana Thompson
-          </label>
-
-          <label for="booradley">
-            <input type="checkbox" id="booradley" name="email" value="booradley@mockingbird.edu" class="email"
-              tabindex="-1">Arthur Radley
-          </label>
-
-          <label for="coolhandluke">
-            <input type="checkbox" id="coolhandluke" name="email" value="coolhandluke@thepenitentiary.gov" class="email"
-              tabindex="-1">Luke Jackson
-          </label>
-
-          <label for="tomanderson">
-            <input type="checkbox" id="tomanderson" name="email" value="tom-anderson@thematrix.mov" class="email"
-              tabindex="-1">Tom Anderson
-          </label>
-
-          <label for="chriscarpenter">
-            <input type="checkbox" id="chriscarpenter" name="email" value="jolly.kris@themorthpole.org" class="email"
-              tabindex="-1">Chris Carpenter
-          </label>
-
-          <label for="johnsmith">
-            <input type="checkbox" id="johnsmith" name="email" value="jon_smith@somewhere.com" class="email"
-              tabindex="-1">John Smith
-          </label>
-
-          <label for="janedoe">
-            <input type="checkbox" id="janedoe" name="email" value="jane.doe@themorgue.gov" class="email"
-              tabindex="-1">Jane Doe
-          </label>
-
-          <label for="maryfranks">
-            <input type="checkbox" id="maryfranks" name="email" value="frankie@bodypartsrus.com" class="email"
-              tabindex="-1">Mary Franks
-          </label>
-
-          <label for="bosomebody">
-            <input type="checkbox" id="bosomebody" name="email" value="big.guy@americancryptids.org" class="email"
-              tabindex="-1">Bo Somebody
-          </label>
-
-          <label for="kristythomas">
-            <input type="checkbox" id="kristythomas" name="email" value="tiredofnaming@thenend.com" class="email"
-              tabindex="-1">Kristy Thomas
-          </label>
-
-          <label for="othername">
-            <input type="checkbox" id="othername" name="email" value="the-end@theend.com" class="email"
-              tabindex="-1">Other Name
-          </label>
-
-        </div>
-
-        <section class="email-text">
-          <div class="form-group">
-            <!-- should this be a button? -->
-            <input id="submit-email" class="submit-email" type="submit" value="Add Emails">
-          </div>
-
-          <button id="email-copy" class="email-copy" value="copy-email" title="Does not work in IE">Copy
-            emails</button>
-          <button id="open" class="email-clear">Clear email box</button>
-          <input id="uncheck" class="uncheck" type="submit" value="Toggle All on/off">
-          <textarea name="email-box" id="email-box" class="email-box"
-            placeholder="Click the boxes or names to select the emails, then click SUBMIT to add them to this field..."></textarea>
-        </section>
-      </div>
-
       <button id="accordian1" class="accordian1" title="Click to open and close">Add Names, Proper Nouns and
         Phrases</button>
       <div id="panel1" class="panel panel1-inactive">
         <section class="alphabet">
-          <div id="special-words" class="box top-items">
+          <div id="special-words" class="box special-items">
           </div>
         </section>
       </div>
-
-      <!-- Clear email field Modal -->
-      <div class="modal-container" id="modal">
-        <div class="modal">
-          <button class="close-btn" id="close">
-            <i class="fa fa-times"></i>
-          </button>
-          <div class="modal-header">
-            <h3>Delete emails</h3>
-          </div>
-          <div class="modal-content">
-            <p>Are you sure that you want to clear the email field?</p>
-            <form class="modal-form">
-              <button id="clearEmail" type="button" class="submit-btn yes">Yes, delete the field.</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- end modal -->
 
       <nav class="main-nav">
         <ul>
@@ -223,11 +84,6 @@
               <ul id="letterh" class="top-words"></ul>
             </div>
           </li>
-          <!-- <li><a href="#" tabindex="-1">I</a>
-            <div class="submenu">
-              <ul id="letteri" class="top-words"></ul>
-            </div>
-          </li> -->
           <li><a href="#" class="multi" tabindex="-1">IJK</a>
             <div class="submenu">
               <ul id="letteri" class="top-words"></ul>
@@ -235,11 +91,6 @@
               <ul id="letterk" class="top-words"></ul>
             </div>
           </li>
-          <!-- <li><a href="#" tabindex="-1">K</a>
-            <div class="submenu">
-              <ul id="letterk" class="top-words"></ul>
-            </div>
-          </li> -->
           <li><a href="#" tabindex="-1">L</a>
             <div class="submenu">
               <ul id="letterl" class="top-words"></ul>
@@ -265,11 +116,6 @@
               <ul id="letterp" class="top-words"></ul>
             </div>
           </li>
-          <!-- <li><a href="#" tabindex="-1">Q</a>
-            <div class="submenu">
-              <ul id="letterq" class="top-words"></ul>
-            </div>
-          </li> -->
           <li><a href="#" class="multi" tabindex="-1">QR</a>
             <div class="submenu">
               <ul id="letterq" class="top-words"></ul>
@@ -286,11 +132,6 @@
               <ul id="lettert" class="top-words"></ul>
             </div>
           </li>
-          <!-- <li><a href="#" tabindex="-1">U</a>
-            <div class="submenu">
-              <ul id="letteru" class="top-words"></ul>
-            </div>
-          </li> -->
           <li><a href="#" class="multi" tabindex="-1">UV</a>
             <div class="submenu">
               <ul id="letteru" class="top-words"></ul>
@@ -327,16 +168,18 @@
           <div class="modal-content">
             <p>Are you sure that you want to clear the text field?</p>
             <form class="modal-form">
-              <button id="clearText" type="button" class="submit-btn yes">Yes, delete the field.</button>
+              <button id="clearText" type="button" class="submit-btn yes-btn">Yes, delete the field.</button>
             </form>
           </div>
         </div>
       </div>
       <!-- end modal -->
 
-      <button id="open2" class="clear">Clear text box</button>
-      <button id="copy" class="copy" value="copy" title="Does not work in IE">Copy text</button>
-      <textarea id="text-box" class="text-area" name="text-area"
+      <button id="open2" class="clear-btn">Clear text box</button>
+      <button id="copy" class="copy-btn" value="copy-text" title="Does not work in IE">Copy text</button>
+      <!-- <textarea name="text-box" id="text-box" class="text-box"
+        placeholder="Click any proper nouns or alphabet word buttons, or try the keyboard below to enter text..."></textarea> -->
+      <textarea name="text-box" id="text-box" class="text-box"
         placeholder="Click any proper nouns or alphabet word buttons, or try the keyboard below to enter text..."></textarea>
 
       <div class="two-col">
@@ -408,7 +251,7 @@
             <button id="quotes" class="nonAlpha shiftItem" tabindex="-1">&#39;</button>
             <!-- <button class="nonAlpha quotes" tabindex="-1">&quot;</button> -->
 
-            <button id="enter" class="nonprint enter" tabindex="-1">Enter</button>
+            <button id="enter" class="enter nonprint" tabindex="-1">Enter</button>
           </div>
           <div class="keybrd-row top-items">
             <button id="shiftl" class="nonprint shiftL shift-off" tabindex="-1">Shift</button>
@@ -599,7 +442,7 @@
         <h2>Technical documentation on this app</h2>
 
         <h3>General Notes:</h3>
-        <p>It would be nice to put each user's name in the logo position, e.g. <span class="highlight">Jim's
+        <p>It would be nice to put each user's name in the logo position, e.g. <span class="highlight-text">Jim's
             Writer</span>. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such
           as that. That can be done in the div tag with the class of "logo".</p>
         <p>The width of the page is set at 85% to give the user a large area to navigate. Change it as you see fit.</p>
@@ -645,8 +488,9 @@
           a website that assists people with disabilities can host the app with users logging into their accounts to
           upload their sample text and emails.</p>
         <h3>Download and install from my GitHub Repository:</h3>
-        <p>Please feel free to download this app from my <a href="https://github.com/Kernix13" target="_blank">GitHub
-            Repo</a> (it will be there by October 10th, 2021).</p>
+        <p>Please feel free to download this app from my <a href="https://github.com/Kernix13/WriterAssist"
+            target="_blank">GitHub
+            Repo</a>.</p>
         <p>If you know of a way to solve the import/export and file upload problems then send me an email from my
           contact page. Also, contact me if you have any
           suggestions or edits that would improve the app. I would like anyone with motor control issues to have a
@@ -675,11 +519,6 @@
       <p class="copyright"> &copy; 2021 Kernix Web Design</p>
     </div>
   </footer>
-
-  <!-- <script src="word.js"></script> -->
-  <!-- <script src="./js/upload.js"></script> -->
-  <!-- <script src="main.js" type="module"></script> -->
-  <!-- Cause for error: https://javascript.info/modules-intro -> Modules work only via HTTP(s), not locally -->
 
   <script src="js/content.js"></script>
   <script src="js/main.js"></script>

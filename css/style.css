@@ -31,14 +31,6 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
-.screenreader-text {
-  position: absolute;
-  left: -999px;
-  width: 1px;
-  height: 1px;
-  top: auto;
-}
-
 a, a:visited {
   text-decoration: none;
   color: #0000cd;
@@ -48,7 +40,7 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-.highlight {
+.highlight-text {
   font-weight: 600;
   font-style: italic;
   color: rgb(75, 72, 136);
@@ -124,7 +116,6 @@ nav, .logo {
 }
 
 .nav-link:hover, .nav-list.active {
-  /* color: rgba(44, 44, 160, .618); */
   text-decoration: none;
   color: rgb(170, 144, 1);
 }
@@ -181,16 +172,9 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   width: 5em;
 }
 
-.shiftItem, #rtsq, #leftsq, #backslash, #semicolon, #quotes, #forwardslash, #comma, #periodpunc {
-  box-shadow: inset 0px 0px 0px 1px rgba(25, 25, 216, 0.5);
-  box-sizing: border-box;
-  color: rgba(25, 25, 216, 0.8);
-  background-color: #eee;
-}
-
-.top-items button, .keybrd-row button {
+.top-items button, .keybrd-row button, .special-items button {
   display: inline-block;
-  font-size: 1rem;
+
   margin: 0.25em;
   padding: 0.375em 0.75em;
   color: #333;
@@ -198,6 +182,13 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   border: 1px solid rgba(7, 7, 87, 0.618);
   border-radius: 0.25em;
   transition: box-shadow 250ms ease-in-out;
+}
+.top-items button, .keybrd-row button {
+  font-size: 1rem;
+}
+
+.special-items button {
+  font-size: 0.9375rem;
 }
 
 .top-items > .secondary {
@@ -218,7 +209,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   transform: translateY(0);
 }
 
-.top-items button:hover, .keybrd-row button:hover, #submit-email:hover {
+.top-items button:hover, .keybrd-row button:hover, .special-items button:hover {
   cursor: pointer;
   color: #000;
   background-color: #ddd;
@@ -231,7 +222,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   /* transform: translateY(2px); */
 }
 
-.top-items button:active, .keybrd-row button:active, #submit-email:active {
+.top-items button:active, .keybrd-row button:active, .special-items button:active {
   background-color: orange;
   box-shadow: 0 5px gray;
   transform: translateY(2px);
@@ -243,7 +234,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   position: relative;
 }
 
-.text-area {
+.text-box {
   display: block;
   width: 85%;
   height: 10em;
@@ -258,26 +249,20 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   /* outline: 1px solid blue; */
 }
 
-.text-area:focus {
+.text-box:focus {
   outline: 1px solid green;
   box-shadow: inset 0.125em 0.125em 0.375em #666;
 }
 
-.text-area:focus::placeholder, .email-text:focus::placeholder {
+.text-box:focus::placeholder {
   color: transparent;  
 }
 
-.text-area::placeholder, .email-text::placeholder {
+.text-box::placeholder {
   color: #aaa;  
 }
 
-.email-text {
-  position: relative;
-  padding: 1em 0;
-  display: block;
-}
-
-.copy, .clear, .email-clear, .email-copy, .uncheck {
+.copy-btn, .clear-btn {
   cursor: pointer;
   display: block;
   position: absolute;
@@ -288,33 +273,21 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   border-radius: 0.25em;
 }
 
-.copy { 
+.copy-btn { 
   top: -5.2%;
   right: 7.5%;
 }
 
-.clear {
+.clear-btn {
   top: -5.2%;
   right: 21%;
 }
 
-.email-copy {
-  /* top: 0; */
-  right: 0;
-}
-.email-clear {
-  right: 15%;
-}
-.uncheck {
-  /* top: 4em; */
-  right: 33%;
-}
-
-.copy:hover, .clear:hover, .email-clear:hover, .email-copy:hover, .uncheck:hover {
+.copy-btn:hover, .clear-btn:hover {
   background-color: rgba(246, 185, 17, 0.722);
 }
 
-.copy:active, .clear:active, .email-clear:active, .email-copy:active, .uncheck:active {
+.copy-btn:active, .clear-btn:active {
   background-color: orange;
   color: #fff;
 }
@@ -339,17 +312,14 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   max-width: 1000px;
   margin: 0 auto 2em;
   padding: 0.5em 0;
-  /* border-radius: 0.375em 0 0 0.375em; */
 }
 
 .keybrd-box2 {
   width: 19%;
-  /* border-left: none; */
   height: max-content;
   font-size: 0.5rem;
   margin: 0 auto .5em;
   padding-bottom: 0.125em;
-  /* border-radius: 0 0.375em 0.375em 0; */
 }
 
 .keybrd-row {
@@ -375,9 +345,10 @@ styling for the alphabet letters and their mega-menus
 } */
 
 /* alpha-nav is equivalent to the top-level li > a or just li items */
-.alpha-nav {
-  /* KP has display: inline-block only for positioning reasons, so that they are next to each other but I only have a single item in each and my parent container is display flex */
+/* KP has display: inline-block only for positioning reasons, so that they are next to each other but I only have a single item in each and my parent container is display flex */
   /* display: inline-block; */
+
+.alpha-nav {
   margin-left: 0.5em;
   padding: 0.125em 0.5em;
   border: 1px dotted #999;
@@ -391,18 +362,12 @@ styling for the alphabet letters and their mega-menus
   color: #fff;
 } 
 
-
-/* the buttons inside the js target div with a class of top-items and correspond to the nested ul tag where the buttons = li > a */
-/* nav > ul > li > a ...
-...ul > li > a 
-TOP-WORDS IS THE NESTED UL */
 .top-words {
-  display: flex;    /* see comment for alpha-nav */
+  display: flex;
   flex-wrap: wrap;
   padding: 0;
 }
 
-/* HERE ARE THE NESTED LI A ITEMS BUT AS A BUTTON */
 .top-words button {
   display: inline-block;
   font-size: 1rem;
@@ -427,7 +392,6 @@ TOP-WORDS IS THE NESTED UL */
   box-shadow: 0 5px gray;
   transform: translateY(2px);
 }
-
 /* -------end Alpha ----------- */
 
 /* -------file upload ----------- */
@@ -554,13 +518,11 @@ footer h3 {
 }
 
 /* ================================= */
-/* DONE - no correlation */
 .notes-docs {
   width: 85%;
   max-width: 1200px;
 }
 
-/* DONE - alpha-box */
 .main-nav {
   margin-bottom: 1em;
   padding: 1em 0 0;
@@ -568,8 +530,6 @@ footer h3 {
 .main-nav ul {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly;
-  align-items: center; */
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -578,7 +538,6 @@ footer h3 {
   list-style: none;
 }
 
-/* not done - alpha-nav */
 .main-nav li {
   display: inline-block;
   color: #333;
@@ -588,6 +547,7 @@ footer h3 {
   transition: box-shadow 250ms ease-out;
   margin: 0 0.75em 0.5em 0;
 }
+
 .main-nav li:hover {
   text-decoration: none;
   color: #000;
@@ -605,7 +565,6 @@ footer h3 {
   padding: .25em 0.75em;
 }
 
-/* not done - top-words I THINK */
 .submenu {
   position: absolute;
   left: 0;
@@ -616,19 +575,9 @@ footer h3 {
   z-index: 9999;
 }
 
-/* not done - alpha-nav > top-words? */
 .main-nav li:hover .submenu {
   display: block;
 }
-/* the above is all you need for a simple dropdown menu with  the exception of the commented out block below but then I deviated from his CSS */
-
-/* .submenu li {
-  display: block;
-} */
-
-/* .submenu li {
-  padding: 0;
-} */
 
 .submenu a:hover {
   cursor: pointer;
@@ -644,9 +593,8 @@ footer h3 {
   transform: translateY(2px);
 }
 
-/* === accordian-like animation for proper nouns and email addresses === */
-/* ====================================== */
-.accordian1, .accordian2 {
+/* === accordian-like animation for proper nouns === */
+.accordian1 {
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -665,31 +613,18 @@ footer h3 {
   border-radius: 0.25em;
 }
 
-.accordian2 {
-  margin-bottom: 1em;
-}
-
-.accordian1:hover, .accordian2:hover {
+.accordian1:hover {
   background-color: rgba(246, 190, 36, 0.445);
 }
 
-/* .panel {
-  margin-bottom: 0.5em;
-} */
-
-/* .panel1 {
-  padding-bottom: 2em;
-} */
-
-.panel1-inactive, .panel2-inactive {
+.panel1-inactive {
   display: none;
   overflow: hidden;
   opacity: 0;
   background-color: #fff;
 }
 
-.panel1-active, .panel2-active {
-  /* display: block; */
+.panel1-active {
   overflow: inherit;
   opacity: 1;
   animation: opac 1000ms forwards;
@@ -709,72 +644,8 @@ footer h3 {
   }
 }
 
-.form-group {
-  background-color: #fff;
-  margin-top: -1em;
-  padding: 1em;
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
-  flex-wrap: wrap;
-  border: 1px solid #ccc;
-}
-
-.form-group > label {
-  display: inline-block;
-  padding: 0 0.85em 0 0.25em;
-}
-
-.form-group > label:hover {
-  background-color: rgb(198, 232, 255);
-}
-
-/* styling: https://appitventures.com/blog/styling-checkbox-css-tips */
-/* input[type=checkbox]:active {
-  background-color: red;
-} */
-
-.submit-email {
-  display: block;
-  text-transform: uppercase;
-  width: max-content;
-  margin: 0 auto;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #888;
-  border-radius: 0.25em;
-}
-
-.submit-email:active {
-  background-color: orange;
-  color: #fff;
-  font-weight: bold;
-}
-
-.email-box {
-  display: block;
-  width: 100%;
-  height: 3.5em;
-  font-family: 'Roboto', sans-serif;
-  margin: 1.5em auto;
-  background-color: #fff;
-  font-size: 1rem;
-  color: #444;
-  overflow: auto;
-  padding: 0.5em;
-  box-shadow: inset 0.125em 0.125em 0.375em #666;
-  /* outline: 1px solid blue; */
-}
-
-.email-box:focus, .email-box:active {
-  outline: 1px solid green;
-  box-shadow: inset 0.125em 0.125em 0.375em #666;
-}
-
 /* modal styles */
-.yes {
+.yes-btn {
   display: block;
   background-color: transparent;
   border: 0;
@@ -788,7 +659,7 @@ footer h3 {
   transition: background-color 500ms ease;
 }
 
-.yes:hover {
+.yes-btn:hover {
   background-color: rgb(200, 235, 213);
 }
 
@@ -822,16 +693,13 @@ footer h3 {
 }
 
 .modal-header {
-/*   background-color: rgb(170, 144, 1); */
   background-color: #708090;
-  /* background-color: rgba(238, 223, 140, 0.322); */
   color: #fff;
   padding: 15px;
 }
 
 .modal-header h3 {
   margin: 0;
-/*   border-bottom: 1px solid #333; */
 }
 
 .modal-content {
@@ -892,13 +760,11 @@ footer h3 {
 @media (max-width: 1000px) {
   .top-items button, .keybrd-row button {
     font-size: .875rem;
-    /* margin: 0.25em;
-    padding: 0.25em 0.5em; */
   }
 }
 
 @media (max-width: 900px) {
-  .top-items button, .keybrd-row button {
+  .top-items button, .keybrd-row button, .special-items button {
     margin: 0.25em;
     padding: 0.25em 0.5em;
   }
@@ -913,7 +779,3 @@ footer h3 {
     font-size: 1rem;
   }
 }
-
-/* 
-====== navigation keys section only here ======
-*/

@@ -79,7 +79,7 @@ function pageOutput(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].count > 0 && arr[i].word != "") {
 
-      let outputHTML = `<li class="text-btn" value><a id="${arr[i].word}">${arr[i].word}</a></li>`;
+      let outputHTML = `<li class="text-btn" value><a class="${arr[i].word}">${arr[i].word}</a></li>`;
 
       let textButton = document.createElement('li');
       textButton.value = arr[i].word;
@@ -139,68 +139,6 @@ for (let i = 0; i < special.length; i++) {
     }
   })
 }
-
-/* === add email addresses to email-box to === */
-// for (let i = 0; i < email.length; i++) {
-//   email[i].addEventListener('change', e => {
-//     let myAddresses = e.target.value;
-
-//     emailBox.value = emailBox.value + " " + myAddresses;
-//     emailBox.focus();
-//   })
-// }
-// const email = document.getElementsByClassName('email');
-// const emailBox = document.getElementById("email-box");
-
-let checkbox = document.querySelector("input[type=checkbox]");
-const email = document.getElementsByClassName('email');
-const submitEmail = document.getElementById("submit-email");
-const emailBox = document.getElementById("email-box");
-
-function getSelectedCheckboxValues(name) {
-  const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-  let values = [];
-  checkboxes.forEach((checkbox) => {
-    values.push(' ' + checkbox.value);
-  });
-  return values;
-}
-
-submitEmail.addEventListener('click', (event) => {
-  let myAddresses = getSelectedCheckboxValues('email');
-  emailBox.value = emailBox.value + myAddresses + ",";
-
-  function clearCheckboxes() {
-    document.querySelectorAll('input[type="checkbox"]')
-      .forEach(box => box.checked = false);
-  }
-  clearCheckboxes();
-});
-
-// not sure about all of this https://www.javascripttutorial.net/javascript-dom/javascript-checkbox/
-function check(checked = true) {
-  const cbs = document.querySelectorAll('input[name="email"]');
-  cbs.forEach((cb) => {
-    cb.checked = checked;
-  });
-}
-
-const uncheck = document.getElementById("uncheck");
-uncheck.onclick = checkAll;
-
-function checkAll() {
-  check();
-  // reassign click event handler
-  this.onclick = uncheckAll;
-}
-
-function uncheckAll() {
-  check(false);
-  // reassign click event handler
-  this.onclick = checkAll;
-}
-
-// ========== end uncheck here
 
 /* ==============================================================
   add keyboard chars to page in "text-area" on click
@@ -288,7 +226,7 @@ let semicolon = document.getElementById("semicolon");
 let quotes = document.getElementById("quotes");
 let forwardslash = document.getElementById("forwardslash");
 let comma = document.getElementById("comma");
-let period = document.getElementById("period");
+let period = document.getElementById("periodpunc");
 
 function changeInner() {
   if (shiftl.classList.contains('shift-on') || shiftr.classList.contains('shift-on')) {
@@ -353,23 +291,6 @@ function coords() {
     return y;
   });
 }
-// coords();
-// function cursorUp(pos) {
-//   let x = cursorPosition();
-//   pos = coords();
-//   // x = pos[0];
-//   // y = pos[1];
-//   textBox.value = textBox.value;
-//   textBox.focus();
-//   textBox.selectionEnd = x;
-// }
-// arrowUp.addEventListener("click", cursorUp);
-
-/*
-how can i define textBox[0] = 0, 0? or can make position = 0, did that for position above and it output zero. For up and down arrows it's about 18px but change text-box font sixe to test that; for right and left arrows, how do I get the size of the character to the right if cursor position is zero - is that textBox[0], and is behind textBox[-1]?
-let textBoxEmpty = []
-
-*/
 
 /* ==============================================================
   add nonprint keys functionality to #text-box .text-area on click
@@ -502,34 +423,6 @@ async function copyToClipboard(e) {
 }
 copy.addEventListener("click", copyToClipboard);
 
-async function copyEmails(e) {
-  if (!navigator.clipboard) {
-    e.target.textContent = 'Copy to clipboard not supported'
-    return
-  }
-  const emailToCopy = emailBox;
-  try {
-    await navigator.clipboard.writeText(emailToCopy.value);
-    emailToCopy.select();
-  } catch (err) {
-    console.error("Failed to copy: ", err);
-  }
-}
-emailCopy.addEventListener("click", copyEmails);
-
-// Clear out the e-mail-text box
-const close = document.getElementById('close');
-const open = document.getElementById('open');
-const modal = document.getElementById('modal');
-// show modal:
-open.addEventListener('click', () => modal.classList.add('show-modal'));
-// hide modal clicking on X icon:
-close.addEventListener('click', () => modal.classList.remove('show-modal'));
-// hide modal on outside click
-window.addEventListener('click', e =>
-  e.target == modal ? modal.classList.remove('show-modal') : false
-);
-
 // Clear out the main-text box
 const close2 = document.getElementById('close2');
 const open2 = document.getElementById('open2');
@@ -552,17 +445,8 @@ document
     modal2.classList.remove('show-modal')
   });
 
-// clear email field
-document
-  .getElementById("clearEmail")
-  .addEventListener("click", function () {
-    emailBox.value = '';
-    emailBox.focus();
-    modal.classList.remove('show-modal')
-  });
 
-
-// accordians for proper nouns and emails
+// accordian for proper nouns
 // https://codepen.io/craigwarren-dev/pen/vzdeoy
 const accordian1 = document.getElementById("accordian1")
 
@@ -578,20 +462,5 @@ function displayPanel1() {
   }
 }
 accordian1.addEventListener("click", displayPanel1);
-
-const accordian2 = document.getElementById("accordian2")
-
-// add or remove class for displaying EMAILS
-function displayPanel2() {
-  const panel2 = document.getElementById("panel2");
-  if (!panel2.classList.contains('panel2-active')) {
-    panel2.classList.add("panel2-active");
-    panel2.classList.remove("panel2-inactive");
-  } else {
-    panel2.classList.add("panel2-inactive");
-    panel2.classList.remove("panel2-active");
-  }
-}
-accordian2.addEventListener("click", displayPanel2);
 
 /* ====== FILE UPLOAD - HOW TO PLACE CONTENT IN  VARIABLE ======= */
