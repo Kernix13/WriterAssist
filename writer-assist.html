@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+  <!-- change file names to writerassist.css and writerassist.js -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Writer Assist</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <a id="skip-nav" class="screenreader-text" href="#main-content">
+      Skip to Content
+    </a>
+    <nav class="primary-nav">
+      <div class="logo">
+        <!-- User can enter a small image below, image below is 72x48 px -->
+        <!-- <img class="photo" src="https://everyguitarchord.com/wp-content/uploads/2019/06/trace-bitmap2-teal.png"
+          alt="photo"> -->
+        <span>Writing Assistant</span>
+
+      </div>
+      <ul role="list" class="nav-list">
+        <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
+        <li class="nav-item"><a href="#docs" class="nav-link">Documentation</a></li>
+      </ul>
+    </nav>
+    <h2>Mouse-only document &amp; email composition tool</h2>
+    <p>Assistive teechnology tool for people with reduced motor skills</p>
+  </header>
+
+
+
+  <main>
+    <div class="container">
+
+      <button id="accordian2" class="accordian2" title="Click to open and close">Add Emails</button>
+      <div id="panel2" class="panel panel2-inactive">
+        <div class="form-group">
+
+          <label for="jimsmith">
+            <input type="checkbox" id="jimsmith" name="email" value="jim.smith@bigmonkeys.com" class="email"
+              tabindex="-1">Jim Smith
+          </label>
+
+          <label for="superman">
+            <input type="checkbox" id="superman" name="email" value="superman@thedailyplanet.com" class="email"
+              tabindex="-1">Clark
+            Kent
+          </label>
+
+          <label for="mysteryperson">
+            <input type="checkbox" id="mysteryperson" name="email" value="mystery.person@somebody.org" class="email"
+              tabindex="-1">Jane Smith
+          </label>
+
+          <label for="homersimpson">
+            <input type="checkbox" id="homersimpson" name="email" value="susan_simpson@springfield.com" class="email"
+              tabindex="-1">Susan Simpson
+          </label>
+
+          <label for="attillathehun">
+            <input type="checkbox" id="attillathehun" name="email" value="alfred@raidersrus.net" class="email"
+              tabindex="-1">Al Fred
+          </label>
+
+          <label for="somebody">
+            <input type="checkbox" id="somebody" name="email" value="sam.smith@somebody.co.uk" class="email"
+              tabindex="-1">Sam Smith
+          </label>
+
+          <label for="jimkernix">
+            <input type="checkbox" id="jimkernix" name="email" value="boris1@movies.com" class="email"
+              tabindex="-1">Boris Karlof
+          </label>
+
+          <label for="gregkernix">
+            <input type="checkbox" id="gregkernix" name="email" value="ivana@itchy.org" class="email"
+              tabindex="-1">Illana Thompson
+          </label>
+
+          <label for="booradley">
+            <input type="checkbox" id="booradley" name="email" value="booradley@mockingbird.edu" class="email"
+              tabindex="-1">Arthur Radley
+          </label>
+
+          <label for="coolhandluke">
+            <input type="checkbox" id="coolhandluke" name="email" value="coolhandluke@thepenitentiary.gov" class="email"
+              tabindex="-1">Luke Jackson
+          </label>
+
+          <label for="tomanderson">
+            <input type="checkbox" id="tomanderson" name="email" value="tom-anderson@thematrix.mov" class="email"
+              tabindex="-1">Tom Anderson
+          </label>
+
+          <label for="chriscarpenter">
+            <input type="checkbox" id="chriscarpenter" name="email" value="jolly.kris@themorthpole.org" class="email"
+              tabindex="-1">Chris Carpenter
+          </label>
+
+          <label for="johnsmith">
+            <input type="checkbox" id="johnsmith" name="email" value="jon_smith@somewhere.com" class="email"
+              tabindex="-1">John Smith
+          </label>
+
+          <label for="janedoe">
+            <input type="checkbox" id="janedoe" name="email" value="jane.doe@themorgue.gov" class="email"
+              tabindex="-1">Jane Doe
+          </label>
+
+          <label for="maryfranks">
+            <input type="checkbox" id="maryfranks" name="email" value="frankie@bodypartsrus.com" class="email"
+              tabindex="-1">Mary Franks
+          </label>
+
+          <label for="bosomebody">
+            <input type="checkbox" id="bosomebody" name="email" value="big.guy@americancryptids.org" class="email"
+              tabindex="-1">Bo Somebody
+          </label>
+
+          <label for="kristythomas">
+            <input type="checkbox" id="kristythomas" name="email" value="tiredofnaming@thenend.com" class="email"
+              tabindex="-1">Kristy Thomas
+          </label>
+
+          <label for="othername">
+            <input type="checkbox" id="othername" name="email" value="the-end@theend.com" class="email"
+              tabindex="-1">Other Name
+          </label>
+
+        </div>
+
+        <section class="email-text">
+          <div class="form-group">
+            <!-- should this be a button? -->
+            <input id="submit-email" class="submit-email" type="submit" value="Add Emails">
+          </div>
+
+          <button id="email-copy" class="email-copy" value="copy-email" title="Does not work in IE">Copy
+            emails</button>
+          <button id="open" class="email-clear">Clear email box</button>
+          <input id="uncheck" class="uncheck" type="submit" value="Toggle All on/off">
+          <textarea name="email-box" id="email-box" class="email-box"
+            placeholder="Click the boxes or names to select the emails, then click SUBMIT to add them to this field..."></textarea>
+        </section>
+      </div>
+
+      <button id="accordian1" class="accordian1" title="Click to open and close">Add Names, Proper Nouns and
+        Phrases</button>
+      <div id="panel1" class="panel panel1-inactive">
+        <section class="alphabet">
+          <div id="special-words" class="box top-items">
+          </div>
+        </section>
+      </div>
+
+      <!-- Clear email field Modal -->
+      <div class="modal-container" id="modal">
+        <div class="modal">
+          <button class="close-btn" id="close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-header">
+            <h3>Delete emails</h3>
+          </div>
+          <div class="modal-content">
+            <p>Are you sure that you want to clear the email field?</p>
+            <form class="modal-form">
+              <button id="clearEmail" type="button" class="submit-btn yes">Yes, delete the field.</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" tabindex="-1">A</a>
+            <div class="submenu">
+              <ul id="lettera" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">B</a>
+            <div class="submenu">
+              <ul id="letterb" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">C</a>
+            <div class="submenu">
+              <ul id="letterc" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">D</a>
+            <div class="submenu">
+              <ul id="letterd" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">E</a>
+            <div class="submenu">
+              <ul id="lettere" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">F</a>
+            <div class="submenu">
+              <ul id="letterf" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">G</a>
+            <div class="submenu">
+              <ul id="letterg" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">H</a>
+            <div class="submenu">
+              <ul id="letterh" class="top-words"></ul>
+            </div>
+          </li>
+          <!-- <li><a href="#" tabindex="-1">I</a>
+            <div class="submenu">
+              <ul id="letteri" class="top-words"></ul>
+            </div>
+          </li> -->
+          <li><a href="#" class="multi" tabindex="-1">IJK</a>
+            <div class="submenu">
+              <ul id="letteri" class="top-words"></ul>
+              <ul id="letterj" class="top-words"></ul>
+              <ul id="letterk" class="top-words"></ul>
+            </div>
+          </li>
+          <!-- <li><a href="#" tabindex="-1">K</a>
+            <div class="submenu">
+              <ul id="letterk" class="top-words"></ul>
+            </div>
+          </li> -->
+          <li><a href="#" tabindex="-1">L</a>
+            <div class="submenu">
+              <ul id="letterl" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">M</a>
+            <div class="submenu">
+              <ul id="letterm" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">N</a>
+            <div class="submenu">
+              <ul id="lettern" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">O</a>
+            <div class="submenu">
+              <ul id="lettero" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">P</a>
+            <div class="submenu">
+              <ul id="letterp" class="top-words"></ul>
+            </div>
+          </li>
+          <!-- <li><a href="#" tabindex="-1">Q</a>
+            <div class="submenu">
+              <ul id="letterq" class="top-words"></ul>
+            </div>
+          </li> -->
+          <li><a href="#" class="multi" tabindex="-1">QR</a>
+            <div class="submenu">
+              <ul id="letterq" class="top-words"></ul>
+              <ul id="letterr" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">S</a>
+            <div class="submenu">
+              <ul id="letters" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">T</a>
+            <div class="submenu">
+              <ul id="lettert" class="top-words"></ul>
+            </div>
+          </li>
+          <!-- <li><a href="#" tabindex="-1">U</a>
+            <div class="submenu">
+              <ul id="letteru" class="top-words"></ul>
+            </div>
+          </li> -->
+          <li><a href="#" class="multi" tabindex="-1">UV</a>
+            <div class="submenu">
+              <ul id="letteru" class="top-words"></ul>
+              <ul id="letterv" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" tabindex="-1">W</a>
+            <div class="submenu">
+              <ul id="letterw" class="top-words"></ul>
+            </div>
+          </li>
+          <li><a href="#" class="multi" tabindex="-1">XYZ</a>
+            <div class="submenu">
+              <ul id="letterx" class="top-words"></ul>
+              <ul id="lettery" class="top-words"></ul>
+              <ul id="letterz" class="top-words"></ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="main-section">
+
+      <!-- Clear textfield Modal -->
+      <div class="modal-container" id="modal2">
+        <div class="modal">
+          <button class="close-btn" id="close2">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-header">
+            <h3>Delete text</h3>
+          </div>
+          <div class="modal-content">
+            <p>Are you sure that you want to clear the text field?</p>
+            <form class="modal-form">
+              <button id="clearText" type="button" class="submit-btn yes">Yes, delete the field.</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <button id="open2" class="clear">Clear text box</button>
+      <button id="copy" class="copy" value="copy" title="Does not work in IE">Copy text</button>
+      <textarea id="text-box" class="text-area" name="text-area"
+        placeholder="Click any proper nouns or alphabet word buttons, or try the keyboard below to enter text..."></textarea>
+
+      <div class="two-col">
+        <div id="keyboard" class="keybrd-box">
+          <div class="keybrd-row top-items">
+            <button class="nonAlpha tilde" tabindex="-1">~</button>
+            <button class="nonAlpha exclamation" tabindex="-1">!</button>
+            <button class="nonAlpha atsymbol" tabindex="-1">@</button>
+            <button class="nonAlpha pound" tabindex="-1">#</button>
+            <button class="nonAlpha dollar" value="$" tabindex="-1">$</button>
+            <button class="nonAlpha percent" value="%" tabindex="-1">%</button>
+            <button class="nonAlpha caret" value="^" tabindex="-1">^</button>
+            <button id="amp" class="nonAlpha ampersand" value="&amp;" tabindex="-1">&#38;</button>
+            <button class="nonAlpha asterisk" tabindex="-1">*</button>
+            <button class="nonAlpha rtparen" tabindex="-1">(</button>
+            <button class="nonAlpha leftparen" tabindex="-1">)</button>
+            <button class="nonAlpha underscore" tabindex="-1">_</button>
+            <button class="nonAlpha plus" tabindex="-1">+</button>
+            <button id="backspace" class="nonprint backspace" tabindex="-1">Backspace</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button class="nonAlpha accent" tabindex="-1">`</button>
+            <button class="nonAlpha one" tabindex="-1">1</button>
+            <button class="nonAlpha two" tabindex="-1">2</button>
+            <button class="nonAlpha three" tabindex="-1">3</button>
+            <button class="nonAlpha four" tabindex="-1">4</button>
+            <button class="nonAlpha five" tabindex="-1">5</button>
+            <button class="nonAlpha six" tabindex="-1">6</button>
+            <button class="nonAlpha seven" tabindex="-1">7</button>
+            <button class="nonAlpha eight" tabindex="-1">8</button>
+            <button class="nonAlpha nine" tabindex="-1">9</button>
+            <button class="nonAlpha zero" tabindex="-1">0</button>
+            <button class="nonAlpha dash" tabindex="-1">-</button>
+            <button class="nonAlpha equal" tabindex="-1">=</button>
+            <button id="delete" class="nonprint delete" tabindex="-1">Delete</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="tab" class="nonprint tab" tabindex="-1">Tab</button>
+            <button class="key keyq" value="q" tabindex="-1">Q</button>
+            <button class="key keyw" value="w" tabindex="-1">W</button>
+            <button class="key keye" value="e" tabindex="-1">E</button>
+            <button class="key keyr" value="r" tabindex="-1">R</button>
+            <button class="key keyt" value="t" tabindex="-1">T</button>
+            <button class="key keyy" value="y" tabindex="-1">Y</button>
+            <button class="key keyu" value="u" tabindex="-1">U</button>
+            <button class="key keyi" value="i" tabindex="-1">I</button>
+            <button class="key keyo" value="o" tabindex="-1">O</button>
+            <button class="key keyp" value="p" tabindex="-1">P</button>
+            <button id="rtsq" class="nonAlpha rtsq shiftItem" tabindex="-1">[</button>
+            <!-- <button class="nonAlpha rtcurly shiftItem" tabindex="-1">{</button> -->
+            <button id="leftsq" class="nonAlpha leftsq shiftItem" tabindex="-1">]</button>
+            <!-- <button class="nonAlpha rtcurly shiftItem" tabindex="-1">}</button> -->
+            <button id="backslash" class="nonAlpha backslash shiftItem" tabindex="-1">\</button>
+            <!-- <button class="nonAlpha pipe shiftItem" tabindex="-1">|</button> -->
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="caps" class="nonprint caps caps-off" tabindex="-1">Caps</button>
+            <button class="key keya" value="a" tabindex="-1">A</button>
+            <button class="key keys" value="s" tabindex="-1">S</button>
+            <button class="key keyd" value="d" tabindex="-1">D</button>
+            <button class="key keyf" value="f" tabindex="-1">F</button>
+            <button class="key keyg" value="g" tabindex="-1">G</button>
+            <button class="key keyh" value="h" tabindex="-1">H</button>
+            <button class="key keyj" value="j" tabindex="-1">J</button>
+            <button class="key keyk" value="k" tabindex="-1">K</button>
+            <button class="key keyl" value="l" tabindex="-1">L</button>
+            <button id="semicolon" class="nonAlpha shiftItem" tabindex="-1">;</button>
+            <!-- <button class="nonAlpha colon" tabindex="-1">:</button> -->
+            <button id="quotes" class="nonAlpha shiftItem" tabindex="-1">&#39;</button>
+            <!-- <button class="nonAlpha quotes" tabindex="-1">&quot;</button> -->
+
+            <button id="enter" class="nonprint enter" tabindex="-1">Enter</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="shiftl" class="nonprint shiftL shift-off" tabindex="-1">Shift</button>
+            <button class="key keyz" value="z" tabindex="-1">Z</button>
+            <button class="key keyx" value="x" tabindex="-1">X</button>
+            <button class="key keyc" value="c" tabindex="-1">C</button>
+            <button class="key keyv" value="v" tabindex="-1">V</button>
+            <button class="key keyb" value="b" tabindex="-1">B</button>
+            <button class="key keyn" value="n" tabindex="-1">N</button>
+            <button class="key keym" value="m" tabindex="-1">M</button>
+            <button id="comma" class="nonAlpha shiftItem" tabindex="-1">,</button>
+            <!-- <button class="nonAlpha lt" tabindex="-1">&lt;</button> -->
+            <button id="periodpunc" class="nonAlpha shiftItem" tabindex="-1">.</button>
+            <!-- <button class="nonAlpha gt" tabindex="-1">&gt;</button> -->
+            <button id="forwardslash" class="nonAlpha shiftItem" tabindex="-1">/</button>
+            <!-- <button class="nonAlpha question" value="?">?</button> -->
+            <button id="shiftr" class="nonprint shiftR shift-off" tabindex="-1">Shift</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="ctrlleft" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button>
+            <button class="nonprint alt secondary" tabindex="-1">Alt</button>
+            <button id="spacebar" class="spacebar nonprint" tabindex="-1">Spacebar</button>
+            <button class="nonprint alt secondary" tabindex="-1">Alt</button>
+            <button id="ctrlright" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button>
+          </div>
+        </div>
+        <!-- nav keys -->
+        <div class="keybrd-box2">
+          <div class="keybrd-row top-items">
+            <button id="homekey" class="home" value="home" tabindex="-1">Home</button>
+            <!-- <button id="uparrow" class="up-arrow secondary" value="&uarr;" tabindex="-1">&#8679;</button> -->
+            <!-- <button id="page-up" class="page-up secondary" value="page up" tabindex="-1">Pg &#8679;</button> -->
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="leftarrow" class="larr" value="&larr;" tabindex="-1">&#8678;</button>
+            <span class="navBtn nothing" value=" " tabindex="-1">&nbsp; &nbsp;</span>
+            <button id="rightarrow" class="rarr" value="&rarr;" tabindex="-1">&#8680;</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button id="end" class="end" tabindex="-1">End</button>
+            <!-- <button id="downarrow" class="down-arrow secondary" value="&darr;" tabindex="-1">&#8681;</button> -->
+            <!-- <button id="page-down" class="page-down secondary" value="page down" tabindex="-1">Pg &#8681;</button> -->
+          </div>
+          <hr>
+          <div class="keybrd-row top-items">
+            <button class="numpad nonAlpha" tabindex="-1">7</button>
+            <button class="numpad nonAlpha" tabindex="-1">8</button>
+            <button class="numpad nonAlpha" tabindex="-1">9</button>
+            <button class="numpad nonAlpha" tabindex="-1">/</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button class="numpad nonAlpha" tabindex="-1">4</button>
+            <button class="numpad nonAlpha" tabindex="-1">5</button>
+            <button class="numpad nonAlpha" tabindex="-1">6</button>
+            <button class="numpad nonAlpha" tabindex="-1">*</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button class="numpad nonAlpha" tabindex="-1">1</button>
+            <button class="numpad nonAlpha" tabindex="-1">2</button>
+            <button class="numpad nonAlpha" tabindex="-1">3</button>
+            <button class="numpad nonAlpha" tabindex="-1">-</button>
+          </div>
+          <div class="keybrd-row top-items">
+            <button class="numpad nonAlpha zero2" tabindex="-1">0</button>
+            <button class="numpad nonAlpha" tabindex="-1">.</button>
+            <button class="numpad nonAlpha" tabindex="-1">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- https://betterprogramming.pub/whats-best-innertext-vs-innerhtml-vs-textcontent-903ebc43a3fc -->
+  <!-- <div class="input-box">
+    <div class="inputfile">
+      <input type="file" class="fileupload">
+      <textarea class="userinputarea" cols="60" rows="10" placeholder="text will appear here">
+      </textarea>
+      <div class="useroutput" id="useroutput"></div>
+    </div>
+  </div> -->
+
+  <!-- <hr class="notes-docs"> -->
+  <div class="notes-container">
+    <section id="notes" class="notes">
+      <div class="container border technical">
+        <h2>Important notes about using this app</h2>
+        <p>This single-page app is for anyone with reduced fine motor controls, assuming they have better control of
+          positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often
+          result in a loss of fine motor skills include infection, multiple sclerosis, stroke, cerebral palsy, brain
+          tumors, neuropathy, and spinal injuries.</p>
+        <p>My goal is to have a friend or family member upload a file of text to populate the Writing Assistant page for
+          someone who could benefit from the app. This file should contain the most used words and emails addresses for
+          someone who has reduced motor control. This way they will be able to communicate with loved ones much easier,
+          especially if they also have trouble speaking.</p>
+        <p>When I have the file upload issue solved, you will be able to download the app to use on a desktop or laptop.
+          I would also like to make the app available to any websites and non-profit organizations that assist people
+          with disabilities.</p>
+        <h3>General Notes:</h3>
+        <ol>
+          <li>This app is for people who prefer to use a mouse to write because of their motor control difficulties.
+            This app is NOT for tablets or smartphones, though I tried to make it responsive in the event you wanted to
+            show someone the features or have a very small laptop monitor.</li>
+          <li>Click the Proper Names and Add Emails buttons at the top to open each respective section. Click either one
+            a second time to close the section.</li>
+          <li>Both the email text box and main text box have a clear button that will delete everything in those fields.
+            Clicking that button opens a popup asking to confirm the deletion. The popup confirmation is in case you
+            clicked the clear button by accident. Both fields also have a copy button to copy the contents into your
+            clipboard. You can then paste the text or email addresses into another program.</li>
+          <li>All buttons have a change in color when you hover over them to know that you are "over the target", so to
+            speak. They also turn orange when you click them.</li>
+          <li>All words are designed to add a space before the word. Conversely, all characters on the keyboard do not
+            add a space. So if
+            you will be typing out a word, use the Spacebar key of the virtual keyboard before typing the word.</li>
+          <li>You can skip the Techincal Documentation section unless you want to download the app or edit the code that
+            runs the app.</li>
+        </ol>
+
+        <h3>Proper Nouns and Email sections:</h3>
+        <ol>
+          <li>You can manually enter email addresses in the email text area with your keyboard or by selecting the
+            names and clicking the Add Emails button. Buttons like delete and enter on the virtual keyboard only
+            work in the main text area. If you manually enter an address, be sure to add a comma at the end before you
+            add another address.</li>
+          <li>You can click the actual checkbox or the name to the right of the checkbox to select the name. To add the
+            selected email address associated with the name to the email text box, just click the SUBMIT button.</li>
+          <li>Use the main text area to compose an email subject line, then copy it to add to your email. Then clear
+            that text to compose the body of the email.</li>
+          <li>Hovering over a name in the email section will change the background to light blue – click as soon as you
+            see that effect if you want to add that address.</li>
+          <li>If you want to select most of the emails but not all, then click the toggle button to select all, then
+            click the names of the ones you don't want to deselect them. Then click the button to add the addresses.
+          </li>
+          <li>The email names, email addresses, words, and phrases in this section are hard-coded in the HTML. It is
+            important that the button text is
+            the same as the text in the “value” attribute, as it is the value text that is added to the text area.</li>
+        </ol>
+
+        <h3>Alphabetical words:</h3>
+        <ol>
+          <li>If you hover over the buttons for each letter of the alphabet, you'll see between 20 to 100+ words. I
+            added
+            the most commonly used words that were 4 letters or greater, though for a few letters the cutoff is 3
+            letters.</li>
+          <li>Ideally, you want long words that are most often used by the user. The list shouldn’t be so long that you
+            lose time searching for a word that is not in there because you can’t remember a list of 100 words per
+            letter. Shorter is probably better.</li>
+          <li>Depending on the number of words you upload or the size of your monitor, you may not always see the text
+            entered in the text box because the mega menu will block part of the text field, though the background is
+            partially transparent. Don’t worry, if you click a word and can’t see the text box - it will be added.</li>
+        </ol>
+
+        <h3>Virtual Keyboard and main text area:</h3>
+        <ol>
+          <li>I omitted the Insert key as I find it an annoyance rather than a helpful key. I also moved the Delete key
+            to the main keyboard section. Backspace removes a character behind the cursor, while Delete removes a
+            character in front of the cursor. Place your cursor anywhere in the text field to use them. The same goes
+            for the Enter and Tab keys.</li>
+          <li>I have the Ctrl and Alt keys disabled as they are not needed for basic email or document writing. I also
+            hid the buttons for arrow up, page up, arrow down, and page down as I don’t think they are needed, though I
+            may add them in later.</li>
+          <li>The Home, End, right and left arrow keys are functional. However, the Home key takes you to the beginning
+            of the text area, as opposed to the beginning of each line. The end key has the same issue but it takes you
+            to the end of the text area instead of the end of each line.</li>
+          <li>I added the nav keys and number pad to the left mostly to make entering numbers easier.</li>
+          <li>Both the Caps key and Shift keys will stay highlighted until you click them a second time. All words and
+            letters will be capitalized while the Caps key is on.</li>
+          <li>Hitting the Shift key toggles the 8
+            double-character keys that are below the top row on a standard keyboard. Or specifically, square and curly
+            brackets, back slash and pipe, colon and semi-colonm, single and double quotes, and forward slash and
+            question mark. Those keys also have a subtle border and color difference from the other keys.</li>
+          <li>As you can see, I created a new row for the double-character keys that are above the top row of
+            letters. The Backspace key looked odd on that row by itself.</li>
+          <li>All words or letters that are the first in the text area, or are the first after you hit enter, or that
+            follow a period, exclamation, or question mark will automatically be capitalized. Use the Caps key for all
+            other capital letters.</li>
+          <li><strong>Tip</strong>: I have a few free browser extensions added to my Chrome and Brave web browsers. One
+            that may help
+            you is the spelling and grammar checker called Grammarly. I highly recommend that you add
+            that extension to your browser. It will pur a red underline under spelling and grammar errors in the text
+            box. Just click the suggested replacement to make the change.</li>
+        </ol>
+
+      </div>
+    </section>
+    <section id="docs" class="docs">
+      <div class="container technical">
+        <h2>Technical documentation on this app</h2>
+
+        <h3>General Notes:</h3>
+        <p>It would be nice to put each user's name in the logo position, e.g. <span class="highlight">Jim's
+            Writer</span>. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such
+          as that. That can be done in the div tag with the class of "logo".</p>
+        <p>The width of the page is set at 85% to give the user a large area to navigate. Change it as you see fit.</p>
+        <p>I have the buttons with a class of "numpad" in the section containing the nav and number pad keys set to a
+          flex-direction of
+          column at 1058px in the only media query in the CSS file. Hopefully, no one has a monitor smaller than that.
+          If they do then the numpad / nav section
+          will go below the keyboard.</p>
+        <p>Another aspect to change is the margin and padding for all buttons. Consider changing those values if you
+          are designing for a user who needs more margin and padding for a bigger target area.</p>
+        <p>Note: I set the <strong>tabindex</strong> to <strong>-1</strong> for EVERYTHING except the header and footer
+          links. This is a
+          mouse-only tool so using a keyboard to tab doesn't make sense. Also, it would take too long to TAB through all
+          the email checkboxes, proper nouns, alphabetical words, and keyboard keys.
+        </p>
+
+        <h3>How to add you own words and emails</h3>
+        <p>All the words are either content.js and the emails and associated names are in the HTML file. Ideally, I
+          wanted the user to be able to
+          upload a 3 files:</p>
+        <ol>
+          <li>10 to 20,000 words from previous writings, if possible.</li>
+          <li>A list of people's names and phrases for the common nouns</li>
+          <li>A list of names and associated email addresses.</li>
+        </ol>
+        <p>Using javascript you could:</p>
+        <ul>
+          <li>Add the proper nouns and emails to their respective sections</li>
+          <li>Filter out all sample words and perform a word count
+            <ul>
+              <li>Then you could filter out words below a certain word count</li>
+              <li>Perform an alphabetical sort on the remaining words</li>
+              <li>Output the resulting words into each alphabetical link</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Uploading a file of text vs. hardcoding the words</h4>
+        <p>I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt will
+          be
+          using a file that has a C:\... address and import/export require either a server or an HTTPS address.
+          Hopefully,
+          a website that assists people with disabilities can host the app with users logging into their accounts to
+          upload their sample text and emails.</p>
+        <h3>Download and install from my GitHub Repository:</h3>
+        <p>Please feel free to download this app from my <a href="https://github.com/Kernix13" target="_blank">GitHub
+            Repo</a> (it will be there by October 10th, 2021).</p>
+        <p>If you know of a way to solve the import/export and file upload problems then send me an email from my
+          contact page. Also, contact me if you have any
+          suggestions or edits that would improve the app. I would like anyone with motor control issues to have a
+          high-quality free app to
+          help them communicate.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="primary-footer">
+    <div class="footer-container">
+      <h3>My important links:</h3>
+      <div class="footer-box">
+        <ul class="footer-nav">
+          <li><a href="https://kernixwebdesign.com/resume-portfolio.html" target="_blank">Portfolio Home</a></li>
+          <li><a href="https://kernixwebdesign.com/" target="_blank">My Website</a></li>
+          <li><a href="https://kernixwebdesign.com/inventory-management-resume/" target="_blank">My Resume</a></li>
+          <li><a href="https://github.com/Kernix13" target="_blank">GitHub</a></li>
+          <!-- <li><a href="#">Figma</a></li> -->
+          <li><a href="https://codepen.io/jim-kernicky/pens/public" target="_blank">Codepen</a></li>
+          <li><a href="https://www.freecodecamp.org/fccb4a9d0f6-135f-4a94-97f5-795068269ca7"
+              target="_blank">freeCodeCamp</a></li>
+        </ul>
+      </div>
+      <hr>
+      <p class="copyright"> &copy; 2021 Kernix Web Design</p>
+    </div>
+  </footer>
+
+  <!-- <script src="word.js"></script> -->
+  <!-- <script src="./js/upload.js"></script> -->
+  <!-- <script src="main.js" type="module"></script> -->
+  <!-- Cause for error: https://javascript.info/modules-intro -> Modules work only via HTTP(s), not locally -->
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

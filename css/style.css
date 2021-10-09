@@ -1,0 +1,919 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --modal-duration: 1000ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #000;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 120%;
+}
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
+.screenreader-text {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #0000cd;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+.highlight {
+  font-weight: 600;
+  font-style: italic;
+  color: rgb(75, 72, 136);
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.25rem;
+}
+.highlight2 {
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: underline;
+  color: rgb(75, 72, 136);
+}
+
+.header, .container, .footer-container {
+  width: 85%;
+  max-width: 1200px;
+}
+
+.notes-container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 0.5em 0;
+}
+
+.header h2, .header p {
+  text-align: center;
+}
+.header h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0.5em 0 0;
+}
+
+.header p {
+  margin: 0;
+  padding-bottom: 1.5em;
+}
+
+nav, .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo {
+  display: block;
+  width: 3.75em;
+  height: auto;
+  /* background-color: rgba(196, 134, 247, 0.486); */
+}
+
+.logo span {
+  padding-left: 1em;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  /* from Kev Powell, the below is normal for a nav ul or maybe just ul */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 600;
+  transition: color 250ms ease-out;
+}
+
+.nav-link:hover, .nav-list.active {
+  /* color: rgba(44, 44, 160, .618); */
+  text-decoration: none;
+  color: rgb(170, 144, 1);
+}
+
+.nav-item + .nav-item {
+  margin-left: 1.5em;
+}
+/* ----------HEADER ABOVE--------------------- */
+main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .container   {
+  margin: 0 auto;
+}
+
+/* .box {
+  background-color: #000;
+  display: block;
+  padding: 4.5em;
+  border: 1px solid #ff0000;
+} */
+
+.alphabet {
+  background-color: rgba(0, 0, 0, 0.247);
+  display: block;
+  padding: 1.5em;
+}
+.top-items, .keybrd-row {
+  list-style: none;
+  padding: 0;
+}
+
+.keybrd-box2 > .top-items button, .keybrd-box2 > .keybrd-row button {
+  margin: 0.125em;
+  padding: 0.25em 0.5em;
+}
+
+.keybrd-box2 > .top-items {
+  display: flex;
+  justify-content: center;
+}
+
+.keybrd-box2 > .top-items > button {
+  width: 3.75em;
+  margin: 0.25em 0.25em;
+  font-size: 0.875rem;
+}
+
+.keybrd-box2 > .top-items > .numpad {
+  width: 2em;
+  font-size: 0.9rem;
+  margin: 0.25em 0.5em;
+  padding: 0.375em;
+}
+
+.keybrd-box2 > .top-items > .zero2 {
+  width: 5em;
+}
+
+.shiftItem, #rtsq, #leftsq, #backslash, #semicolon, #quotes, #forwardslash, #comma, #periodpunc {
+  box-shadow: inset 0px 0px 0px 1px rgba(25, 25, 216, 0.5);
+  box-sizing: border-box;
+  color: rgba(25, 25, 216, 0.8);
+  background-color: #eee;
+}
+
+.top-items button, .keybrd-row button {
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.25em;
+  padding: 0.375em 0.75em;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid rgba(7, 7, 87, 0.618);
+  border-radius: 0.25em;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+.top-items > .secondary {
+  border: none;
+  color: #ccc;
+  background-color: #fff;
+}
+.top-items > .secondary:hover {
+  cursor: unset;
+  color: #ccc;
+  background-color: #fff;
+  box-shadow: none;
+}
+.top-items > .secondary:active {
+  color: #ccc;
+  background-color: #fff;
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.top-items button:hover, .keybrd-row button:hover, #submit-email:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: #ddd;
+  box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
+}
+
+.keybrd-row .caps-on, .keybrd-row .caps-on:hover, .keybrd-row .shift-on, .keybrd-row .shift-on:hover {
+  background-color: orange;
+  box-shadow: 0 5px gray;
+  /* transform: translateY(2px); */
+}
+
+.top-items button:active, .keybrd-row button:active, #submit-email:active {
+  background-color: orange;
+  box-shadow: 0 5px gray;
+  transform: translateY(2px);
+}
+
+/* text area and copy */
+.main-section {
+  margin-top: 4em;
+  position: relative;
+}
+
+.text-area {
+  display: block;
+  width: 85%;
+  height: 10em;
+  font-family: 'Roboto', sans-serif;
+  margin: 2.5em auto 1.5em;
+  background-color: #fff;
+  font-size: 1.125rem;
+  color: #222;
+  overflow: auto;
+  padding: 0.5em;
+  box-shadow: inset 0.125em 0.125em 0.375em #666;
+  /* outline: 1px solid blue; */
+}
+
+.text-area:focus {
+  outline: 1px solid green;
+  box-shadow: inset 0.125em 0.125em 0.375em #666;
+}
+
+.text-area:focus::placeholder, .email-text:focus::placeholder {
+  color: transparent;  
+}
+
+.text-area::placeholder, .email-text::placeholder {
+  color: #aaa;  
+}
+
+.email-text {
+  position: relative;
+  padding: 1em 0;
+  display: block;
+}
+
+.copy, .clear, .email-clear, .email-copy, .uncheck {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  background-color: rgba(238, 223, 140, 0.322);
+  color: #000;
+  padding: 0.25em 0.5em;
+  border: 2px solid #888;
+  border-radius: 0.25em;
+}
+
+.copy { 
+  top: -5.2%;
+  right: 7.5%;
+}
+
+.clear {
+  top: -5.2%;
+  right: 21%;
+}
+
+.email-copy {
+  /* top: 0; */
+  right: 0;
+}
+.email-clear {
+  right: 15%;
+}
+.uncheck {
+  /* top: 4em; */
+  right: 33%;
+}
+
+.copy:hover, .clear:hover, .email-clear:hover, .email-copy:hover, .uncheck:hover {
+  background-color: rgba(246, 185, 17, 0.722);
+}
+
+.copy:active, .clear:active, .email-clear:active, .email-copy:active, .uncheck:active {
+  background-color: orange;
+  color: #fff;
+}
+
+.two-col {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.keybrd-box, .keybrd-box2 {
+  border: 1px solid #888;
+  background-color: rgba(238, 223, 140, 0.322);
+  color: #fff;
+  border-radius: 0.375em;
+}
+
+.keybrd-box {
+  width: 81%;
+  max-width: 1000px;
+  margin: 0 auto 2em;
+  padding: 0.5em 0;
+  /* border-radius: 0.375em 0 0 0.375em; */
+}
+
+.keybrd-box2 {
+  width: 19%;
+  /* border-left: none; */
+  height: max-content;
+  font-size: 0.5rem;
+  margin: 0 auto .5em;
+  padding-bottom: 0.125em;
+  /* border-radius: 0 0.375em 0.375em 0; */
+}
+
+.keybrd-row {
+  display: block;
+  text-align: center;
+}
+
+.keybrd-row button {
+  font-weight: bold;
+}
+
+.spacebar {
+  width: 40%;
+} 
+
+/* ==============================================
+styling for the alphabet letters and their mega-menus
+================================================ */
+
+/* this is like the nav tag */
+/* .alphabet {
+  padding-bottom: 0.5em;
+} */
+
+/* alpha-nav is equivalent to the top-level li > a or just li items */
+.alpha-nav {
+  /* KP has display: inline-block only for positioning reasons, so that they are next to each other but I only have a single item in each and my parent container is display flex */
+  /* display: inline-block; */
+  margin-left: 0.5em;
+  padding: 0.125em 0.5em;
+  border: 1px dotted #999;
+  text-align: center;
+}
+
+.alpha-nav a {
+  display: block;
+} 
+.alpha-nav a:hover {
+  color: #fff;
+} 
+
+
+/* the buttons inside the js target div with a class of top-items and correspond to the nested ul tag where the buttons = li > a */
+/* nav > ul > li > a ...
+...ul > li > a 
+TOP-WORDS IS THE NESTED UL */
+.top-words {
+  display: flex;    /* see comment for alpha-nav */
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+/* HERE ARE THE NESTED LI A ITEMS BUT AS A BUTTON */
+.top-words button {
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.25em;
+  padding: 0.375em 0.75em;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid rgba(7, 7, 87, 0.618);
+  border-radius: 0.25em;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+.top-words button:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: #eee;
+  box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
+}
+
+.top-words button:active {
+  background-color: orange;
+  box-shadow: 0 5px gray;
+  transform: translateY(2px);
+}
+
+/* -------end Alpha ----------- */
+
+/* -------file upload ----------- */
+.fileupload {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1em;
+}
+.userinputarea {
+  display: block;
+  margin: 2em auto;
+}
+
+input[type="file"] {
+  color: rgb(161, 7, 7);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.fileupload::file-selector-button {
+  color: blue;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 1px solid #888;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  transition: background-color 300ms ease-out;
+}
+
+.fileupload::file-selector-button:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+/* -------------notes and docs----------------------- */ 
+.notes, .docs {
+  background-color: #fff;
+}
+
+.border {
+  padding: 1em 0;
+}
+.notes {
+  margin-top: 2em;
+
+}
+.docs {
+  padding: 0.5em 0 2em;
+}
+
+.notes::after {
+  content: "";
+  display: block;
+  outline: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 0;
+  width: 95%;
+}
+
+.notes-docs {
+  border: 1px solid #ccc;
+}
+
+.technical h3, .technical h4  {
+  margin-bottom: 0;
+  padding: 1em 0 0;
+}
+
+/* -------------footer----------------------- */ 
+
+footer {
+  text-align: center;
+  background-color: rgb(49, 49, 88);
+  color: #fff;
+  padding: 1em 0 0;
+}
+
+footer h3 {
+  padding: 1em 0 0.75em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.footer-box {
+  padding-bottom: 1em;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-evenly;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav li {
+  padding-left: 0.5em;
+  transition: transform 250ms ease-out;
+}
+.footer-nav li:hover {
+  transform: translateY(-0.25em);
+}
+.footer-nav a {
+  font-size: 1.25rem;
+  color: white;
+  transition: color 250ms ease-out;
+}
+.footer-nav a:hover {
+ text-decoration: none;
+ color: rgb(240, 213, 62);
+
+}
+
+.copyright {
+  font-size: .95rem;
+  margin: 0;
+  padding-bottom: 1em; 
+}
+
+/* ================================= */
+/* DONE - no correlation */
+.notes-docs {
+  width: 85%;
+  max-width: 1200px;
+}
+
+/* DONE - alpha-box */
+.main-nav {
+  margin-bottom: 1em;
+  padding: 1em 0 0;
+}
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly;
+  align-items: center; */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  list-style: none;
+}
+
+/* not done - alpha-nav */
+.main-nav li {
+  display: inline-block;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid rgba(7, 7, 87, 0.618);
+  border-radius: 0.25em;
+  transition: box-shadow 250ms ease-out;
+  margin: 0 0.75em 0.5em 0;
+}
+.main-nav li:hover {
+  text-decoration: none;
+  color: #000;
+  background-color: #ddd;
+  box-shadow: 0.125em -0.125em 0.25em rgba(7, 7, 87, 0.75);
+}
+
+.main-nav .multi {
+  letter-spacing: .1875rem;
+}
+
+.main-nav a {
+  color: #444;
+  display: block;
+  padding: .25em 0.75em;
+}
+
+/* not done - top-words I THINK */
+.submenu {
+  position: absolute;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  display: none;
+  padding: 0.5em 0.25em 0;
+  z-index: 9999;
+}
+
+/* not done - alpha-nav > top-words? */
+.main-nav li:hover .submenu {
+  display: block;
+}
+/* the above is all you need for a simple dropdown menu with  the exception of the commented out block below but then I deviated from his CSS */
+
+/* .submenu li {
+  display: block;
+} */
+
+/* .submenu li {
+  padding: 0;
+} */
+
+.submenu a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  background-color: #eee;
+  box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
+}
+
+.submenu li a:active {
+  background-color: orange;
+  box-shadow: 0 5px gray;
+  transform: translateY(2px);
+}
+
+/* === accordian-like animation for proper nouns and email addresses === */
+/* ====================================== */
+.accordian1, .accordian2 {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 1rem;
+  /* margin-bottom: 0.5em; */
+  padding: 1rem 0;
+  background-color: rgba(238, 223, 140, 0.322);
+  color: #000;
+  border: 2px solid #888;
+  transition: background-color 250ms linear;
+  border-radius: 0.25em;
+}
+
+.accordian2 {
+  margin-bottom: 1em;
+}
+
+.accordian1:hover, .accordian2:hover {
+  background-color: rgba(246, 190, 36, 0.445);
+}
+
+/* .panel {
+  margin-bottom: 0.5em;
+} */
+
+/* .panel1 {
+  padding-bottom: 2em;
+} */
+
+.panel1-inactive, .panel2-inactive {
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+  background-color: #fff;
+}
+
+.panel1-active, .panel2-active {
+  /* display: block; */
+  overflow: inherit;
+  opacity: 1;
+  animation: opac 1000ms forwards;
+}
+
+@keyframes opac {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    display: block;
+    opacity: 0.75;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.form-group {
+  background-color: #fff;
+  margin-top: -1em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+}
+
+.form-group > label {
+  display: inline-block;
+  padding: 0 0.85em 0 0.25em;
+}
+
+.form-group > label:hover {
+  background-color: rgb(198, 232, 255);
+}
+
+/* styling: https://appitventures.com/blog/styling-checkbox-css-tips */
+/* input[type=checkbox]:active {
+  background-color: red;
+} */
+
+.submit-email {
+  display: block;
+  text-transform: uppercase;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #888;
+  border-radius: 0.25em;
+}
+
+.submit-email:active {
+  background-color: orange;
+  color: #fff;
+  font-weight: bold;
+}
+
+.email-box {
+  display: block;
+  width: 100%;
+  height: 3.5em;
+  font-family: 'Roboto', sans-serif;
+  margin: 1.5em auto;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #444;
+  overflow: auto;
+  padding: 0.5em;
+  box-shadow: inset 0.125em 0.125em 0.375em #666;
+  /* outline: 1px solid blue; */
+}
+
+.email-box:focus, .email-box:active {
+  outline: 1px solid green;
+  box-shadow: inset 0.125em 0.125em 0.375em #666;
+}
+
+/* modal styles */
+.yes {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  padding: 1em 2em;
+  border: 0.25em solid rgba(0, 128, 0, 0.75);
+  width: 75%;
+  margin: 2em auto 1em;
+  transition: background-color 500ms ease;
+}
+
+.yes:hover {
+  background-color: rgb(200, 235, 213);
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.modal-container.show-modal {
+  display: block;
+}
+
+.modal {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 25em;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header {
+/*   background-color: rgb(170, 144, 1); */
+  background-color: #708090;
+  /* background-color: rgba(238, 223, 140, 0.322); */
+  color: #fff;
+  padding: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+/*   border-bottom: 1px solid #333; */
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-form div {
+  margin: 15px 0;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+  padding: 8px;
+  width: 100%;
+}
+
+.close-btn {
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1058px) {
+  .two-col {
+    flex-direction: column;
+  }
+  .keybrd-box {
+    width: 100%;
+  }
+  .keybrd-box2 {
+    width: 22%;
+    height: max-content;
+    font-size: 0.5rem;
+    margin: 0 auto .5em;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .top-items button, .keybrd-row button {
+    font-size: .875rem;
+    /* margin: 0.25em;
+    padding: 0.25em 0.5em; */
+  }
+}
+
+@media (max-width: 900px) {
+  .top-items button, .keybrd-row button {
+    margin: 0.25em;
+    padding: 0.25em 0.5em;
+  }
+}
+
+@media (max-width: 590px) {
+  footer {
+    font-size: 0.875rem;
+  }
+
+  .footer-nav a {
+    font-size: 1rem;
+  }
+}
+
+/* 
+====== navigation keys section only here ======
+*/
