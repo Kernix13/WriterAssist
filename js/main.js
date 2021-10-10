@@ -5,7 +5,7 @@
 // 4. Once that is possible, have a number input field so that they can fine tune the # of alphabetical words to more or less words for each letter.
 // 5. Have the keyboard keys created by JS for different languages, e.g. Greek.
 
-// content.js has all the proper and alpha words
+// content.js has all the proper and alphabetical words
 
 // EMAIL ADDRESSES AND NAMES OUTPUT
 

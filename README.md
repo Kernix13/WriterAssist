@@ -56,4 +56,4 @@ I used Node.js to pull in the Require module for export/import but there is a pr
 If you know of a way to solve the import/export and file upload problems then send me an email from my contact page. Also, contact me if you have any suggestions or edits that would improve the app. I would like anyone with motor control issues to have a high-quality free app to help them communicate.
 
 ### Credits
-I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website.
+I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website!
