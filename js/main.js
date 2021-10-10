@@ -16,7 +16,7 @@ function properNouns() {
 }
 let pn = properNouns();
 
-// ALPHABETICAL WORDS SPLIT PRIOT TO OUTPUT
+// ALPHABETICAL WORDS SPLIT PRIOR TO OUTPUT
 function splitWords(str) {
   let words = str.split(/[^a-zA-Z'-]+/gi);
   for (let i = 0; i < words.length; i++) {
@@ -54,7 +54,6 @@ the object with the words as keys and their counts as values
 ==================== */
 let inputWords = wordCount(a);
 let output = Object.entries(inputWords).map(([word, count]) => ({ word, count }));
-// let outputKeys = Object.entries(inputWords).map(([word, count]) => ({ word, count }));
 
 /* ==================================
 properNounOutput places the Proper Nouns in the #special-words div
@@ -150,7 +149,6 @@ function cursorPosition() {
   // console.log("position is: " + position);
   return position;
 }
-// cursorPosition()
 
 // letters, CAPS key, SHIFT key
 const keys = document.getElementsByClassName('key');
@@ -198,7 +196,6 @@ capsKey.addEventListener("click", capitalize);
 
 const shiftl = document.getElementById("shiftl");
 const shiftr = document.getElementById("shiftr");
-
 
 function shift() {
   if (!shiftl.classList.contains('shift-on') || !shiftr.classList.contains('shift-on')) {
@@ -275,7 +272,6 @@ for (let i = 0; i < nonAlpha.length; i++) {
 }
 
 // get cursor X & Y coordinates
-// const navBtn = document.getElementsByClassName("navBtn");
 const pageUp = document.getElementById("page-up");
 const pageDown = document.getElementById("page-down");
 const arrowUp = document.getElementById("uparrow");
@@ -294,10 +290,10 @@ function coords() {
 /* ==============================================================
   add nonprint keys functionality to #text-box .text-area on click
 ====================== */
-// BACKSPACE
 const backspace = document.getElementById('backspace');
 const deleteKey = document.getElementById('delete');
 
+// BACKSPACE
 function removeCharBehind(x) {
   x = cursorPosition();
   if (x != 0) {
@@ -319,7 +315,6 @@ function removeCharAhead(x) {
   textBox.selectionEnd = x;
 }
 deleteKey.addEventListener("click", removeCharAhead);
-
 
 // TAB
 document
@@ -402,10 +397,8 @@ function arrowRight(x) {
 }
 rightarrow.addEventListener("click", arrowRight);
 
-/* COPY the text area, Clipboard API, (2nd example Permission API) - WORKS
-from https://codepen.io/mornir0/pen/LgLPjo */
+/* COPY the text area, Clipboard API */
 const copy = document.getElementById("copy");
-const emailCopy = document.getElementById("email-copy");
 
 async function copyToClipboard(e) {
   if (!navigator.clipboard) {
@@ -422,13 +415,12 @@ async function copyToClipboard(e) {
 }
 copy.addEventListener("click", copyToClipboard);
 
-// Clear out the main-text box
+// Clear out the text box
 const close2 = document.getElementById('close2');
 const open2 = document.getElementById('open2');
 const modal2 = document.getElementById('modal2');
-// show modal:
+
 open2.addEventListener('click', () => modal2.classList.add('show-modal'));
-// hide modal:
 close2.addEventListener('click', () => modal2.classList.remove('show-modal'));
 
 window.addEventListener('click', e =>
@@ -445,8 +437,7 @@ document
   });
 
 
-// accordian for proper nouns
-// https://codepen.io/craigwarren-dev/pen/vzdeoy
+// accordian for proper nouns - https://codepen.io/craigwarren-dev/pen/vzdeoy
 const accordian1 = document.getElementById("accordian1")
 
 // add or remove class for displaying PROPER NOUNS

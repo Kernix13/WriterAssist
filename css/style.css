@@ -43,7 +43,7 @@ a:hover, a:focus {
 .highlight-text {
   font-weight: 600;
   font-style: italic;
-  color: rgb(75, 72, 136);
+  color: rgb(75, 71, 141);
   font-family: 'Architects Daughter', cursive;
   font-size: 1.25rem;
 }
@@ -619,12 +619,7 @@ footer h3 {
   0% {
     opacity: 0;
   }
-  50% {
-    display: block;
-    opacity: 0.75;
-  }
   100% {
-    display: block;
     opacity: 1;
   }
 }

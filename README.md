@@ -3,7 +3,7 @@
 ![Screenshot of the writer app](/writer-assist-github-600.png)
 
 ## Overview 
-This single-page app is for anyone with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, multiple sclerosis, stroke, cerebral palsy, brain tumors, neuropathy, and spinal injuries.
+This single-page app is for people with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, multiple sclerosis, stroke, cerebral palsy, brain tumors, neuropathy, and spinal injuries.
 
 My motivation was to help my aunt who has cerebral palsy and takes 5-10 seconds to type a single character using her keyboard. Now it should be easier for her to compose emails to friends and family. This is a single-page app that can run on a user's desktop or laptop. 
 
