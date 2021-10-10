@@ -169,7 +169,6 @@ function addLetters() {
           textBox.focus();
           textBox.selectionEnd = x + 2;
         } else {
-
           textBox.value = textBox.value.slice(0, x) + letterkey.toLowerCase() + textBox.value.slice(x);
           textBox.focus();
           textBox.selectionEnd = x + 1;

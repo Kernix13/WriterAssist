@@ -62,7 +62,7 @@ a:hover, a:focus {
 .notes-container {
   width: 80%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 3em;
 }
 
 .header {
@@ -432,32 +432,17 @@ input[type="file"] {
 }
 
 /* -------------notes and docs----------------------- */ 
-.notes, .docs {
+.notes {
   background-color: #fff;
 }
 
 .border {
-  padding: 1em 0;
+  padding: 3em 0;
 }
+
 .notes {
   margin-top: 2em;
 
-}
-.docs {
-  padding: 0.5em 0 2em;
-}
-
-.notes::after {
-  content: "";
-  display: block;
-  outline: 1px solid #ccc;
-  margin: 0 auto;
-  padding: 0;
-  width: 95%;
-}
-
-.notes-docs {
-  border: 1px solid #ccc;
 }
 
 .technical h3, .technical h4  {

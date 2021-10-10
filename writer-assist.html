@@ -21,7 +21,8 @@
       </div>
       <ul role="list" class="nav-list">
         <li class="nav-item"><a href="#notes" class="nav-link">Notes</a></li>
-        <li class="nav-item"><a href="#docs" class="nav-link">Documentation</a></li>
+        <li class="nav-item"><a href="https://kernixwebdesign.com/resume-portfolio.html" target="_blank"
+            class="nav-link">Portfolio Home</a></li>
       </ul>
     </nav>
     <h2>Mouse-only document &amp; email composition tool</h2>
@@ -32,15 +33,6 @@
 
   <main>
     <div class="container">
-
-      <button id="accordian1" class="accordian1" title="Click to open and close">Add Names, Proper Nouns and
-        Phrases</button>
-      <div id="panel1" class="panel panel1-inactive">
-        <section class="alphabet">
-          <div id="special-words" class="box special-items">
-          </div>
-        </section>
-      </div>
 
       <nav class="main-nav">
         <ul>
@@ -152,6 +144,16 @@
           </li>
         </ul>
       </nav>
+
+      <button id="accordian1" class="accordian1" title="Click to open and close">Add Names, Proper Nouns and
+        Phrases</button>
+      <div id="panel1" class="panel panel1-inactive">
+        <section class="alphabet">
+          <div id="special-words" class="box special-items">
+          </div>
+        </section>
+      </div>
+
     </div>
 
     <section class="main-section">
@@ -434,68 +436,6 @@
             that extension to your browser. It will pur a red underline under spelling and grammar errors in the text
             box. Just click the suggested replacement to make the change.</li>
         </ol>
-
-      </div>
-    </section>
-    <section id="docs" class="docs">
-      <div class="container technical">
-        <h2>Technical documentation on this app</h2>
-
-        <h3>General Notes:</h3>
-        <p>It would be nice to put each user's name in the logo position, e.g. <span class="highlight-text">Jim's
-            Writer</span>. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such
-          as that. That can be done in the div tag with the class of "logo".</p>
-        <p>The width of the page is set at 85% to give the user a large area to navigate. Change it as you see fit.</p>
-        <p>I have the buttons with a class of "numpad" in the section containing the nav and number pad keys set to a
-          flex-direction of
-          column at 1058px in the only media query in the CSS file. Hopefully, no one has a monitor smaller than that.
-          If they do then the numpad / nav section
-          will go below the keyboard.</p>
-        <p>Another aspect to change is the margin and padding for all buttons. Consider changing those values if you
-          are designing for a user who needs more margin and padding for a bigger target area.</p>
-        <p>Note: I set the <strong>tabindex</strong> to <strong>-1</strong> for EVERYTHING except the header and footer
-          links. This is a
-          mouse-only tool so using a keyboard to tab doesn't make sense. Also, it would take too long to TAB through all
-          the email checkboxes, proper nouns, alphabetical words, and keyboard keys.
-        </p>
-
-        <h3>How to add you own words and emails</h3>
-        <p>All the words are either content.js and the emails and associated names are in the HTML file. Ideally, I
-          wanted the user to be able to
-          upload a 3 files:</p>
-        <ol>
-          <li>10 to 20,000 words from previous writings, if possible.</li>
-          <li>A list of people's names and phrases for the common nouns</li>
-          <li>A list of names and associated email addresses.</li>
-        </ol>
-        <p>Using javascript you could:</p>
-        <ul>
-          <li>Add the proper nouns and emails to their respective sections</li>
-          <li>Filter out all sample words and perform a word count
-            <ul>
-              <li>Then you could filter out words below a certain word count</li>
-              <li>Perform an alphabetical sort on the remaining words</li>
-              <li>Output the resulting words into each alphabetical link</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h4>Uploading a file of text vs. hardcoding the words</h4>
-        <p>I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt will
-          be
-          using a file that has a C:\... address and import/export require either a server or an HTTPS address.
-          Hopefully,
-          a website that assists people with disabilities can host the app with users logging into their accounts to
-          upload their sample text and emails.</p>
-        <h3>Download and install from my GitHub Repository:</h3>
-        <p>Please feel free to download this app from my <a href="https://github.com/Kernix13/WriterAssist"
-            target="_blank">GitHub
-            Repo</a>.</p>
-        <p>If you know of a way to solve the import/export and file upload problems then send me an email from my
-          contact page. Also, contact me if you have any
-          suggestions or edits that would improve the app. I would like anyone with motor control issues to have a
-          high-quality free app to
-          help them communicate.</p>
       </div>
     </section>
   </div>
