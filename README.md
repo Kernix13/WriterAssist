@@ -70,23 +70,23 @@ The app is fine to use as is with the phrases and words I included in the file c
 
 1. While in the WriterAssist folder/repository, click the Green code button and select Download ZIP
 
-![Download instructions](/writer-assist-dl-code2.PNG)
+![Download instructions](/dl-code2.PNG)
 
 2. Go to your downloads folder, select the zip file, right-click and choose Extract All...
 
-![Extracting the zip files](/writer-assist-extract.PNG)
+![Extracting the zip files](/extract.PNG)
 
 3. Click the Extract button on the popup that appears. This will create a folder in your downloads folder with a name like WriterAssist-master
 
-![Extract](/writer-assist-extract2.PNG)
+![Extract](/extract2.PNG)
 
 4. Copy or move that folder to a folder such as Documents then delete both the folder and zip file from your downloads folder.
 
-![Copy to folder of choice](/writer-assist-copy-to.PNG)
+![Copy to folder of choice](/copy-to.PNG)
 
 5. Finally, go into the folder and launch the file named writer-assist.html. You can also delete all of the PNG files since they are just used in this README file.
 
-![Open the main file](/writer-assist-open.PNG)
+![Open the main file](/open.PNG)
 
 ### Credits
 I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website!
