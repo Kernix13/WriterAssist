@@ -4,7 +4,7 @@ This is a tool for people with reduced motor skills who find using a technology 
 
 ## Wish list items
 1. Up and Down arrow functionality
-2. User-supplied word and phrases files uploaded to populate the page
+2. User-supplied word and phrases file upload to populate the page
 3. A number input field to change the number of words output to each letter of the alphabet
 4. Keyboard layout for different languages
 
