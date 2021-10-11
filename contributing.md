@@ -3,10 +3,10 @@
 This is a tool for people with reduced motor skills who find using a technology assisted mouse easier than using a keyboard. It is mostly complete though I have a few items that I would like to incorporate into the code.
 
 ## Wish list items
-1. [Up and Down arrow keys](###up-and-down-arrow-key)
-2. [User supplied file uploads](### user-supplied-file-uploads)
+1. [Up and Down arrow keys](#up-and-down-arrow-key)
+2. [User supplied file uploads](#user-supplied-file-uploads)
 3. [Choose alphabetical word count output](#choose-alphabetical-word-count-output)
-4. [Keyboard layouts by language](# keyboard-layouts-by-language)
+4. [Keyboard layouts by language](#keyboard-layouts-by-language)
 
 ### Up and down arrow keys
 
