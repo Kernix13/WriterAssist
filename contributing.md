@@ -3,12 +3,12 @@
 This is a tool for people with reduced motor skills who find using a technology assisted mouse easier than using a keyboard. It is mostly complete though I have a few items that I would like to incorporate into the code.
 
 ## Wish list items
-1. [Up and Down arrow functionality](###up-and-down-arrows)
+1. [Up and Down arrow keys](###up-and-down-arrow-key)
 2. User-supplied word and phrases file upload to populate the page
 3. A number input field to change the number of words output to each letter of the alphabet
 4. Keyboard layout for different languages
 
-### Up and down arrows
+### Up and down arrow keys
 
 This is not essential but it would be nice to have. They would be used when a user notices a mis-spelling and click near the word to make a correction but click the wrong row of text. The right and left arrows can be used to get to the part of the word that needs to be replaced or removed.
 
