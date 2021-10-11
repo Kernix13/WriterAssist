@@ -69,10 +69,10 @@ a:hover, a:focus {
   padding: 0.5em 0;
 }
 
-.header h2, .header p {
+.header h1, .header p {
   text-align: center;
 }
-.header h2 {
+.header h1 {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin: 0;

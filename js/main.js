@@ -1,8 +1,8 @@
 /* Problems &/or tasks remaining  */
 // 1. use local storage to store the text in textarea in case the user gets interrupted or is not finished composing their email or document
 // 2. import and export for type="module" is NOT possible if app is running from user's localhost (C:/). Is there a solution for that or do I need to keep a small amount of "common" words in the main.js file?
-// 3. I need to have the user upload 1. list of email addresses and corresponding names, 2. list of proper nouns, 3. a very large sample of their past writing. Once I store all that data, I need to generate a new html file with the data from the uploads.
-// 4. Once that is possible, have a number input field so that they can fine tune the # of alphabetical words to more or less words for each letter.
+// 3. I need to have the user upload 1. list of proper nouns, 3. a very large sample of their past writing. Once I store all that data, I need to generate a new html file with the data from the uploads.
+// 4. Once that is possible, have an input field of type="number" so that they can fine tune the # of alphabetical words to more or less words for each letter.
 // 5. Have the keyboard keys created by JS for different languages, e.g. Greek.
 
 // content.js has all the proper and alphabetical words
@@ -89,7 +89,7 @@ function pageOutput(arr) {
       let ul = document.getElementById(id);
 
       // The if statement only prevents possible errors, 
-      // caused by the last ul with id letterxyz
+      // caused by combo ul's like id letterxyz
       if (ul) {
         ul.insertAdjacentHTML("beforeend", outputHTML);
       }
@@ -453,4 +453,4 @@ function displayPanel1() {
 }
 accordian1.addEventListener("click", displayPanel1);
 
-/* ====== FILE UPLOAD - HOW TO PLACE CONTENT IN  VARIABLE ======= */
+/* ==== FILE UPLOAD: HOW TO PUT CONTENT IN A VAR OR LOCAL STORAGE? ===== */
