@@ -3,7 +3,7 @@
 This is a tool for people with reduced motor skills who find using a technology assisted mouse easier than using a keyboard. It is mostly complete though I have a few items that I would like to incorporate into the code.
 
 ## Wish list items
-1. [Up and Down arrow keys](#up-and-down-arrow-key)
+1. [Up and Down arrow keys](up-and-down-arrow-key)
 2. User-supplied word and phrases file upload to populate the page
 3. A number input field to change the number of words output to each letter of the alphabet
 4. Keyboard layout for different languages
