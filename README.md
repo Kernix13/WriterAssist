@@ -8,7 +8,7 @@
 3. [General Notes](#general-notes)
 4. [Adding your own words](#adding-your-own-words)
 5. [Uploading a file versus hardcoding the words](#uploading-a-file-versus-hardcoding-the-words)
-6. [Downloading the app](#downloading-the-app-to-desktop-or-laptop)
+6. [Downloading the app to desktop or laptop](#downloading-the-app-to-desktop-or-laptop)
 7. [Credits](#credits)
 
 ## Overview 
@@ -63,7 +63,7 @@ I used Node.js to pull in the Require module for export/import but there is a pr
 If you know of a way to solve the import/export and file upload problems then send me an email from my contact page. Also, contact me if you have any suggestions or edits that would improve the app. I would like anyone with motor control issues to have a high-quality free app to help them communicate.
 
 ***
-## Downloading the app to desktop or laptop (for USERS)
+## Downloading the app to desktop or laptop
 
 All you need to do is download the files and open writer-assist.html to start using the app. I have a detailed note and documentation section below the virtual keyboard that will help use the tool.
 
