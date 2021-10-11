@@ -1,6 +1,6 @@
 # WriterAssist (Virtual keyboard)
 
-![Screenshot of the writer app](/writer-assist-github-600.png)
+![Screenshot of the writer app](/writer-assist-github-800.png)
 
 ## Overview 
 This single-page app is for people with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, multiple sclerosis, stroke, cerebral palsy, brain tumors, neuropathy, and spinal injuries.
