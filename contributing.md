@@ -1,9 +1,9 @@
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+email, or any other method with the owner of this repository before making a change. 
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+We have a code of conduct that you are expected to folllow.
 
 ## Pull Request Process
 
@@ -12,7 +12,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 2. Update the README.md with details of changes to the interface, this includes new environment 
    variables, exposed ports, useful file locations and container parameters.
 3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+   Pull Request would represent. The versioning scheme we currently use is [SemVer](http://semver.org/).
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
@@ -40,7 +40,7 @@ include:
 
 Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
+* The use of sexual language or imagery and unwelcome sexual attention or
 advances
 * Trolling, insulting/derogatory comments, and personal or political attacks
 * Public or private harassment
@@ -94,8 +94,7 @@ available at [http://contributor-covenant.org/version/1/4][version]
 ---
 
 # Overview of this app
-
-This is a tool for people with reduced motor skills who find using a technology assisted mouse easier than using a keyboard. It is mostly complete though I have a few items that I would like to incorporate into the code.
+This is a tool for people with reduced motor skills who find using a technology assisted mouse easier than using a keyboard. Tjhat is the main focus that should drive any and all improvements to the app.
 
 ## Wish list items
 1. [Up and down arrow keys](#up-and-down-arrow-keys)
@@ -104,17 +103,17 @@ This is a tool for people with reduced motor skills who find using a technology 
 4. [Keyboard layouts by language](#keyboard-layouts-by-language)
 
 ### Up and down arrow keys
-
-This is not essential but it would be nice to have. They would be used when a user notices a mis-spelling and click near the word to make a correction but click the wrong row of text. The right and left arrows can be used to get to the part of the word that needs to be replaced or removed.
+This is not essential but it would be nice to have. They would be used when a user notices a mis-spelling and clicks near the word to make a correction but clicks the wrong row of text. The right and left arrows can be used to get to the part of the word that needs to be replaced or removed.
 
 ### User supplied file uploads
-
-I had to load user-supplied content into local storage but I do not like that option.
+I had to load user-supplied content into local storage but I do not like that option. Let me know if you have a solution for that keeping in mind that this app will re running on local machines. One solution is to get an organization to host the app allowing users to upload their files to servers.
 
 ### Choose alphabetical word count output
+In my opinion 15-20 words per letter of the alphabet is too few and 100+ is too many. You don't want so many words that the megamenu if larger than the viewport height. Plus it would be hard to remember which words are under each letter. I don't know what the optimum number is, and that may change for each user. It would be nice for the user to view the output of their file upload, and then increase or decrease the amount of words by changing the character count cutoff. 
 
-In my opinion 15-20 words per letter of the alphabet is too few and 100+ is too many. I don't know what the optimum number is, and that may change for each user. It would be nice for the user to view the output of their file upload, and then increase or decrease the amount of words by choosing a character count output. For example, I chose not to include and words with 3 or less characters with a ffew exceptions. 
+For example, I chose not to include words with 3 or less characters. An input field of type="number" should do the trick. Then a user could tweak the character count to get a list of words that is not too small or too big.
 
 ### Keyboard layouts by language
+I would like to involve developers from other countries who could contribute to building a keyboard for people from their country. I would then have to creeate a select list of possible keyboard layouts to choose from. Translations for all page text would be needed, as well as the default words and phrases in content.js and text-default.txt. 
 
-Once I have the file upload issue solved, I would like to involve developers from other countries who could contribute to building a keyboard for people from their country. I would then have to creeate a select list of possible keyboard layouts to choose from. I suppose I would also need a translator for the Notes section. 
+Also, the HTML, CSS, and JavaScript would most likely need to be modified to account for different keyboard layouts. For example, the SHIFT key would be needed for more or less keys to display alternate values. Each row of the keyboard is set to display of flex. If more keys need to be added, then changes to the HTML file will be required. 

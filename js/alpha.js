@@ -2,12 +2,16 @@
 /* can't split the output for ALPHA when using the async function below */
 
 // async function userWords() {
-//   const response = await fetch('text-alpha.txt')
-//   const data = await response.text()
-//   console.log("This is asunc userWords:" + data)
-//   return data;
+//   try {
+//     const response = await fetch('text-alpha2.txt')
+//     const data = await response.text()
+//     console.log("text-alpha2: " + data)
+//     return data;
+//   } catch (e) {
+//     console.log("There was a problem fetching the file")
+//   }
 // }
-// let localAlpha = userWords()
+// userWords();
 
 // let localAlpha = "";
 fetch('text-alpha.txt')
@@ -23,11 +27,12 @@ let localAlpha = window.localStorage.getItem('alphaWords');
 function splitWords() {
   let y = localAlpha;
   if (y) {
-    // if words in text-alpha.txt, then output; BUT if text-alpha.txt is empty, wordsToSplit loads - only solution I could find!?!?
     let words = y.split(/[^a-zA-Z'-]+/gi);
+    console.log("This is alphaWords/localAlpha from fetch: " + words.length)
     return words;
   } else {
     let words = wordsToSplit.split(/[^a-zA-Z'-]+/gi);
+    console.log("This is wordsToSplit from content.js (length of array / word count): " + words.length)
     return words;
   }
 }

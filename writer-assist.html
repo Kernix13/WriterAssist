@@ -5,9 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
-  <!-- change file names to writerassist.css and writerassist.js -->
   <link rel="stylesheet" href="css/style.css">
   <title>Writer Assist</title>
 </head>
@@ -342,24 +339,25 @@
         <p>This single-page app is for anyone with reduced fine motor controls, assuming they have better control of
           positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often
           result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral
-          palsy, brain
+          palsy, Parkinson's, brain
           tumors, neuropathy, and spinal injuries.</p>
-        <p>My goal is to have a friend or family member upload a file of text to populate the Writing Assistant page for
+        <p>Ideally, a friend or family can create a file of text to populate the Writing Assistant page for
           someone who could benefit from the app. This file should contain the most used words and phrases for
           someone who has reduced motor control. This way they will be able to communicate with loved ones much easier,
           especially if they also have trouble speaking.</p>
         <p>If you would like to load your own words and phrases then you have to add your words to two text files in the
-          main folder. See each section for details.These notes are also in my README.md file which you can find in the
-          GitHub repo for this app.</p>
-        <p>If you are a developer and would like to make edits to the app, then you can download or clone it from my <a
-            href="https://github.com/Kernix13/WriterAssist" target="_blank">GitHub repository</a>.</p>
+          main folder. See each respective section below for details.</p>
+        <p>There are similar notes in my README.md file which you can find in the
+          GitHub repository for this app. If you are a developer and would like to make edits to the app, then you can
+          download or clone it from my <a href="https://github.com/Kernix13/WriterAssist" target="_blank">GitHub
+            repo</a>.</p>
 
         <h3>General Notes:</h3>
         <ul>
           <li>This app is for people who prefer to use a mouse to write because of their motor control difficulties.
             This app is NOT for tablets or smartphones, though I tried to make it responsive in the event you wanted to
-            show someone the features or have a very small laptop monitor.</li>
-          <li>The text area has a clear button that will delete everything in those text field.
+            show someone the features or have a very small laptop monitor or a large tablet.</li>
+          <li>The text area has a clear button that will delete everything in the text field.
             Clicking that button opens a popup asking to confirm the deletion. The popup confirmation is in case you
             clicked the clear button by accident. The text area also has a copy button to copy the contents into your
             clipboard. You can then paste the text into another program.</li>
@@ -367,7 +365,7 @@
             speak. They also turn orange when you click them.</li>
           <li>All words are designed to add a space before the word. Conversely, all characters on the keyboard do not
             add a space. So if
-            you will be typing out a word, use the Spacebar key of the virtual keyboard before typing the word.</li>
+            you will be typing out a word, use the Spacebar key on the virtual keyboard before typing the word.</li>
         </ul>
         <hr>
         <h3>Alphabetical words:</h3>
@@ -380,8 +378,8 @@
             lose time searching for a word that is not in there because you can’t remember a list of 100 words per
             letter. Shorter is probably better.</li>
           <li>Depending on the number of words you upload or the size of your monitor, you may not always see the text
-            entered in the text box because the mega menu will block part of the text field, though the background is
-            partially transparent. Don’t worry, if you click a word and can’t see the text box - it will be added.</li>
+            entered in the text box because the mega menu will block part of the text field. Don’t worry, if you click a
+            word and can’t see the text box - it will be added.</li>
         </ul>
 
         <h4>Adding your own words</h4>
@@ -389,13 +387,18 @@
           <li>Make sure your words are all lowercase and sorted alphabetically.</li>
           <li>You can separate each word with either a space or a comma followed by a space.</li>
           <li>Copy all the words into your clipboard. Then go into the root folder and open the file called
-            <strong>text-alpha.txt</strong>. Use notepad on Windows to oepn the file or TextEdit if on macOS.
+            <strong>text-alpha.txt</strong>. Use notepad on Windows to open the file or TextEdit if on macOS.
           </li>
           <li>That file will be completely empty. Paste in your words and save the file to the same location.</li>
           <li>You should now see your list of words. If you do not then hit the Refresh button, or close the
             writer-assist.html file and relaunch for the changes to show.</li>
-          <li>If you prefer the original default list then open the text file, select all the text and delete it all.
+          <li>If you prefer the original default list then delete everything you added to text-alpha.txt.
             Save and close the file.</li>
+          <li>You can also do a combination. If you like most of my words, you can use the default list as a
+            starting point. Open <strong>text-default.txt</strong> to get a copy of the default
+            words. Copy the default list into text-alpha.txt. Add additional words and remove those you
+            don't want. Then save text-alpha.txt for the changes to take to show. You may have to refresh the page.
+          </li>
         </ol>
         <hr>
         <h3>Proper Nouns and Phrases:</h3>
@@ -403,39 +406,45 @@
           Click the buttons to add that word or phrase to the text area.</p>
         <h4>Adding your own Proper Nouns and Phrases</h4>
         <ol>
-          <li>Arrange your words in the order you would like them to appear. Look at the example where the phrases come
-            first followed by days of the week and months of the year.</li>
+          <li>Arrange your words in the order you would like them to appear.</li>
           <li>You MUST separate each word with a comma followed by a space. If you have a phrase that ends with a comma,
-            then you need two commas (e.g. "Sincerly,," for "Sincerely," to output to the list.</li>
-          <li>Copy all the words into your clipboard. Then go into the root folder and open the file called
-            <strong>text-proper.txt</strong>. Use notepad on Windows to oepn the file or TextEdit if on macOS.
+            then you need two commas (e.g. "Sincerely,," will output as "Sincerely,").</li>
+          <li>Copy all your phrases into your clipboard. Then go into the root folder and open the file called
+            <strong>text-proper.txt</strong>. Use notepad on Windows to open the file or TextEdit if on macOS.
           </li>
-          <li>That file will be completely empty. Paste in your words and save the file to the same location.</li>
+          <li>That file will be completely empty. Paste in your phrases and save the file to the same location.</li>
           <li>You should now see your list of phrases. If you do not then hit the Refresh button, or close the
             writer-assist.html file and relaunch for the changes to show.</li>
-          <li>If you prefer the original default list then open the text file, select all the text and delete it all.
+          <li>If you prefer the original default list then delete everything you added to text-proper.txt.
             Save and close the file.</li>
+          <li>You can also do a combination. If you like most of my phrases, you can use the default list as a
+            starting point. Open <strong>text-default.txt</strong> to get a copy of the default
+            phrases. Copy the default list into text-proper.txt. Add additional phrases and remove those you
+            don't want. Then save text-proper.txt for the changes to take to show. You may have to refresh the page.
+          </li>
         </ol>
         <hr>
         <h3>Virtual Keyboard and main text area:</h3>
         <ul>
           <li>I omitted the Insert key as I find it an annoyance rather than a helpful key. I also moved the Delete key
-            to the main keyboard section. Backspace removes a character behind the cursor, while Delete removes a
-            character in front of the cursor. Place your cursor anywhere in the text field to use them. The same goes
-            for the Enter and Tab keys.</li>
+            to the main keyboard section.</li>
+          <li>Place your cursor anywhere in the text field to add any of the characters or the keys like Delete, Enter,
+            or the arrow keys. You can also insert works or phrases at the location of your cursor. </li>
           <li>I have the Ctrl and Alt keys disabled as they are not needed for basic email or document writing. I also
             hid the buttons for arrow up, page up, arrow down, and page down as I don’t think they are needed, though I
             may add them in later.</li>
           <li>The Home, End, right and left arrow keys are functional. However, the Home key takes you to the beginning
-            of the text area, as opposed to the beginning of each line. The end takes you
+            of the text area, as opposed to the beginning of each line. The End key takes you
             to the end of the text area instead of the end of each line. </li>
           <li>I added the nav keys and number pad to the left of the main keyboard section. The nav keys are close
-            together for ease of use, and the number pad is for more making entering numbers easier.</li>
+            together for ease of use, and the number pad is to make entering multiple numbers easier (phone #'s,
+            addresses, etc.)</li>
           <li>Both the Caps key and Shift keys will stay highlighted until you click them a second time. All words and
             letters will be capitalized while the Caps key is on.</li>
           <li>Hitting the Shift key toggles the 8
             double-character keys that are below the top row on a standard keyboard. Or specifically, square and curly
-            brackets, back slash and pipe, colon and semi-colonm, single and double quotes, and forward slash and
+            brackets, back slash and pipe, colon and semi-colonm, single and double quotes, comma and less than sign,
+            period and greater than sign, and forward slash and
             question mark.</li>
           <li>As you can see, I decided to create a new row for the double-character keys that are above the top row of
             letters.</li>
@@ -449,6 +458,34 @@
             box. Just click the suggested replacement to make the change. Or click 'Dismiss' to remove the red
             highlighting. You would do that for acronyms, technical jargon, slang, etc.</li>
         </ul>
+        <hr>
+        <h3>Downloading the app to desktop or laptop</h3>
+        <p>All you need to do is download the files and open writer-assist.html to start using the app.</p>
+        <p>The keyboard and words are for American English keyboard. I hope to have other language options in the
+          future. If you would like to download the files and start using the app, then follow these steps:</p>
+        <ol class="download-notes">
+          <li>Go to my GitHub repositoy called <a href="https://github.com/Kernix13/WriterAssist"
+              target="_blank">WriterAssist</a>.</li>
+          <li>Click the Green code button and select <strong>Download ZIP</strong>.</li>
+          <img src="https://kernixwebdesign.com/images/dl-code2.PNG" alt="screenshot of the download button">
+          <li>Go to your downloads folder, select the zip file, right-click and choose <strong>Extract All...</strong>
+          </li>
+          <img src="https://kernixwebdesign.com/images/extract.PNG" alt="right-click view to extracl all">
+          <li>Click the Extract button on the popup that appears. This will create a folder in your downloads folder
+            with a name like WriterAssist-master</li>
+          <img src="https://kernixwebdesign.com/images/extract2.PNG" alt="extract popup options">
+          <li>Go into that folder and copy or move the folder inside of that (same name) to a folder such as Documents.
+            Then delete both the
+            folder and zip file from your downloads folder since you don't need them anymore</li>
+          <img src="https://kernixwebdesign.com/images/copy-to.PNG" alt="the copy to dialog popup">
+          <li>Finally, go into the folder you just copied or moved and launch the file named writer-assist.html. You can
+            also delete all of the PNG files since they are just used in this README file.</li>
+          <img src="https://kernixwebdesign.com/images/open.PNG" alt="file to open">
+        </ol>
+        <p>While you are in that folder, notice the files <strong>text-alpha.txt</strong>,
+          <strong>text-default.txt</strong>, and <strong>text-proper.txt</strong>. It is those files you use to add your
+          own words and phrases mentioned above.
+        </p>
       </div>
     </section>
   </div>
@@ -477,6 +514,7 @@
   <script src="js/alpha.js"></script>
   <script src="js/proper.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>

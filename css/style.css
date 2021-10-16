@@ -44,6 +44,17 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+.download-notes li {
+  padding: 0.375em 0;
+}
+
+.download-notes img {
+  display: block;
+  margin: 0.75em 0;
+  padding: 0;
+  border: 1px solid #888;
+}
+
 .highlight-text {
   font-weight: 600;
   font-style: italic;

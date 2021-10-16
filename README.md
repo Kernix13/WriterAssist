@@ -7,87 +7,67 @@
 2. [App Description](#app-description)
 3. [General Notes](#general-notes)
 4. [Adding your own words](#adding-your-own-words)
-5. [Uploading a file versus hardcoding the words](#uploading-a-file-versus-hardcoding-the-words)
-6. [Downloading the app to desktop or laptop](#downloading-the-app-to-desktop-or-laptop)
-7. [Credits](#credits)
+5. [Credits](#credits)
 
 ## Overview 
-This single-page app is for people with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, multiple sclerosis, stroke, cerebral palsy, brain tumors, neuropathy, and spinal injuries.
+This single-page app is for anyone with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral palsy, Parkinson's, brain tumors, neuropathy, and spinal injuries.
 
-My motivation was to help my aunt who has cerebral palsy and takes 5-10 seconds to type a single character using her keyboard. Now it should be easier for her to compose emails to friends and family. This is a single-page app that can run on a user's desktop or laptop. 
+Ideally, a friend or family can create a file of text to populate the Writing Assistant page for someone who could benefit from the app. This file should contain the most used words and phrases for someone who has reduced motor control. This way they will be able to communicate with loved ones much easier, especially if they also have trouble speaking.
 
-The idea is to allow users to click on words and phrases to enter them into a text area. They can also use the virtual keyboard to enter words and characters. They can then copy the text area to use in an email program.
+If you would like to load your own words and phrases then you have to add your words to two text files in the main folder. See each respective section below for details.
 
-## App description
+### App description
 There are 4 main sections
-1. Proper Nouns section: A list of common phrases, days of the week, and months of the year.
-2. Alphabetical list of common words: hovering over the different letters of the alphabet displays a list of approximately 40-100 common words for that letter.
-3. The main text area: All the words, phrases, and character buttons clicked on will appear here. The user also has buttons to copy the text area and also to clear the field when done.
-4. Virtual keyboard: Since it would be impractical to include all possible words and phrases, users can use the keyboard to enter their own words, numbers, and characters.
+1. **Proper Nouns section**: A list of common phrases, days of the week, and months of the year.
+2. **Alphabetical list of common words**: hovering over the different letters of the alphabet displays a list of approximately 40-100 common words for each letter.
+3. **The main text area**: Clicking on any of the buttons for the words, phrases, and/or keyboard characters will appear in the textarea box. The user also has buttons to copy the text area and also to clear the field when done.
+4. **Virtual keyboard**: Since it would be impractical to include all possible words and phrases, users can use the keyboard to enter their own words, numbers, and characters.
 
-The only technologies used are Vanilla JavaScript and the Clipboard API. I also wanted to use the File API and FileReader for users to upload their own words and phrases but it appears that is not possible for files stored on a user's local machine. I have the words hardcoded in the file content.js. 
+The only technologies used are Vanilla JavaScript and the Clipboard API. I also wanted to use the File API and FileReader for users to upload their own words and phrases but it appears that is not possible for files stored on a user's local machine. I have the words hardcoded in the file content.js though there is a way to add your own words and phrases (see the Adding your own words section). 
 
-I would need the app to be on a server to be able to fetch their word files to populate the DOM. I will be contacting non-profit organizations that may be interested in hosting the app.
+Finally, I would like to have a select option to change the language of the virtual keyboard. As of now, it is in English so people who speak other languages will not be able to use it. Assuming there would not be a change in the keyboard keys on each row, then the change would only require the changing of the characters. But then someone would have to manually change the words and phrases in content.js. I would need help with the different language keyboards. Please contact me if you are interested by visiting my website [contact page](https://kernixwebdesign.com/contact/).
 
-Finally, I would like to have a select option to change the language of the virtual keyboard. As of now, it is in English so people who speak other languages will not be able to use it. Assuming there would not be a change in the keyboard keys on each row, then the change would only require the changing of the characters. But then someone would have to manually change the words and phrases in content.js as well unless I can have users upload a file of their words. I would need help with the different language keyboards. Please contact me if you are interested by visiting my website [contact page](https://kernixwebdesign.com/contact/).
-
-## General Notes
+### General Notes
 It would be nice to put each user's name in the logo position, e.g. ***Jim's Writer***. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such as that. That can be done in the div tag with the class of "logo".
 
 The width of the page is set at 85% to give the user a large area to navigate. Change it as you see fit.
 
-I have the buttons with a class of "numpad" in the section containing the nav and number pad keys set to a flex-direction of column at 1058px in the only media query in the CSS file. Hopefully, no one has a monitor smaller than that. If they do then the numpad / nav section will go below the keyboard.
+I have the buttons with a class of "numpad" in the section containing the navigation keys and number pad keys set to a flex-direction of column to sit alongside the main keyboard. That change tales place at 1058px in the only media query in the CSS file. Hopefully, no one has a monitor smaller than that. If they do then the numpad / nav section will go below the keyboard.
 
 Another aspect to change is the margin and padding for all buttons. Consider changing those values if you are designing for a user who needs more margin and padding for a bigger target area.
 
 **Note**: I set the tabindex to -1 for EVERYTHING except the header and footer links. This is a mouse-only tool so using a keyboard to tab doesn't make sense. Also, it would take too long to TAB through all the proper nouns, alphabetical words, and keyboard keys.
 
-### Adding your own words
-All the proper nouns, phrases and words are in content.js. You will have to change the words and phrases in that file. Ideally, I wanted the user to be able to upload a 3 files:
-
-- 10 to 20,000 words from previous writings, if possible.
-- A list of people's names and phrases for the proper nouns sction
-Using javascript you could:
-
-- Add the proper nouns and emails to their respective sections
-- Filter out all sample words and perform a word count
-  - Then you could filter out words below a certain word count
-  - Perform an alphabetical sort on the remaining words
-  - Output the resulting words into each alphabetical link
-
-I hope to figure out the upload issue and update the app when I do.
-
-### Uploading a file versus hardcoding the words
-I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt will be using a file that has a C:\... address and import/export require either a server or an HTTPS address. Hopefully, a website that assists people with disabilities can host the app with users logging into their accounts to upload their sample text and emails.
-
-If you know of a way to solve the import/export and file upload problems then send me an email from my contact page. Also, contact me if you have any suggestions or edits that would improve the app. I would like anyone with motor control issues to have a high-quality free app to help them communicate.
-
 ***
-## Downloading the app to desktop or laptop
 
-All you need to do is download the files and open writer-assist.html to start using the app. I have a detailed note and documentation section below the virtual keyboard that will help use the tool.
+## Adding your own words
+I wanted the user to upload thie words and phrases from a different page. I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt, and other users, will be using a file that has a C:\\... address and import/export require either a server or an HTTPS address. 
 
-The app is fine to use as is with the phrases and words I included in the file content.js, although the keyboard and words are for American English. If you would like to download the files and start using the app, then follow these steps:
+Hopefully, a website that assists people with disabilities can host the app with users logging into their accounts to upload their preferred words and phrases. I contacted 39 organizations so far and none of them were interested.
 
-1. While in the WriterAssist folder/repository, click the Green code button and select Download ZIP
+All the default proper nouns, phrases and words are in content.js. 
 
-![Download instructions](/dl-code2.PNG)
+### Adding alphabetical words
+Follow these steps to add youw own list of words for each alphabet letter:
 
-2. Go to your downloads folder, select the zip file, right-click and choose Extract All...
+1. Make sure your words are all lowercase and sorted alphabetically.
+2. You can separate each word with either a space, or a comma followed by a space.
+3. Copy all the words into your clipboard. Then go into the root folder and open the file called **text-alpha.txt**. Use notepad on Windows to open the file or TextEdit if on macOS.
+4. That file will be completely empty. Paste in your words and save the file to the same location.
+5. You should now see your list of words. If you do not then hit the Refresh button, or close the writer-assist.html file and relaunch for the changes to show.
+6. If you prefer the original default list then delete everything you added to text-alpha.txt. Save and close the file.
+7. You can also do a combination. If you like most of my words, you can use the default list as a starting point. Open **text-default.txt** to get a copy of the default words. Copy the default list into text-alpha.txt. Add additional words and remove those you don't want. Then save text-alpha.txt for the changes to take to show. You may have to refresh the page.
 
-![Extracting the zip files](/extract.PNG)
+### Adding proper nouns and phrases
+Follow these steps to add youw own list of phrases:
 
-3. Click the Extract button on the popup that appears. This will create a folder in your downloads folder with a name like WriterAssist-master
+1. Arrange your words in the order you would like them to appear.
+2. You MUST separate each word with a comma followed by a space. If you have a phrase that ends with a comma, then you need two commas (e.g. "Sincerely,," will output as "Sincerely,").
+3. Copy all your phrases into your clipboard. Then go into the root folder and open the file called text-proper.txt. Use notepad on Windows to open the file or TextEdit if on macOS.
+4. That file will be completely empty. Paste in your phrases and save the file to the same location.
+5. You should now see your list of phrases. If you do not then hit the Refresh button, or close the writer-assist.html file and relaunch for the changes to show.
+6. If you prefer the original default list then delete everything you added to text-proper.txt. Save and close the file.
+7. You can also do a combination. If you like most of my phrases, you can use the default list as a starting point. Open text-default.txt to get a copy of the default phrases. Copy the default list into text-proper.txt. Add additional phrases and remove those you don't want. Then save text-proper.txt for the changes to take to show. You may have to refresh the page.
 
-![Extract](/extract2.PNG)
-
-4. Copy or move that folder to a folder such as Documents then delete both the folder and zip file from your downloads folder since you don't need them in the downloads folder anymore.
-
-![Copy to folder of choice](/copy-to.PNG)
-
-5. Finally, go into the folder you just copied or moved and launch the file named writer-assist.html. You can also delete all of the PNG files since they are just used in this README file.
-
-![Open the main file](/open.PNG)
-
-### Credits
+#### Credits
 I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website!
