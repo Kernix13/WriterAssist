@@ -1,7 +1,4 @@
 upload.html
-*.PNG
-*.png
 /js/main_bkup.js
 /js/upload.js
-/images
 /css/upload.css
