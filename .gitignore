@@ -1,9 +1,10 @@
-workspace.html
-word.js
-word.html
 upload.html
 test.txt
+test2.txt
 test.json
+*.PNG
+*.png
+/js/main_bkup.js
 /js/upload.js
 /images
 /css/upload.css

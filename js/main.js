@@ -1,147 +1,21 @@
-/* Problems &/or tasks remaining  */
-// 1. use local storage to store the text in textarea in case the user gets interrupted or is not finished composing their email or document
-// 2. import and export for type="module" is NOT possible if app is running from user's localhost (C:/). Is there a solution for that or do I need to keep a small amount of "common" words in the main.js file?
-// 3. I need to have the user upload 1. list of proper nouns, 3. a very large sample of their past writing. Once I store all that data, I need to generate a new html file with the data from the uploads.
-// 4. Once that is possible, have an input field of type="number" so that they can fine tune the # of alphabetical words to more or less words for each letter.
-// 5. Have the keyboard keys created by JS for different languages, e.g. Greek.
-
-// content.js has all the proper and alphabetical words
-
-// EMAIL ADDRESSES AND NAMES OUTPUT
-
-// PROPER NOUN SPLIT & SORT PRIOT TO OUTPUT
-function properNouns() {
-  let nouns = proper.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
-  return nouns;
-}
-let pn = properNouns();
-
-// ALPHABETICAL WORDS SPLIT PRIOR TO OUTPUT
-function splitWords(str) {
-  let words = str.split(/[^a-zA-Z'-]+/gi);
-  for (let i = 0; i < words.length; i++) {
-    if (words !== "") {
-      return words.sort((a, b) => a.localeCompare(b));
-    }
-  }
-}
-// console.log(splitWords(lowerCase));
-
-/* =========== get a count for each word ================
-also: https://jsbin.com/vuvosah/edit?js,console
-wordCount 
-=============================================================*/
-
-const a = splitWords(wordsToSplit);
-
-function wordCount(a) {
-  let counts = {}
-
-  for (let i = 0; i < a.length; i++) {
-    if (counts[a[i]]) {
-      counts[a[i]] += 1
-    } else {
-      counts[a[i]] = 1
-    }
-  }
-  // console.log(counts);
-  return counts;
-}
-wordCount(a);
-
-/* ============ output creates:
-the object with the words as keys and their counts as values
-==================== */
-let inputWords = wordCount(a);
-let output = Object.entries(inputWords).map(([word, count]) => ({ word, count }));
-
-/* ==================================
-properNounOutput places the Proper Nouns in the #special-words div
-=================================== */
-function properNounOutput(arr) {
-  for (let i = 0; i < arr.length; i++) {
-
-    let outputNouns = `<button class="special" value="${arr[i]}" tabindex="-1">${arr[i]}</button>`;
-    let nounButton = document.createElement('button');
-    nounButton.value = arr[i];
-    let specialNoun = document.getElementById("special-words");
-    specialNoun.insertAdjacentHTML("beforeend", outputNouns);
-
-  }
-}
-properNounOutput(pn);
-
-/* ==================================
-pageOutput places the words in each alphabet letter div
-=================================== */
-function pageOutput(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].count > 0 && arr[i].word != "") {
-
-      let outputHTML = `<li class="text-btn" value><a class="${arr[i].word}">${arr[i].word}</a></li>`;
-
-      let textButton = document.createElement('li');
-      textButton.value = arr[i].word;
-      textButton.classList.add('text-btn');
-
-      let firstLetter = arr[i].word.charAt(0);
-      let id = `letter${firstLetter}`;
-      let ul = document.getElementById(id);
-
-      // The if statement only prevents possible errors, 
-      // caused by combo ul's like id letterxyz
-      if (ul) {
-        ul.insertAdjacentHTML("beforeend", outputHTML);
-      }
-    }
-  }
-}
-pageOutput(output);
-
-// variables for user favorite words, most used words and textarea element
-const special = document.getElementsByClassName('special');
-const textBtns = document.getElementsByClassName('text-btn');
+/* ==== VAR for textarea ===== */
 const textBox = document.getElementById("text-box");
 
-// add alphabetical megamenu words to textarea on click, and capitalize if following end of sentence punctuation
-for (let i = 0; i < textBtns.length; i++) {
-  if (textBtns[i]) {
-    textBtns[i].addEventListener('click', e => {
-      let word = e.target.textContent;
-      let len = textBox.value.length;
-      let punc = textBox.value;
-      let first = word.charAt(0);
-      let remainder = word.slice(1)
+/* ==== BEGIN ALPHABETICAL WORDS ===== */
+//          in alpha.js
+/* ==== END ALPHABETICAL WORDS  ===== */
 
-      if (['.', '?', '!', '\n'].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == '') {
-        textBox.value = textBox.value + " " + first.toUpperCase() + remainder;
-        textBox.focus();
-      } else {
-        textBox.value = textBox.value + " " + word;
-        textBox.focus();
-      }
-    })
-  }
 
-}
+/* ==== BEGIN PROPER NOUNS AND PHRASES ===== */
+//          in proper.js
+/* ==== END PROPER NOUNS AND PHRASES  ===== */
 
-// add Special Words to text-box, capitalize words if following ., ! or ?
-for (let i = 0; i < special.length; i++) {
-  special[i].addEventListener('click', e => {
-    let userFavs = e.target.value;
-    if (e.target.value == 'com' || e.target.value == 'net' || e.target.value == 'org') {
-      textBox.value = textBox.value + userFavs;
-      textBox.focus();
-    } else {
-      textBox.value = textBox.value + " " + userFavs;
-      textBox.focus();
-    }
-  })
-}
 
 /* ==============================================================
-  add keyboard chars to page in "text-area" on click
-====================== */
+=================================================================
+  add KEYBOARD CHARACTERS to text area & get cursor position for ALL keyboard functionality except CAPS and SHIFT keys
+  ===============================================================
+=============================================================== */
 // GET INDEX POSITION OF CURSOR
 // https://www.webtips.dev/webtips/javascript/how-to-get-caret-position-with-javascript
 function cursorPosition() {
@@ -150,10 +24,10 @@ function cursorPosition() {
   return position;
 }
 
-// letters, CAPS key, SHIFT key
+// LETTERS, CAPS key, SHIFT key
 const keys = document.getElementsByClassName('key');
-const capsKey = document.getElementById("caps");
 
+// capitalize letter or not based on various criteria
 function addLetters() {
   for (let i = 0; i < keys.length; i++) {
     keys[i].addEventListener('click', e => {
@@ -182,7 +56,9 @@ function addLetters() {
 }
 addLetters()
 
-// add or remove class for highlighting the CAPS key & SHIFT key
+// add or remove class for highlighting the CAPS & SHIFT keys
+const capsKey = document.getElementById("caps");
+
 function capitalize() {
   if (!capsKey.classList.contains('caps-on')) {
     capsKey.classList.add("caps-on");
@@ -213,6 +89,7 @@ function shift() {
 shiftl.addEventListener("click", shift);
 shiftr.addEventListener("click", shift);
 
+// output shift key elements based on status of shift key
 const shiftKeyL = document.querySelector(".shiftL");
 const shiftKeyR = document.querySelector(".shiftR");
 let rightSquare = document.getElementById("rtsq");
@@ -224,6 +101,7 @@ let forwardslash = document.getElementById("forwardslash");
 let comma = document.getElementById("comma");
 let period = document.getElementById("periodpunc");
 
+// Change the value of the shift keys with a class of shiftItem though the id is being selected
 function changeInner() {
   if (shiftl.classList.contains('shift-on') || shiftr.classList.contains('shift-on')) {
     rightSquare.innerHTML = "{";
@@ -248,9 +126,9 @@ function changeInner() {
 shiftKeyL.addEventListener("click", changeInner);
 shiftKeyR.addEventListener("click", changeInner);
 
-// non-alphabetic (numbers & symbols)
+// add NON-ALPHABETIC CHARACTERS (numbers & symbols) to textarea
 const nonAlpha = document.getElementsByClassName("nonAlpha");
-const amp = document.getElementById("amp");
+// const amp = document.getElementById("amp");
 
 for (let i = 0; i < nonAlpha.length; i++) {
   nonAlpha[i].addEventListener('click', e => {
@@ -271,25 +149,26 @@ for (let i = 0; i < nonAlpha.length; i++) {
   })
 }
 
-// get cursor X & Y coordinates
-const pageUp = document.getElementById("page-up");
-const pageDown = document.getElementById("page-down");
-const arrowUp = document.getElementById("uparrow");
-const arrowDown = document.getElementById("downarrow");
+// get cursor X & Y coordinates - couldn't get this to work for up and down keys
 
-function coords() {
-  document.addEventListener('mousemove', (e) => {
-    let XnY = [e.clientX, e.clientY]
-    let x = XnY[0];
-    let y = XnY[1];
-    // console.log(y);
-    return y;
-  });
-}
+// const pageUp = document.getElementById("page-up");
+// const pageDown = document.getElementById("page-down");
+// const arrowUp = document.getElementById("uparrow");
+// const arrowDown = document.getElementById("downarrow");
 
-/* ==============================================================
-  add nonprint keys functionality to #text-box .text-area on click
-====================== */
+// function coords() {
+//   document.addEventListener('mousemove', (e) => {
+//     let XnY = [e.clientX, e.clientY]
+//     let x = XnY[0];
+//     let y = XnY[1];
+//     console.log(y);
+//     return y;
+//   });
+// }
+
+/* ===========================================
+  add nonprint keys functionality for textarea
+============================================ */
 const backspace = document.getElementById('backspace');
 const deleteKey = document.getElementById('delete');
 
@@ -309,14 +188,13 @@ backspace.addEventListener("click", removeCharBehind);
 // DELETE
 function removeCharAhead(x) {
   x = cursorPosition();
-
   textBox.value = textBox.value.slice(0, x) + textBox.value.slice(x + 1);
   textBox.focus();
   textBox.selectionEnd = x;
 }
 deleteKey.addEventListener("click", removeCharAhead);
 
-// TAB
+// TAB (set to 5 spaces)
 document
   .getElementById("tab")
   .addEventListener("click", function () {
@@ -350,22 +228,23 @@ document
     textBox.selectionEnd = x + 1;
   });
 
-// HOME
+/* ===================================
+add nvaigation keys functionality 
+===================================== */
 const home = document.getElementById('homekey');
+const end = document.getElementById('end');
+const leftarrow = document.getElementById('leftarrow');
+const rightarrow = document.getElementById('rightarrow');
 
+// HOME
 function focusAtStart(x) {
-  // x = cursorPosition();
-  // textBox.value = textBox.value.slice(0, x) + textBox.value.slice(x + 1);
   textBox.value = textBox.value;
   textBox.focus();
   textBox.selectionEnd = textBox.value[0];
-  // console.log(x);
 }
 home.addEventListener("click", focusAtStart);
 
 // END
-const end = document.getElementById('end');
-
 function focusAtEnd(x) {
   x = cursorPosition();
   textBox.value = textBox.value;
@@ -376,8 +255,6 @@ function focusAtEnd(x) {
 end.addEventListener("click", focusAtEnd);
 
 // LEFT ARROW
-const leftarrow = document.getElementById('leftarrow');
-
 function arrowLeft(x) {
   x = cursorPosition();
   textBox.value = textBox.value;
@@ -387,8 +264,6 @@ function arrowLeft(x) {
 leftarrow.addEventListener("click", arrowLeft);
 
 // RIGHT  ARROW
-const rightarrow = document.getElementById('rightarrow');
-
 function arrowRight(x) {
   x = cursorPosition();
   textBox.value = textBox.value;
@@ -397,7 +272,14 @@ function arrowRight(x) {
 }
 rightarrow.addEventListener("click", arrowRight);
 
-/* COPY the text area, Clipboard API */
+/* ==============================================================
+  end KEYBOARD CHARACTERS
+=============================================================== */
+
+/* ==============================================================
+  COPY & CLEAR functionality for textarea
+=============================================================== */
+/* COPY the text area using the Clipboard API */
 const copy = document.getElementById("copy");
 
 async function copyToClipboard(e) {
@@ -415,7 +297,7 @@ async function copyToClipboard(e) {
 }
 copy.addEventListener("click", copyToClipboard);
 
-// Clear out the text box
+// Clear out the text area and open modal for confirmation
 const close2 = document.getElementById('close2');
 const open2 = document.getElementById('open2');
 const modal2 = document.getElementById('modal2');
@@ -436,21 +318,12 @@ document
     modal2.classList.remove('show-modal')
   });
 
+/* ==== FILE UPLOAD: Decided against this approach ===== */
 
-// accordian for proper nouns - https://codepen.io/craigwarren-dev/pen/vzdeoy
-const accordian1 = document.getElementById("accordian1")
 
-// add or remove class for displaying PROPER NOUNS
-function displayPanel1() {
-  const panel1 = document.getElementById("panel1");
-  if (!panel1.classList.contains('panel1-active')) {
-    panel1.classList.add("panel1-active");
-    panel1.classList.remove("panel1-inactive");
-  } else {
-    panel1.classList.add("panel1-inactive");
-    panel1.classList.remove("panel1-active");
-  }
-}
-accordian1.addEventListener("click", displayPanel1);
-
-/* ==== FILE UPLOAD: HOW TO PUT CONTENT IN A VAR OR LOCAL STORAGE? ===== */
+/* Notes, problems &/or tasks remaining  */
+// 1. use local storage to store the text in textarea in case the user gets interrupted or is not finished composing their email or document
+// 2. Have the keyboard layouts created by JS via a select element for different languages, e.g. Greek, French, Russian...
+// 3. figure out a better way for user input files than local storage
+// 4. content.js has all the proper nouns / phrases and alphabetical default words - or the file text-proper.txt and text-alpha.txt both of which are empty. The user would have to load all the proper nouns and phrases into those files, separated by a comma and space for phrases, and same or just a space for alpha . If a phrase ends with a comma, then it needs 2 commas. The text-alpha file should already be sorted and in lowercase.
+// 5. If test-proper & text-alpha are empty of text or don't exist it defaults to content.js, though if the file is not present it throws an error (try catch?). User needs to refresh the page after populating the text file - same for text-alpha.txt

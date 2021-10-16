@@ -81,11 +81,11 @@ The app is fine to use as is with the phrases and words I included in the file c
 
 ![Extract](/extract2.PNG)
 
-4. Copy or move that folder to a folder such as Documents then delete both the folder and zip file from your downloads folder.
+4. Copy or move that folder to a folder such as Documents then delete both the folder and zip file from your downloads folder since you don't need them in the downloads folder anymore.
 
 ![Copy to folder of choice](/copy-to.PNG)
 
-5. Finally, go into the folder and launch the file named writer-assist.html. You can also delete all of the PNG files since they are just used in this README file.
+5. Finally, go into the folder you just copied or moved and launch the file named writer-assist.html. You can also delete all of the PNG files since they are just used in this README file.
 
 ![Open the main file](/open.PNG)
 

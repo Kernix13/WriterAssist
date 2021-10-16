@@ -31,6 +31,10 @@ button {
   font-family: 'Roboto', sans-serif;
 }
 
+h4 {
+  margin: 0;
+}
+
 a, a:visited {
   text-decoration: none;
   color: #0000cd;
@@ -544,7 +548,7 @@ footer h3 {
   letter-spacing: .1875rem;
 }
 
-.main-nav a {
+.main-nav a, .main-nav button {
   color: #444;
   display: block;
   padding: .25em 0.75em;
@@ -560,8 +564,14 @@ footer h3 {
   z-index: 9999;
 }
 
+/* consider removing href from all alpha letters or changing the a tag to button */
+.main-nav li:hover a:hover {
+  cursor: default;
+}
+
 .main-nav li:hover .submenu {
   display: block;
+  cursor: default;
 }
 
 .submenu a:hover {
