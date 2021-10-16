@@ -1,6 +1,6 @@
 # WriterAssist (Virtual keyboard)
 
-![Screenshot of the writer app](/WriterAssist/images/writer-assist-github-800.png)
+![Screenshot of the writer app](/writer-assist-github-800.png)
 
 ## Table of contents
 1. [Overview](#overview)
