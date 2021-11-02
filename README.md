@@ -1,6 +1,8 @@
 # WriterAssist (Virtual keyboard)
 
 ![Screenshot of the writer app](/writer-assist-github-800.png)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Kernix13/WriterAssist?style=for-the-badge)
+![GitHub all releases](https://img.shields.io/github/downloads/Kernix13/WriterAssist/total?style=for-the-badge)
 
 ## Table of contents
 1. [Overview](#overview)
