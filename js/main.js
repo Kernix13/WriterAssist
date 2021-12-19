@@ -1,3 +1,4 @@
+"use strict";
 /* ==== VAR for textarea ===== */
 const textBox = document.getElementById("text-box");
 
