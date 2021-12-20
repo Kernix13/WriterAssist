@@ -105,23 +105,23 @@ let period = document.getElementById("periodpunc");
 // Change the value of the shift keys with a class of shiftItem though the id is being selected
 function changeInner() {
   if (shiftl.classList.contains('shift-on') || shiftr.classList.contains('shift-on')) {
-    rightSquare.innerHTML = "{";
-    leftSquare.innerHTML = "}";
-    backslash.innerHTML = "|";
-    semicolon.innerHTML = ":";
-    quotes.innerHTML = "\"";
-    comma.innerHTML = "&lt;";
-    period.innerHTML = "&gt;";
-    forwardslash.innerHTML = "?";
+    rightSquare.textContent = "{";
+    leftSquare.textContent = "}";
+    backslash.textContent = "|";
+    semicolon.textContent = ":";
+    quotes.textContent = "\"";
+    comma.textContent = "<";
+    period.textContent = ">";
+    forwardslash.textContent = "?";
   } else {
-    rightSquare.innerHTML = "[";
-    leftSquare.innerHTML = "]";
-    backslash.innerHTML = "\\";
-    semicolon.innerHTML = ";";
-    quotes.innerHTML = "'";
-    comma.innerHTML = ",";
-    period.innerHTML = ".";
-    forwardslash.innerHTML = "/";
+    rightSquare.textContent = "[";
+    leftSquare.textContent = "]";
+    backslash.textContent = "\\";
+    semicolon.textContent = ";";
+    quotes.textContent = "'";
+    comma.textContent = ",";
+    period.textContent = ".";
+    forwardslash.textContent = "/";
   }
 };
 shiftKeyL.addEventListener("click", changeInner);
