@@ -78,3 +78,8 @@ Follow these steps to add youw own list of phrases:
 
 #### Credits
 I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website!
+
+## License
+
+Copyright © 2021 [Jim Kernicky](https://github.com/Kernix13). <br />
+This project is [MIT](https://github.com/Kernix13/WriterAssist/blob/master/LICENSE.txt) licensed.
