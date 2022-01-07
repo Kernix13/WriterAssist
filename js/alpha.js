@@ -1,40 +1,10 @@
 /* ==== BEGIN ALPHA MANIPULATION & OUTPUT ===== */
-/* can't split the output for ALPHA when using the async function below */
 
-// async function userWords() {
-//   try {
-//     const response = await fetch('text-alpha2.txt')
-//     const data = await response.text()
-//     console.log("text-alpha2: " + data)
-//     return data;
-//   } catch (e) {
-//     console.log("There was a problem fetching the file")
-//   }
-// }
-// userWords();
-
-// let localAlpha = "";
-fetch('text-alpha.txt')
-  .then((response => response.text()))
-  .then((data) => {
-    // I REALLY hate using local storage
-    localStorage.setItem("alphaWords", data);
-    return data;
-  })
-let localAlpha = window.localStorage.getItem('alphaWords');
-// window.localStorage.clear();
-
+// split alphabetical words from content.js
 function splitWords() {
-  let y = localAlpha;
-  if (y) {
-    let words = y.split(/[^a-zA-Z'-]+/gi);
-    console.log("This is alphaWords/localAlpha from fetch: " + words.length)
-    return words;
-  } else {
-    let words = wordsToSplit.split(/[^a-zA-Z'-]+/gi);
-    console.log("This is wordsToSplit from content.js (length of array / word count): " + words.length)
-    return words;
-  }
+  let words = wordsToSplit.split(/[^a-zA-Z'-]+/gi);
+  console.log("This is wordsToSplit from content.js (length of array / word count): " + words.length)
+  return words;
 }
 let output = splitWords();
 

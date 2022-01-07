@@ -1,28 +1,10 @@
-/* ==== BEGIN PROPER MANIPULATION & OUTPUT ===== */
-// let fileNouns = "";
-fetch('text-proper.txt')
-  .then((res => res.text()))
-  .then((data) => {
-    // I hate having to use local storage
-    localStorage.setItem("wordsNounsPhrases", data);
-    let fileNouns = data;
-    return fileNouns;
-    // return data;
-  })
+/* ==== BEGIN PROPER NOUNS MANIPULATION & OUTPUT ===== */
 
-// split proper nouns from local storage (instead of FETCH) or content.js
+// split proper nouns from content.js
 function properNouns() {
-  let x = window.localStorage.getItem('wordsNounsPhrases');
-  // let x = fileNouns;
-  if (x) {
-    let nouns = x.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
-    console.log("This is filenouns from fetch: " + nouns)
-    return nouns;
-  } else {
-    let nouns = properToSplit.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
-    console.log("This is properToSplit from content.js: " + nouns)
-    return nouns;
-  }
+  let nouns = properToSplit.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
+  // console.log("This is properToSplit from content.js: " + nouns)
+  return nouns;
 }
 let pn = properNouns();
 
