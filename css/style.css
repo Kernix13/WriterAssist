@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,9 +25,10 @@ body {
   padding: 0;
 }
 
-header, footer {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 120%;
+header,
+footer {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 120%;
 }
 button {
   font-family: 'Roboto', sans-serif;
@@ -35,12 +38,14 @@ h4 {
   margin: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: #0000cd;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
@@ -69,7 +74,9 @@ a:hover, a:focus {
   color: rgb(75, 72, 136);
 }
 
-.header, .container, .footer-container {
+.header,
+.container,
+.footer-container {
   width: 85%;
   max-width: 1100px;
 }
@@ -84,10 +91,11 @@ a:hover, a:focus {
   padding: 0.5em 0;
 }
 
-.header h1, .header p {
+.header-title,
+.header p {
   text-align: center;
 }
-.header h1 {
+.header-title {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin: 0;
@@ -99,7 +107,8 @@ a:hover, a:focus {
   padding-bottom: 1.5em;
 }
 
-nav, .logo {
+nav,
+.logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,7 +139,8 @@ nav, .logo {
   transition: color 250ms ease-out;
 }
 
-.nav-link:hover, .nav-list.active {
+.nav-link:hover,
+.nav-list.active {
   text-decoration: none;
   color: rgb(170, 144, 1);
 }
@@ -139,7 +149,14 @@ nav, .logo {
   margin-left: 1.5em;
 }
 /* ----------HEADER ABOVE--------------------- */
-main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .container   {
+main,
+section,
+.box,
+.header,
+.keybrd-row,
+.alphabet,
+.footer-container,
+.container {
   margin: 0 auto;
 }
 
@@ -155,12 +172,14 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   display: block;
   padding: 1.5em;
 }
-.top-items, .keybrd-row {
+.top-items,
+.keybrd-row {
   list-style: none;
   padding: 0;
 }
 
-.keybrd-box2 > .top-items button, .keybrd-box2 > .keybrd-row button {
+.keybrd-box2 > .top-items button,
+.keybrd-box2 > .keybrd-row button {
   margin: 0.125em;
   padding: 0.25em 0.5em;
 }
@@ -187,7 +206,9 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   width: 5em;
 }
 
-.top-items button, .keybrd-row button, .special-items button {
+.top-items button,
+.keybrd-row button,
+.special-items button {
   display: inline-block;
 
   margin: 0.25em;
@@ -198,7 +219,8 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   border-radius: 0.25em;
   transition: box-shadow 250ms ease-in-out;
 }
-.top-items button, .keybrd-row button {
+.top-items button,
+.keybrd-row button {
   font-size: 1rem;
 }
 
@@ -224,20 +246,27 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   transform: translateY(0);
 }
 
-.top-items button:hover, .keybrd-row button:hover, .special-items button:hover {
+.top-items button:hover,
+.keybrd-row button:hover,
+.special-items button:hover {
   cursor: pointer;
   color: #000;
   background-color: #ddd;
   box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
 }
 
-.keybrd-row .caps-on, .keybrd-row .caps-on:hover, .keybrd-row .shift-on, .keybrd-row .shift-on:hover {
+.keybrd-row .caps-on,
+.keybrd-row .caps-on:hover,
+.keybrd-row .shift-on,
+.keybrd-row .shift-on:hover {
   background-color: orange;
   box-shadow: 0 5px gray;
   /* transform: translateY(2px); */
 }
 
-.top-items button:active, .keybrd-row button:active, .special-items button:active {
+.top-items button:active,
+.keybrd-row button:active,
+.special-items button:active {
   background-color: orange;
   box-shadow: 0 5px gray;
   transform: translateY(2px);
@@ -270,14 +299,15 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
 }
 
 .text-box:focus::placeholder {
-  color: transparent;  
+  color: transparent;
 }
 
 .text-box::placeholder {
-  color: #aaa;  
+  color: #aaa;
 }
 
-.copy-btn, .clear-btn {
+.copy-btn,
+.clear-btn {
   cursor: pointer;
   display: block;
   position: absolute;
@@ -288,7 +318,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   border-radius: 0.25em;
 }
 
-.copy-btn { 
+.copy-btn {
   top: -5.2%;
   right: 7.5%;
 }
@@ -298,11 +328,13 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   right: 21%;
 }
 
-.copy-btn:hover, .clear-btn:hover {
+.copy-btn:hover,
+.clear-btn:hover {
   background-color: rgba(246, 185, 17, 0.722);
 }
 
-.copy-btn:active, .clear-btn:active {
+.copy-btn:active,
+.clear-btn:active {
   background-color: orange;
   color: #fff;
 }
@@ -315,7 +347,8 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   margin: 0 auto;
 }
 
-.keybrd-box, .keybrd-box2 {
+.keybrd-box,
+.keybrd-box2 {
   border: 1px solid #888;
   background-color: rgba(238, 223, 140, 0.322);
   color: #fff;
@@ -333,7 +366,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
   width: 19%;
   height: max-content;
   font-size: 0.5rem;
-  margin: 0 auto .5em;
+  margin: 0 auto 0.5em;
   padding-bottom: 0.125em;
 }
 
@@ -348,7 +381,7 @@ main, section, .box, .header, .keybrd-row, .alphabet, .footer-container, .contai
 
 .spacebar {
   width: 40%;
-} 
+}
 
 /* ==============================================
 styling for the alphabet letters and their mega-menus
@@ -361,7 +394,7 @@ styling for the alphabet letters and their mega-menus
 
 /* alpha-nav is equivalent to the top-level li > a or just li items */
 /* KP has display: inline-block only for positioning reasons, so that they are next to each other but I only have a single item in each and my parent container is display flex */
-  /* display: inline-block; */
+/* display: inline-block; */
 
 .alpha-nav {
   margin-left: 0.5em;
@@ -372,10 +405,10 @@ styling for the alphabet letters and their mega-menus
 
 .alpha-nav a {
   display: block;
-} 
+}
 .alpha-nav a:hover {
   color: #fff;
-} 
+}
 
 .top-words {
   display: flex;
@@ -421,7 +454,7 @@ styling for the alphabet letters and their mega-menus
   margin: 2em auto;
 }
 
-input[type="file"] {
+input[type='file'] {
   color: rgb(161, 7, 7);
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
@@ -446,7 +479,7 @@ input[type="file"] {
   background-color: #ddd;
 }
 
-/* -------------notes and docs----------------------- */ 
+/* -------------notes and docs----------------------- */
 .notes {
   background-color: #fff;
 }
@@ -457,15 +490,15 @@ input[type="file"] {
 
 .notes {
   margin-top: 2em;
-
 }
 
-.technical h3, .technical h4  {
+.technical h3,
+.technical h4 {
   margin-bottom: 0;
   padding: 1em 0 0;
 }
 
-/* -------------footer----------------------- */ 
+/* -------------footer----------------------- */
 
 footer {
   text-align: center;
@@ -506,15 +539,14 @@ footer h3 {
   transition: color 250ms ease-out;
 }
 .footer-nav a:hover {
- text-decoration: none;
- color: rgb(240, 213, 62);
-
+  text-decoration: none;
+  color: rgb(240, 213, 62);
 }
 
 .copyright {
-  font-size: .95rem;
+  font-size: 0.95rem;
   margin: 0;
-  padding-bottom: 1em; 
+  padding-bottom: 1em;
 }
 
 /* ================================= */
@@ -556,13 +588,14 @@ footer h3 {
 }
 
 .main-nav .multi {
-  letter-spacing: .1875rem;
+  letter-spacing: 0.1875rem;
 }
 
-.main-nav a, .main-nav button {
+.main-nav a,
+.main-nav button {
   color: #444;
   display: block;
-  padding: .25em 0.75em;
+  padding: 0.25em 0.75em;
 }
 
 .submenu {
@@ -753,19 +786,22 @@ footer h3 {
     width: 22%;
     height: max-content;
     font-size: 0.5rem;
-    margin: 0 auto .5em;
+    margin: 0 auto 0.5em;
     padding: 0;
   }
 }
 
 @media (max-width: 1000px) {
-  .top-items button, .keybrd-row button {
-    font-size: .875rem;
+  .top-items button,
+  .keybrd-row button {
+    font-size: 0.875rem;
   }
 }
 
 @media (max-width: 900px) {
-  .top-items button, .keybrd-row button, .special-items button {
+  .top-items button,
+  .keybrd-row button,
+  .special-items button {
     margin: 0.25em;
     padding: 0.25em 0.5em;
   }
