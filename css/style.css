@@ -91,6 +91,7 @@ a:focus {
   padding: 0.5em 0;
 }
 
+// had to give the h1 a class because user agent stylesheet removed my styles
 .header-title,
 .header p {
   text-align: center;
