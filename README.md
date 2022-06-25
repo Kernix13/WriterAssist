@@ -10,13 +10,17 @@
 ![GitHub](https://img.shields.io/github/license/Kernix13/WriterAssist?style=flat-square)
 
 ## Table of contents
+
 1. [Overview](#overview)
 2. [App Description](#app-description)
 3. [General Notes](#general-notes)
 4. [Adding your own words](#adding-your-own-words)
 5. [Credits](#credits)
 
-## Overview 
+## Overview
+
+Check out the [Live Demo](https://kernixwebdesign.com/writer-assist.html) on my website or view my [Portfolio page](https://kernixwebdesign.com/resume-portfolio.html) for links to my other projects.
+
 This single-page app is for anyone with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral palsy, Parkinson's, brain tumors, neuropathy, and spinal injuries.
 
 Ideally, a friend or family can create a file of text to populate the Writing Assistant page for someone who could benefit from the app. This file should contain the most used words and phrases for someone who has reduced motor control. This way they will be able to communicate with loved ones much easier, especially if they also have trouble speaking.
@@ -24,18 +28,21 @@ Ideally, a friend or family can create a file of text to populate the Writing As
 If you would like to load your own words and phrases then you have to add your words to two text files in the main folder. See each respective section below for details.
 
 ### App description
+
 There are 4 main sections
+
 1. **Proper Nouns section**: A list of common phrases, days of the week, and months of the year.
 2. **Alphabetical list of common words**: hovering over the different letters of the alphabet displays a list of approximately 40-100 common words for each letter.
 3. **The main text area**: Clicking on any of the buttons for the words, phrases, and/or keyboard characters will appear in the textarea box. The user also has buttons to copy the text area and also to clear the field when done.
 4. **Virtual keyboard**: Since it would be impractical to include all possible words and phrases, users can use the keyboard to enter their own words, numbers, and characters.
 
-The only technologies used are Vanilla JavaScript and the Clipboard API. I also wanted to use the File API and FileReader for users to upload their own words and phrases but it appears that is not possible for files stored on a user's local machine. I have the words hardcoded in the file content.js though there is a way to add your own words and phrases (see the Adding your own words section). 
+The only technologies used are Vanilla JavaScript and the Clipboard API. I also wanted to use the File API and FileReader for users to upload their own words and phrases but it appears that is not possible for files stored on a user's local machine. I have the words hardcoded in the file content.js though there is a way to add your own words and phrases (see the Adding your own words section).
 
 Finally, I would like to have a select option to change the language of the virtual keyboard. As of now, it is in English so people who speak other languages will not be able to use it. Assuming there would not be a change in the keyboard keys on each row, then the change would only require the changing of the characters. But then someone would have to manually change the words and phrases in content.js. I would need help with the different language keyboards. Please contact me if you are interested by visiting my website [contact page](https://kernixwebdesign.com/contact/).
 
 ### General Notes
-It would be nice to put each user's name in the logo position, e.g. ***Jim's Writer***. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such as that. That can be done in the div tag with the class of "logo".
+
+It would be nice to put each user's name in the logo position, e.g. **_Jim's Writer_**. Each user is going to need a developer or someone familiar with HTML & CSS to make edits such as that. That can be done in the div tag with the class of "logo".
 
 The width of the page is set at 85% to give the user a large area to navigate. Change it as you see fit.
 
@@ -45,16 +52,18 @@ Another aspect to change is the margin and padding for all buttons. Consider cha
 
 **Note**: I set the tabindex to -1 for EVERYTHING except the header and footer links. This is a mouse-only tool so using a keyboard to tab doesn't make sense. Also, it would take too long to TAB through all the proper nouns, alphabetical words, and keyboard keys.
 
-***
+---
 
 ## Adding your own words
-I wanted the user to upload thie words and phrases from a different page. I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt, and other users, will be using a file that has a C:\\... address and import/export require either a server or an HTTPS address. 
+
+I wanted the user to upload thie words and phrases from a different page. I used Node.js to pull in the Require module for export/import but there is a problem with that. My aunt, and other users, will be using a file that has a C:\\... address and import/export require either a server or an HTTPS address.
 
 Hopefully, a website that assists people with disabilities can host the app with users logging into their accounts to upload their preferred words and phrases. I contacted 39 organizations so far and none of them were interested.
 
-All the default proper nouns, phrases and words are in content.js. 
+All the default proper nouns, phrases and words are in content.js.
 
 ### Adding alphabetical words
+
 Follow these steps to add youw own list of words for each alphabet letter:
 
 1. Make sure your words are all lowercase and sorted alphabetically.
@@ -66,6 +75,7 @@ Follow these steps to add youw own list of words for each alphabet letter:
 7. You can also do a combination. If you like most of my words, you can use the default list as a starting point. Open **text-default.txt** to get a copy of the default words. Copy the default list into text-alpha.txt. Add additional words and remove those you don't want. Then save text-alpha.txt for the changes to take to show. You may have to refresh the page.
 
 ### Adding proper nouns and phrases
+
 Follow these steps to add youw own list of phrases:
 
 1. Arrange your words in the order you would like them to appear.
@@ -77,6 +87,7 @@ Follow these steps to add youw own list of phrases:
 7. You can also do a combination. If you like most of my phrases, you can use the default list as a starting point. Open text-default.txt to get a copy of the default phrases. Copy the default list into text-proper.txt. Add additional phrases and remove those you don't want. Then save text-proper.txt for the changes to take to show. You may have to refresh the page.
 
 #### Credits
+
 I got answers to questions I had while building the project by posting in the [freeCodeCamp forum](https://forum.freecodecamp.org/). So I would like to thank everyone who helped me and for the resources avaiable on the freeCodeCamp website!
 
 ## License
