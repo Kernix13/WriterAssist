@@ -63,5 +63,5 @@ I will definitely use objects and classes when I output the keyboard values via 
 
 But what do I do with the _alpha_ and _proper nouns_ sections for languages I don't know?
 
-- File upload? (maybe)
+- User file upload? (maybe)
 - Contributors? (YES!)
