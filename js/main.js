@@ -1,43 +1,33 @@
-"use strict";
-/* ==== VAR for textarea ===== */
 const textBox = document.getElementById("text-box");
 
-/* ==== BEGIN ALPHABETICAL WORDS ===== */
-//          in alpha.js
-/* ==== END ALPHABETICAL WORDS  ===== */
-
-
-/* ==== BEGIN PROPER NOUNS AND PHRASES ===== */
-//          in proper.js
-/* ==== END PROPER NOUNS AND PHRASES  ===== */
-
+/* ==== ALPHABETICAL WORDS was here, now in alpha.js ===== */
+/* ==== PROPER NOUNS was here, now in proper.js ===== */
 
 /* ==============================================================
-=================================================================
-  add KEYBOARD CHARACTERS to text area & get cursor position for ALL keyboard functionality except CAPS and SHIFT keys
-  ===============================================================
+  add KEYBOARD CHARACTERS to text area & get cursor position for 
+  ALL keyboard functionality except CAPS and SHIFT keys
 =============================================================== */
 // GET INDEX POSITION OF CURSOR
-// https://www.webtips.dev/webtips/javascript/how-to-get-caret-position-with-javascript
-function cursorPosition() {
-  const position = textBox.selectionStart;
-  // console.log("position is: " + position);
+function cursorPosition(element) {
+  const position = element.selectionStart;
   return position;
 }
 
 // LETTERS, CAPS key, SHIFT key
-const keys = document.getElementsByClassName('key');
+const [...keys] = document.getElementsByClassName("key");
 
 // capitalize letter or not based on various criteria
+/*  From a functional programming POV, no parameter, no return!?! 
+    I don't see how to "fix" that since each if block have 2 or more calculations */
 function addLetters() {
-  for (let i = 0; i < keys.length; i++) {
-    keys[i].addEventListener('click', e => {
-      let letterkey = e.target.value;
-      if (capsKey.classList.contains('caps-off')) {
-        let len = textBox.value.length;
-        let punc = textBox.value;
-        let x = cursorPosition();
-        if (['.', '?', '!', '\n'].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == '') {
+  keys.map(key => {
+    key.addEventListener("click", e => {
+      const letterkey = e.target.value;
+      if (capsKey.classList.contains("caps-off")) {
+        const len = textBox.value.length;
+        const punc = textBox.value;
+        const x = cursorPosition(textBox);
+        if ([".", "?", "!", "\n"].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == "") {
           textBox.value = textBox.value.slice(0, x) + " " + letterkey.toUpperCase() + textBox.value.slice(x);
           textBox.focus();
           textBox.selectionEnd = x + 2;
@@ -47,21 +37,22 @@ function addLetters() {
           textBox.selectionEnd = x + 1;
         }
       } else {
-        let x = cursorPosition();
+        const x = cursorPosition(textBox);
         textBox.value = textBox.value.slice(0, x) + letterkey.toUpperCase() + textBox.value.slice(x);
         textBox.focus();
         textBox.selectionEnd = x + 1;
       }
-    })
-  }
+    });
+  });
 }
-addLetters()
+addLetters();
 
 // add or remove class for highlighting the CAPS & SHIFT keys
 const capsKey = document.getElementById("caps");
 
+/*  Same here & for shift(): no parameter, no return */
 function capitalize() {
-  if (!capsKey.classList.contains('caps-on')) {
+  if (!capsKey.classList.contains("caps-on")) {
     capsKey.classList.add("caps-on");
     capsKey.classList.remove("caps-off");
   } else {
@@ -75,7 +66,7 @@ const shiftl = document.getElementById("shiftl");
 const shiftr = document.getElementById("shiftr");
 
 function shift() {
-  if (!shiftl.classList.contains('shift-on') || !shiftr.classList.contains('shift-on')) {
+  if (!shiftl.classList.contains("shift-on") || !shiftr.classList.contains("shift-on")) {
     shiftl.classList.add("shift-on");
     shiftl.classList.remove("shift-off");
     shiftr.classList.add("shift-on");
@@ -93,23 +84,24 @@ shiftr.addEventListener("click", shift);
 // output shift key elements based on status of shift key
 const shiftKeyL = document.querySelector(".shiftL");
 const shiftKeyR = document.querySelector(".shiftR");
-let rightSquare = document.getElementById("rtsq");
-let leftSquare = document.getElementById("leftsq");
-let backslash = document.getElementById("backslash");
-let semicolon = document.getElementById("semicolon");
-let quotes = document.getElementById("quotes");
-let forwardslash = document.getElementById("forwardslash");
-let comma = document.getElementById("comma");
-let period = document.getElementById("periodpunc");
 
-// Change the value of the shift keys with a class of shiftItem though the id is being selected
+const rightSquare = document.getElementById("rtsq");
+const leftSquare = document.getElementById("leftsq");
+const backslash = document.getElementById("backslash");
+const semicolon = document.getElementById("semicolon");
+const quotes = document.getElementById("quotes");
+const forwardslash = document.getElementById("forwardslash");
+const comma = document.getElementById("comma");
+const period = document.getElementById("periodpunc");
+
+// Change the value of the shift keys, no parameter or return!
 function changeInner() {
-  if (shiftl.classList.contains('shift-on') || shiftr.classList.contains('shift-on')) {
+  if (shiftl.classList.contains("shift-on") || shiftr.classList.contains("shift-on")) {
     rightSquare.textContent = "{";
     leftSquare.textContent = "}";
     backslash.textContent = "|";
     semicolon.textContent = ":";
-    quotes.textContent = "\"";
+    quotes.textContent = '"';
     comma.textContent = "<";
     period.textContent = ">";
     forwardslash.textContent = "?";
@@ -123,35 +115,35 @@ function changeInner() {
     period.textContent = ".";
     forwardslash.textContent = "/";
   }
-};
+}
 shiftKeyL.addEventListener("click", changeInner);
 shiftKeyR.addEventListener("click", changeInner);
 
 // add NON-ALPHABETIC CHARACTERS (numbers & symbols) to textarea
-const nonAlpha = document.getElementsByClassName("nonAlpha");
-// const amp = document.getElementById("amp");
+const [...nonAlpha] = document.getElementsByClassName("nonAlpha");
 
-for (let i = 0; i < nonAlpha.length; i++) {
-  nonAlpha[i].addEventListener('click', e => {
-    let x = cursorPosition();
-    let char = e.target.innerHTML;
-    if (char == '&amp;') {
-      textBox.value = textBox.value.slice(0, x) + '&' + textBox.value.slice(x);
-    } else if (char == '&lt;') {
-      textBox.value = textBox.value.slice(0, x) + '<' + textBox.value.slice(x);
-    } else if (char == '&gt;') {
-      textBox.value = textBox.value.slice(0, x) + '>' + textBox.value.slice(x);
+nonAlpha.map(item => {
+  item.addEventListener("click", e => {
+    const x = cursorPosition(textBox);
+    const char = e.target.innerHTML;
+    const sliceStart = textBox.value.slice(0, x);
+    const sliceEnd = textBox.value.slice(x);
+    if (char == "&amp;") {
+      textBox.value = sliceStart + "&" + sliceEnd;
+    } else if (char == "&lt;") {
+      textBox.value = sliceStart + "<" + sliceEnd;
+    } else if (char == "&gt;") {
+      textBox.value = sliceStart + ">" + sliceEnd;
     } else {
-      textBox.value = textBox.value.slice(0, x) + char + textBox.value.slice(x);
+      textBox.value = sliceStart + char + sliceEnd;
     }
 
     textBox.focus();
-    textBox.selectionEnd = x + 1;
-  })
-}
+    return (textBox.selectionEnd = x + 1);
+  });
+});
 
-// get cursor X & Y coordinates - couldn't get this to work for up and down keys
-
+/* Couldn't get X & Y coordinates for up & down keys */
 // const pageUp = document.getElementById("page-up");
 // const pageDown = document.getElementById("page-down");
 // const arrowUp = document.getElementById("uparrow");
@@ -162,7 +154,6 @@ for (let i = 0; i < nonAlpha.length; i++) {
 //     let XnY = [e.clientX, e.clientY]
 //     let x = XnY[0];
 //     let y = XnY[1];
-//     console.log(y);
 //     return y;
 //   });
 // }
@@ -170,12 +161,12 @@ for (let i = 0; i < nonAlpha.length; i++) {
 /* ===========================================
   add nonprint keys functionality for textarea
 ============================================ */
-const backspace = document.getElementById('backspace');
-const deleteKey = document.getElementById('delete');
+const backspace = document.getElementById("backspace");
+const deleteKey = document.getElementById("delete");
 
-// BACKSPACE
-function removeCharBehind(x) {
-  x = cursorPosition();
+// BACKSPACE (no parameter, no return)
+function removeCharBehind() {
+  x = cursorPosition(textBox);
   if (x != 0) {
     textBox.value = textBox.value.slice(0, x - 1) + textBox.value.slice(x);
     textBox.focus();
@@ -186,9 +177,9 @@ function removeCharBehind(x) {
 }
 backspace.addEventListener("click", removeCharBehind);
 
-// DELETE
-function removeCharAhead(x) {
-  x = cursorPosition();
+// DELETE (no parameter, no return)
+function removeCharAhead() {
+  x = cursorPosition(textBox);
   textBox.value = textBox.value.slice(0, x) + textBox.value.slice(x + 1);
   textBox.focus();
   textBox.selectionEnd = x;
@@ -196,77 +187,71 @@ function removeCharAhead(x) {
 deleteKey.addEventListener("click", removeCharAhead);
 
 // TAB (set to 5 spaces)
-document
-  .getElementById("tab")
-  .addEventListener("click", function () {
-    if (tab.classList.contains('tab')) {
-      let x = cursorPosition();
-      textBox.value = textBox.value.slice(0, x) + `     ` + textBox.value.slice(x);
-      textBox.focus();
-      textBox.selectionEnd = x + 5;
-    }
-  });
+document.getElementById("tab").addEventListener("click", function () {
+  if (tab.classList.contains("tab")) {
+    const x = cursorPosition(textBox);
+    textBox.value = textBox.value.slice(0, x) + `     ` + textBox.value.slice(x);
+    textBox.focus();
+    textBox.selectionEnd = x + 5;
+  }
+});
 
 // SPACEBAR
-document
-  .getElementById("spacebar")
-  .addEventListener("click", function () {
-    if (spacebar.classList.contains('spacebar')) {
-      let x = cursorPosition();
-      textBox.value = textBox.value.slice(0, x) + " " + textBox.value.slice(x);
-      textBox.focus();
-      textBox.selectionEnd = x + 1;
-    }
-  });
-
-// ENTER
-document
-  .getElementById("enter")
-  .addEventListener("click", function () {
-    let x = cursorPosition();
-    textBox.value = textBox.value.slice(0, x) + "\n" + textBox.value.slice(x);
+document.getElementById("spacebar").addEventListener("click", function () {
+  if (spacebar.classList.contains("spacebar")) {
+    const x = cursorPosition(textBox);
+    textBox.value = textBox.value.slice(0, x) + " " + textBox.value.slice(x);
     textBox.focus();
     textBox.selectionEnd = x + 1;
-  });
+  }
+});
+
+// ENTER
+document.getElementById("enter").addEventListener("click", function () {
+  const x = cursorPosition(textBox);
+  textBox.value = textBox.value.slice(0, x) + "\n" + textBox.value.slice(x);
+  textBox.focus();
+  textBox.selectionEnd = x + 1;
+});
 
 /* ===================================
 add nvaigation keys functionality 
 ===================================== */
-const home = document.getElementById('homekey');
-const end = document.getElementById('end');
-const leftarrow = document.getElementById('leftarrow');
-const rightarrow = document.getElementById('rightarrow');
+const home = document.getElementById("homekey");
+const end = document.getElementById("end");
+const leftarrow = document.getElementById("leftarrow");
+const rightarrow = document.getElementById("rightarrow");
 
-// HOME
-function focusAtStart(x) {
+// HOME (no parameter, no return)
+function focusAtStart() {
   textBox.value = textBox.value;
   textBox.focus();
   textBox.selectionEnd = textBox.value[0];
 }
 home.addEventListener("click", focusAtStart);
 
-// END
-function focusAtEnd(x) {
-  x = cursorPosition();
+// END (no parameter, no return)
+function focusAtEnd() {
+  x = cursorPosition(textBox);
   textBox.value = textBox.value;
   textBox.focus();
-  let length = textBox.value.length;
+  const length = textBox.value.length;
   textBox.selectionStart = length;
 }
 end.addEventListener("click", focusAtEnd);
 
-// LEFT ARROW
-function arrowLeft(x) {
-  x = cursorPosition();
+// LEFT ARROW (no parameter, no return)
+function arrowLeft() {
+  x = cursorPosition(textBox);
   textBox.value = textBox.value;
   textBox.focus();
   textBox.selectionEnd = x - 1;
 }
 leftarrow.addEventListener("click", arrowLeft);
 
-// RIGHT  ARROW
-function arrowRight(x) {
-  x = cursorPosition();
+// RIGHT ARROW (no parameter, no return)
+function arrowRight() {
+  x = cursorPosition(textBox);
   textBox.value = textBox.value;
   textBox.focus();
   textBox.selectionStart = x + 1;
@@ -283,48 +268,41 @@ rightarrow.addEventListener("click", arrowRight);
 /* COPY the text area using the Clipboard API */
 const copy = document.getElementById("copy");
 
-async function copyToClipboard(e) {
+async function copyTextArea(e) {
   if (!navigator.clipboard) {
-    e.target.textContent = 'Copy to clipboard not supported'
-    return
+    e.target.textContent = "Copy to clipboard not supported";
+    return;
   }
-  const textToCopy = textBox;
   try {
-    await navigator.clipboard.writeText(textToCopy.value);
-    textToCopy.select();
+    await navigator.clipboard.writeText(textBox.value);
+    textBox.select();
   } catch (err) {
     console.error("Failed to copy: ", err);
   }
 }
-copy.addEventListener("click", copyToClipboard);
+copy.addEventListener("click", copyTextArea);
 
-// Clear out the text area and open modal for confirmation
-const close2 = document.getElementById('close2');
-const open2 = document.getElementById('open2');
-const modal2 = document.getElementById('modal2');
+// Open modal for confirmation and clear the text area
+const close = document.getElementById("close");
+const open = document.getElementById("open");
+const modal = document.getElementById("modal");
 
-open2.addEventListener('click', () => modal2.classList.add('show-modal'));
-close2.addEventListener('click', () => modal2.classList.remove('show-modal'));
+open.addEventListener("click", () => modal.classList.add("show-modal"));
+close.addEventListener("click", () => modal.classList.remove("show-modal"));
 
-window.addEventListener('click', e =>
-  e.target == modal2 ? modal2.classList.remove('show-modal') : false
-);
+window.addEventListener("click", e => (e.target == modal ? modal.classList.remove("show-modal") : false));
 
 // clear textarea
-document
-  .getElementById("clearText")
-  .addEventListener("click", function () {
-    textBox.value = '';
-    textBox.focus();
-    modal2.classList.remove('show-modal')
-  });
+document.getElementById("clearText").addEventListener("click", function () {
+  textBox.value = "";
+  textBox.focus();
+  modal.classList.remove("show-modal");
+});
 
 /* ==== FILE UPLOAD: Decided against this approach ===== */
 
-
 /* Notes, problems &/or tasks remaining  */
 // 1. use local storage to store the text in textarea in case the user gets interrupted or is not finished composing their email or document
-// 2. Have the keyboard layouts created by JS via a select element for different languages, e.g. Greek, French, Russian...
+// 2. Have the keyboard layouts created by JS via a select element for different languages, e.g. Greek, French, Spanish, ...
 // 3. figure out a better way for user input files than local storage
-// 4. content.js has all the proper nouns / phrases and alphabetical default words - or the file text-proper.txt and text-alpha.txt both of which are empty. The user would have to load all the proper nouns and phrases into those files, separated by a comma and space for phrases, and same or just a space for alpha . If a phrase ends with a comma, then it needs 2 commas. The text-alpha file should already be sorted and in lowercase.
-// 5. If test-proper & text-alpha are empty of text or don't exist it defaults to content.js, though if the file is not present it throws an error (try catch?). User needs to refresh the page after populating the text file - same for text-alpha.txt
+// 4. content.js has all the proper nouns / phrases and alphabetical default words. How would I get the user to be able to upload their own words and phrases? File upload option?

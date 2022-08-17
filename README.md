@@ -9,6 +9,14 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Kernix13/WriterAssist?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Kernix13/WriterAssist?style=flat-square)
 
+## Important Notes
+
+REFACTOR START: 8-16-2022
+
+As of Tuesday August 22nd 2022, I will be refactoring this project. This note is to show the date when I started the refactoring and to provide a link to the [commit](https://github.com/Kernix13/WriterAssist/commit/fcf1a8b393c6f33a70fe868c99ad4491fe987a43) before the refactoring. This is for employers so that they can review the code before and after that commit.
+
+I will be focusing on **Functional Programming** first, followed by **Object Oriented Programming** where applicable.
+
 ## Table of contents
 
 1. [Overview](#overview)

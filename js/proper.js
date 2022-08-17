@@ -1,55 +1,52 @@
 /* ==== BEGIN PROPER NOUNS MANIPULATION & OUTPUT ===== */
 
 // split proper nouns from content.js
-function properNouns() {
-  let nouns = properToSplit.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
-  // console.log("This is properToSplit from content.js: " + nouns)
+function properNouns(str) {
+  const nouns = str.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
   return nouns;
 }
-let pn = properNouns();
 
 /* ==================================
 properNounOutput places the Proper Nouns in the #special-words div
 =================================== */
 function properNounOutput(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    let outputNouns = `<button class="special" value="${arr[i]}" tabindex="-1">${arr[i]}</button>`;
-    let nounButton = document.createElement('button');
-    nounButton.value = arr[i];
-    let specialNoun = document.getElementById("special-words");
-    specialNoun.insertAdjacentHTML("beforeend", outputNouns);
-  }
+  arr.map(item => {
+    const outputNouns = `<button class="special" value="${item}" tabindex="-1">${item}</button>`;
+    const nounButton = document.createElement("button");
+    nounButton.value = item;
+    const specialNoun = document.getElementById("special-words");
+    return specialNoun.insertAdjacentHTML("beforeend", outputNouns);
+  });
 }
-properNounOutput(pn);
+properNounOutput(properNouns(properToSplit));
 
 // ACCORDIAN FOR PROPER NOUNS - https://codepen.io/craigwarren-dev/pen/vzdeoy
-const accordian1 = document.getElementById("accordian1")
+const accordian = document.getElementById("accordian");
 
 // add & remove class for showing PROPER NOUNS
-function displayPanel1() {
-  const panel1 = document.getElementById("panel1");
-  if (!panel1.classList.contains('panel1-active')) {
-    panel1.classList.add("panel1-active");
-    panel1.classList.remove("panel1-inactive");
+function displaypanel() {
+  const panel = document.getElementById("panel");
+  if (!panel.classList.contains("panel-active")) {
+    panel.classList.add("panel-active");
+    panel.classList.remove("panel-inactive");
   } else {
-    panel1.classList.add("panel1-inactive");
-    panel1.classList.remove("panel1-active");
+    panel.classList.add("panel-inactive");
+    panel.classList.remove("panel-active");
   }
 }
-accordian1.addEventListener("click", displayPanel1);
+accordian.addEventListener("click", displaypanel);
 
 /* ==================================
 adding PROPER words to TEXTAREA
 =================================== */
-/* ==== VAR for proper nouns ===== */
-const special = document.getElementsByClassName('special');
+const [...special] = document.getElementsByClassName("special");
 
-// add PROPER NOUNS AND PHRASES to text-box
-for (let i = 0; i < special.length; i++) {
-  special[i].addEventListener('click', e => {
-    let userFavs = e.target.value;
+special.map(item => {
+  item.addEventListener("click", e => {
+    const userFavs = e.target.value;
     textBox.value = textBox.value + " " + userFavs;
     textBox.focus();
-  })
-}
-/* ==== END PROPER & ALPHA output to textarea ==== */
+    return textBox.value;
+  });
+});
+// /* ==== END PROPER output to textarea ==== */

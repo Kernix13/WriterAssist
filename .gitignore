@@ -1,14 +1,35 @@
+## BOILERPLATE IGNORE FILES
+
+# Dependencies
+node_modules
+
+# Production and other folders
+/build
+/dist
+
+### VisualStudioCode ###
+.vscode/*
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Numerous always-ignore extensions
+*.diff
+*.env
+*.err
+*.log
+*.sass-cache
+*.tmp
+
+# Personal project files
 upload.html
-todo.html
-proper_bkup.js
-alpha_bkup.js
-/js/main_bkup.js
-/js/todo.js
+JS_NOTES.md
+NOTES.md
+/js/proper_bkup.js
+/js/alpha_bkup.js
 /js/upload.js
 /css/upload.css
-/css/todo.css
-/images/copy-to.PNG
-/images/dl-code2.PNG
-/images/extract.PNG
-/images/extract2.PNG
-/images/open.PNG
+/images

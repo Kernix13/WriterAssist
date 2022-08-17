@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto&display=swap");
 
 *,
 *::before,
@@ -18,7 +18,7 @@ body {
   background-color: #f5f5f5;
   color: #000;
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-rendering: optimizeSpeed;
   line-height: 1.6;
   margin: 0;
@@ -27,11 +27,11 @@ body {
 
 header,
 footer {
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
   font-size: 120%;
 }
 button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h4 {
@@ -64,7 +64,7 @@ a:focus {
   font-weight: 600;
   font-style: italic;
   color: rgb(75, 71, 141);
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
   font-size: 1.25rem;
 }
 .highlight2 {
@@ -283,7 +283,7 @@ section,
   display: block;
   width: 85%;
   height: 10em;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 2.5em auto 1.5em;
   background-color: #fff;
   font-size: 1.125rem;
@@ -455,9 +455,9 @@ styling for the alphabet letters and their mega-menus
   margin: 2em auto;
 }
 
-input[type='file'] {
+input[type="file"] {
   color: rgb(161, 7, 7);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -634,7 +634,7 @@ footer h3 {
 }
 
 /* === accordian-like animation for proper nouns === */
-.accordian1 {
+.accordian {
   display: block;
   width: 100%;
   margin: 0 auto;
@@ -653,18 +653,18 @@ footer h3 {
   border-radius: 0.25em;
 }
 
-.accordian1:hover {
+.accordian:hover {
   background-color: rgba(246, 190, 36, 0.445);
 }
 
-.panel1-inactive {
+.panel-inactive {
   display: none;
   overflow: hidden;
   opacity: 0;
   background-color: #fff;
 }
 
-.panel1-active {
+.panel-active {
   overflow: inherit;
   opacity: 1;
   animation: opac 1000ms forwards;
