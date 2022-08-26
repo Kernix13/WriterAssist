@@ -9,6 +9,9 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Kernix13/WriterAssist?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Kernix13/WriterAssist?style=flat-square)
 
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Kernix13/WriterAssist?style=flat-square">
+<img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/Kernix13/WriterAssist?style=flat-square">
+
 ## Important Notes
 
 REFACTOR START: 8-16-2022
