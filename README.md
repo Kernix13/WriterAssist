@@ -8,7 +8,6 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/Kernix13/WriterAssist?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/Kernix13/WriterAssist?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/Kernix13/WriterAssist?style=flat-square)
-
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Kernix13/WriterAssist?style=flat-square)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Kernix13/WriterAssist?style=flat-square)
 
