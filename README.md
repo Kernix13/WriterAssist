@@ -29,7 +29,7 @@ I will be focusing on **Functional Programming** first, followed by **Object Ori
 
 ## Overview
 
-Check out the [Live Demo](https://eloquent-pie-e9cd08.netlify.app/) on my website or view my [Portfolio page](https://kernixwebdesign.com/resume-portfolio.html) for links to my other projects.
+Check out the [Live Demo](https://eloquent-pie-e9cd08.netlify.app/) on my website or view my [Portfolio page](https://courageous-cuchufli-816711.netlify.app/) for links to my other projects.
 
 This single-page app is for anyone with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral palsy, Parkinson's, brain tumors, neuropathy, and spinal injuries.
 
@@ -48,7 +48,7 @@ There are 4 main sections
 
 The only technologies used are Vanilla JavaScript and the Clipboard API. I also wanted to use the File API and FileReader for users to upload their own words and phrases but it appears that is not possible for files stored on a user's local machine. I have the words hardcoded in the file content.js though there is a way to add your own words and phrases (see the Adding your own words section).
 
-Finally, I would like to have a select option to change the language of the virtual keyboard. As of now, it is in English so people who speak other languages will not be able to use it. Assuming there would not be a change in the keyboard keys on each row, then the change would only require the changing of the characters. But then someone would have to manually change the words and phrases in content.js. I would need help with the different language keyboards. Please contact me if you are interested by visiting my website [contact page](https://kernixwebdesign.com/contact/).
+Finally, I would like to have a select option to change the language of the virtual keyboard. As of now, it is in English so people who speak other languages will not be able to use it. Assuming there would not be a change in the keyboard keys on each row, then the change would only require the changing of the characters. But then someone would have to manually change the words and phrases in content.js. I would need help with the different language keyboards. Please contact me if you are interested by visiting my website [contact page](https://everyguitarchord.com/).
 
 ### General Notes
 
