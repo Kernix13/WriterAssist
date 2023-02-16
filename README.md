@@ -29,7 +29,7 @@ I will be focusing on **Functional Programming** first, followed by **Object Ori
 
 ## Overview
 
-Check out the [Live Demo](https://kernixwebdesign.com/writer-assist.html) on my website or view my [Portfolio page](https://kernixwebdesign.com/resume-portfolio.html) for links to my other projects.
+Check out the [Live Demo](https://eloquent-pie-e9cd08.netlify.app/) on my website or view my [Portfolio page](https://kernixwebdesign.com/resume-portfolio.html) for links to my other projects.
 
 This single-page app is for anyone with reduced fine motor controls, assuming they have better control of positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral palsy, Parkinson's, brain tumors, neuropathy, and spinal injuries.
 
