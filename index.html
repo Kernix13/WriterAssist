@@ -174,7 +174,7 @@
       <!-- Clear textfield Modal -->
       <div class="modal-container" id="modal">
         <div class="modal">
-          <button class="close-btn" id="close">
+          <button class="close-btn" id="close" aria-label="Close">
             <i class="fa fa-times"></i>
           </button>
           <div class="modal-header">
@@ -183,7 +183,7 @@
           <div class="modal-content">
             <p>Are you sure that you want to clear the text field?</p>
             <form class="modal-form">
-              <button id="clearText" type="button" class="submit-btn yes-btn">Yes, delete the field.</button>
+              <button aria-label="Delete text field contents" id="clearText" type="button" class="submit-btn yes-btn">Yes, delete the field.</button>
             </form>
           </div>
         </div>
@@ -192,7 +192,7 @@
 
       <button id="open" class="clear-btn">Clear text box</button>
       <button id="copy" class="copy-btn" value="copy-text" title="Does not work in IE">Copy text</button>
-      <textarea name="text-box" id="text-box" class="text-box"
+      <textarea aria-label="Text area" name="textbox" id="text-box" class="text-box"
         placeholder="Click any proper nouns or alphabet word buttons, or try the keyboard below to enter text..."></textarea>
 
       <div class="two-col">
@@ -278,11 +278,11 @@
             <button id="shiftr" class="nonprint shiftR shift-off" tabindex="-1">Shift</button>
           </div>
           <div class="keybrd-row top-items">
-            <button id="ctrlleft" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button>
-            <button class="nonprint alt secondary" tabindex="-1">Alt</button>
+            <!-- <button id="ctrlleft" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button> -->
+            <!-- <button class="nonprint alt secondary" tabindex="-1">Alt</button> -->
             <button id="spacebar" class="spacebar nonprint" tabindex="-1">Spacebar</button>
-            <button class="nonprint alt secondary" tabindex="-1">Alt</button>
-            <button id="ctrlright" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button>
+            <!-- <button class="nonprint alt secondary" tabindex="-1">Alt</button> -->
+            <!-- <button id="ctrlright" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button> -->
           </div>
         </div>
         <!-- nav keys -->
