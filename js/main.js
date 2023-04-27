@@ -1,7 +1,128 @@
 const textBox = document.getElementById("text-box");
 
-/* ==== ALPHABETICAL WORDS was here, now in alpha.js ===== */
-/* ==== PROPER NOUNS was here, now in proper.js ===== */
+
+// Create the li and button for Alpha and Proper Nouns
+function createListItems(btnText, btnClass) {
+    const li = document.createElement("li");
+    li.classList.add("text-btn");
+
+    const liBtn = document.createElement("button");
+    liBtn.className = btnClass;
+    liBtn.value = btnText;
+    
+    const liBtnText = document.createTextNode(btnText);
+    liBtn.append(liBtnText)
+    li.append(liBtn);
+    return li;
+}
+
+/* ==== BEGIN ALPHA MANIPULATION & OUTPUT ===== */
+
+// split alphabetical words from content.js
+function splitWords(str) {
+  const words = str.split(/[^a-zA-Z'-]+/gi);
+  return words;
+}
+
+/* ====================================================
+pageOutput places the words in each alphabet letter div
+Need a Fx to toggle .hide to only show submenu when clicked
+==================================================== */
+function pageOutput(arr) {
+  arr.map((item) => {
+    
+    const firstLetter = item.charAt(0);
+    const id = `letter${firstLetter}`;
+    const ul = document.getElementById(id);
+    
+    // find matching UL in the DOM and append li elements:
+    const domLetterUls = document.querySelectorAll(".top-words");
+    domLetterUls.forEach(list => {
+      if (id === list.id) {
+        ul.append(createListItems(item, "alpha"));
+      }
+    })
+  });
+}
+pageOutput(splitWords(wordsToSplit));
+
+/* SHOW SUBMENU ON CLICK - I don't like this, & the HTML structure is bad! */
+const mainNavLi = document.querySelectorAll(".main-nav li");
+mainNavLi.forEach(item => {
+  item.addEventListener('click', (e) => {
+    item.children[1].classList.toggle('show');
+    item.classList.toggle('active');
+  })
+})
+
+/* ===========================
+adding ALPHA words to TEXTAREA
+============================ */
+const [...textBtns] = document.getElementsByClassName("text-btn");
+
+textBtns.map(item => {
+  if (item) {
+    item.addEventListener("click", e => {
+      const word = e.target.innerText;
+      const len = textBox.value.length;
+      const punc = textBox.value;
+      const first = word.charAt(0);
+      // const remainder = word.slice(1);
+      const remainder = word.substring(1);
+
+      if ([".", "?", "!", "\n"].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == "") {
+        textBox.value = textBox.value + " " + first.toUpperCase() + remainder;
+        textBox.focus();
+        return textBox.value;
+      } else {
+        textBox.value = textBox.value + " " + word;
+        textBox.focus();
+        return textBox.value;
+      }
+    });
+  }
+});
+
+/* ==== BEGIN PROPER NOUNS MANIPULATION & OUTPUT ===== */
+
+// split proper nouns from content.js
+function properNouns(str) {
+  const nouns = str.split(/[^a-zA-Z\s.:?!'-]\s+/gi);
+  return nouns;
+}
+
+/* ==================================
+properNounOutput places the Proper Nouns in the #special-words div
+=================================== */
+function properNounOutput(arr) {
+  arr.map(item => {
+    const specialNoun = document.getElementById("special-words");
+    specialNoun.append(createListItems(item, "special"));
+  });
+}
+properNounOutput(properNouns(properToSplit));
+
+/* ACCORDIAN FOR PROPER NOUNS, need animation or transition for closing */
+const accordian = document.getElementById("accordian");
+const panel = document.getElementById("panel");
+accordian.addEventListener("click", function() {
+  panel.classList.toggle("inactive");
+});
+
+/* ==================================
+adding PROPER words to TEXTAREA
+=================================== */
+const [...special] = document.getElementsByClassName("special");
+
+special.map(item => {
+  item.addEventListener("click", e => {
+    panel.classList.toggle("inactive");
+    const userFavs = e.target.value;
+    textBox.value = textBox.value + " " + userFavs;
+    textBox.focus();
+    return textBox.value;
+  });
+});
 
 /* ==============================================================
   add KEYBOARD CHARACTERS to text area & get cursor position for 
@@ -18,7 +139,7 @@ const [...keys] = document.getElementsByClassName("key");
 
 // capitalize letter or not based on various criteria
 /*  From a functional programming POV, no parameter, no return!?! 
-    I don't see how to "fix" that since each if block have 2 or more calculations */
+    I also have a lot of repeated code */
 function addLetters() {
   keys.map(key => {
     key.addEventListener("click", e => {
@@ -47,85 +168,79 @@ function addLetters() {
 }
 addLetters();
 
-// add or remove class for highlighting the CAPS & SHIFT keys
+// add and remove class for highlighting the CAPS key
 const capsKey = document.getElementById("caps");
+// console.dir(capsKey)
 
-/*  Same here & for shift(): no parameter, no return */
-function capitalize() {
-  if (!capsKey.classList.contains("caps-on")) {
-    capsKey.classList.add("caps-on");
-    capsKey.classList.remove("caps-off");
-  } else {
-    capsKey.classList.add("caps-off");
-    capsKey.classList.remove("caps-on");
-  }
-}
-capsKey.addEventListener("click", capitalize);
+capsKey.addEventListener("click", function() {
+  capsKey.classList.toggle("caps-on");
+  capsKey.classList.toggle("caps-off");
+});
 
+// add and remove class for highlighting the SHIFT keys
 const shiftl = document.getElementById("shiftl");
 const shiftr = document.getElementById("shiftr");
 
-function shift() {
-  if (!shiftl.classList.contains("shift-on") || !shiftr.classList.contains("shift-on")) {
-    shiftl.classList.add("shift-on");
-    shiftl.classList.remove("shift-off");
-    shiftr.classList.add("shift-on");
-    shiftr.classList.remove("shift-off");
-  } else {
-    shiftl.classList.add("shift-off");
-    shiftl.classList.remove("shift-on");
-    shiftr.classList.add("shift-off");
-    shiftr.classList.remove("shift-on");
-  }
+shiftl.addEventListener("click", function() {
+  shiftl.classList.toggle("shift-on");
+  shiftr.classList.toggle("shift-on");
+});
+
+shiftr.addEventListener("click", function() {
+  shiftr.classList.toggle("shift-on");
+  shiftl.classList.toggle("shift-on");
+});
+
+
+const shiftItems = document.querySelectorAll('.shiftItem');
+// console.dir(shiftItems[0])
+const nonAlphaObj = {
+  '`': '~',
+  '1': '!',
+  '2': '@',
+  '3': '#',
+  '4': '$',
+  '5': '%',
+  '6': '^',
+  '7': '&',
+  '8': '*',
+  '9': '(',
+  '0': ')',
+  '-': '_',
+  '=': '+',
+  '[': '{',
+  ']': '}',
+  '\\': '|',
+  ';': ':',
+  "'": '"',
+  ',': '<',
+  '.': '>',
+  '/': '?',
 }
-shiftl.addEventListener("click", shift);
-shiftr.addEventListener("click", shift);
 
-// output shift key elements based on status of shift key
-const shiftKeyL = document.querySelector(".shiftL");
-const shiftKeyR = document.querySelector(".shiftR");
-
-const rightSquare = document.getElementById("rtsq");
-const leftSquare = document.getElementById("leftsq");
-const backslash = document.getElementById("backslash");
-const semicolon = document.getElementById("semicolon");
-const quotes = document.getElementById("quotes");
-const forwardslash = document.getElementById("forwardslash");
-const comma = document.getElementById("comma");
-const period = document.getElementById("periodpunc");
-
-// Change the value of the shift keys, no parameter or return!
+// Change the textContent of the shift keys based on if they are active or not
 function changeInner() {
-  if (shiftl.classList.contains("shift-on") || shiftr.classList.contains("shift-on")) {
-    rightSquare.textContent = "{";
-    leftSquare.textContent = "}";
-    backslash.textContent = "|";
-    semicolon.textContent = ":";
-    quotes.textContent = '"';
-    comma.textContent = "<";
-    period.textContent = ">";
-    forwardslash.textContent = "?";
-  } else {
-    rightSquare.textContent = "[";
-    leftSquare.textContent = "]";
-    backslash.textContent = "\\";
-    semicolon.textContent = ";";
-    quotes.textContent = "'";
-    comma.textContent = ",";
-    period.textContent = ".";
-    forwardslash.textContent = "/";
-  }
+  shiftItems.forEach(item => {
+    if (shiftl.classList.contains("shift-on") || shiftr.classList.contains("shift-on")) {
+      item.textContent = nonAlphaObj[item.textContent];
+    } else {
+      item.textContent = item.value;
+    }
+  })
 }
-shiftKeyL.addEventListener("click", changeInner);
-shiftKeyR.addEventListener("click", changeInner);
+
+shiftl.addEventListener("click", changeInner);
+shiftr.addEventListener("click", changeInner);
 
 // add NON-ALPHABETIC CHARACTERS (numbers & symbols) to textarea
+// think I can use this instead of shiftItem
 const [...nonAlpha] = document.getElementsByClassName("nonAlpha");
 
 nonAlpha.map(item => {
   item.addEventListener("click", e => {
     const x = cursorPosition(textBox);
-    const char = e.target.innerHTML;
+    const char = e.target.innerText;
+    console.dir(e.target)
     const sliceStart = textBox.value.slice(0, x);
     const sliceEnd = textBox.value.slice(x);
     if (char == "&amp;") {
@@ -142,21 +257,6 @@ nonAlpha.map(item => {
     return (textBox.selectionEnd = x + 1);
   });
 });
-
-/* Couldn't get X & Y coordinates for up & down keys */
-// const pageUp = document.getElementById("page-up");
-// const pageDown = document.getElementById("page-down");
-// const arrowUp = document.getElementById("uparrow");
-// const arrowDown = document.getElementById("downarrow");
-
-// function coords() {
-//   document.addEventListener('mousemove', (e) => {
-//     let XnY = [e.clientX, e.clientY]
-//     let x = XnY[0];
-//     let y = XnY[1];
-//     return y;
-//   });
-// }
 
 /* ===========================================
   add nonprint keys functionality for textarea
@@ -187,7 +287,8 @@ function removeCharAhead() {
 deleteKey.addEventListener("click", removeCharAhead);
 
 // TAB (set to 5 spaces)
-document.getElementById("tab").addEventListener("click", function () {
+const tab = document.getElementById("tab");
+tab.addEventListener("click", function () {
   if (tab.classList.contains("tab")) {
     const x = cursorPosition(textBox);
     textBox.value = textBox.value.slice(0, x) + `     ` + textBox.value.slice(x);
@@ -197,7 +298,8 @@ document.getElementById("tab").addEventListener("click", function () {
 });
 
 // SPACEBAR
-document.getElementById("spacebar").addEventListener("click", function () {
+const spacebar = document.getElementById("spacebar");
+spacebar.addEventListener("click", function () {
   if (spacebar.classList.contains("spacebar")) {
     const x = cursorPosition(textBox);
     textBox.value = textBox.value.slice(0, x) + " " + textBox.value.slice(x);
@@ -207,7 +309,8 @@ document.getElementById("spacebar").addEventListener("click", function () {
 });
 
 // ENTER
-document.getElementById("enter").addEventListener("click", function () {
+const enter = document.getElementById("enter");
+enter.addEventListener("click", function () {
   const x = cursorPosition(textBox);
   textBox.value = textBox.value.slice(0, x) + "\n" + textBox.value.slice(x);
   textBox.focus();
@@ -259,18 +362,13 @@ function arrowRight() {
 rightarrow.addEventListener("click", arrowRight);
 
 /* ==============================================================
-  end KEYBOARD CHARACTERS
+  COPY (Clipboard API) & CLEAR functionality for textarea
 =============================================================== */
-
-/* ==============================================================
-  COPY & CLEAR functionality for textarea
-=============================================================== */
-/* COPY the text area using the Clipboard API */
 const copy = document.getElementById("copy");
 
 async function copyTextArea(e) {
   if (!navigator.clipboard) {
-    e.target.textContent = "Copy to clipboard not supported";
+    alert("Copy to clipboard not supported")
     return;
   }
   try {
@@ -293,16 +391,10 @@ close.addEventListener("click", () => modal.classList.remove("show-modal"));
 window.addEventListener("click", e => (e.target == modal ? modal.classList.remove("show-modal") : false));
 
 // clear textarea
-document.getElementById("clearText").addEventListener("click", function () {
+const clearText = document.getElementById("clearText");
+clearText.addEventListener("click", function () {
   textBox.value = "";
   textBox.focus();
   modal.classList.remove("show-modal");
 });
 
-/* ==== FILE UPLOAD: Decided against this approach ===== */
-
-/* Notes, problems &/or tasks remaining  */
-// 1. use local storage to store the text in textarea in case the user gets interrupted or is not finished composing their email or document
-// 2. Have the keyboard layouts created by JS via a select element for different languages, e.g. Greek, French, Spanish, ...
-// 3. figure out a better way for user input files than local storage
-// 4. content.js has all the proper nouns / phrases and alphabetical default words. How would I get the user to be able to upload their own words and phrases? File upload option?

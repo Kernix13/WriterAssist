@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
   <!-- change file names to writerassist.css and writerassist.js -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>Writer Assist</title>
 </head>
 
@@ -33,55 +33,55 @@
       <nav class="main-nav">
         <ul>
           <li>
-            <a tabindex="-1">A</a>
+            <button tabindex="-1">A</button>
             <div class="submenu">
               <ul id="lettera" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">B</a>
+            <button tabindex="-1">B</button>
             <div class="submenu">
               <ul id="letterb" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">C</a>
+            <button tabindex="-1">C</button>
             <div class="submenu">
               <ul id="letterc" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">D</a>
+            <button tabindex="-1">D</button>
             <div class="submenu">
               <ul id="letterd" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">E</a>
+            <button tabindex="-1">E</button>
             <div class="submenu">
               <ul id="lettere" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">F</a>
+            <button tabindex="-1">F</button>
             <div class="submenu">
               <ul id="letterf" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">G</a>
+            <button tabindex="-1">G</button>
             <div class="submenu">
               <ul id="letterg" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">H</a>
+            <button tabindex="-1">H</button>
             <div class="submenu">
               <ul id="letterh" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a class="multi" tabindex="-1">IJK</a>
+            <button class="multi" tabindex="-1">IJK</button>
             <div class="submenu">
               <ul id="letteri" class="top-words"></ul>
               <ul id="letterj" class="top-words"></ul>
@@ -89,69 +89,69 @@
             </div>
           </li>
           <li>
-            <a tabindex="-1">L</a>
+            <button tabindex="-1">L</button>
             <div class="submenu">
               <ul id="letterl" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">M</a>
+            <button tabindex="-1">M</button>
             <div class="submenu">
               <ul id="letterm" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">N</a>
+            <button tabindex="-1">N</button>
             <div class="submenu">
               <ul id="lettern" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">O</a>
+            <button tabindex="-1">O</button>
             <div class="submenu">
               <ul id="lettero" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">P</a>
+            <button tabindex="-1">P</button>
             <div class="submenu">
               <ul id="letterp" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a class="multi" tabindex="-1">QR</a>
+            <button class="multi" tabindex="-1">QR</button>
             <div class="submenu">
               <ul id="letterq" class="top-words"></ul>
               <ul id="letterr" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">S</a>
+            <button tabindex="-1">S</button>
             <div class="submenu">
               <ul id="letters" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">T</a>
+            <button tabindex="-1">T</button>
             <div class="submenu">
               <ul id="lettert" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a class="multi" tabindex="-1">UV</a>
+            <button class="multi" tabindex="-1">UV</button>
             <div class="submenu">
               <ul id="letteru" class="top-words"></ul>
               <ul id="letterv" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a tabindex="-1">W</a>
+            <button tabindex="-1">W</button>
             <div class="submenu">
               <ul id="letterw" class="top-words"></ul>
             </div>
           </li>
           <li>
-            <a class="multi" tabindex="-1">XYZ</a>
+            <button class="multi" tabindex="-1">XYZ</button>
             <div class="submenu">
               <ul id="letterx" class="top-words"></ul>
               <ul id="lettery" class="top-words"></ul>
@@ -163,9 +163,9 @@
 
       <button id="accordian" class="accordian" title="Click to open and close">Add Names, Proper Nouns and
         Phrases</button>
-      <div id="panel" class="panel panel-inactive">
+      <div id="panel" class="panel inactive">
         <section class="alphabet">
-          <div id="special-words" class="box special-items"></div>
+          <ul id="special-words" class="box noun-words"></ul>
         </section>
       </div>
     </div>
@@ -183,7 +183,8 @@
           <div class="modal-content">
             <p>Are you sure that you want to clear the text field?</p>
             <form class="modal-form">
-              <button aria-label="Delete text field contents" id="clearText" type="button" class="submit-btn yes-btn">Yes, delete the field.</button>
+              <button aria-label="Delete text field contents" id="clearText" type="button"
+                class="submit-btn yes-btn">Yes, delete the field.</button>
             </form>
           </div>
         </div>
@@ -198,36 +199,23 @@
       <div class="two-col">
         <div id="keyboard" class="keybrd-box">
           <div class="keybrd-row top-items">
-            <button class="nonAlpha tilde" tabindex="-1">~</button>
-            <button class="nonAlpha exclamation" tabindex="-1">!</button>
-            <button class="nonAlpha atsymbol" tabindex="-1">@</button>
-            <button class="nonAlpha pound" tabindex="-1">#</button>
-            <button class="nonAlpha dollar" value="$" tabindex="-1">$</button>
-            <button class="nonAlpha percent" value="%" tabindex="-1">%</button>
-            <button class="nonAlpha caret" value="^" tabindex="-1">^</button>
-            <button id="amp" class="nonAlpha ampersand" value="&amp;" tabindex="-1">&#38;</button>
-            <button class="nonAlpha asterisk" tabindex="-1">*</button>
-            <button class="nonAlpha rtparen" tabindex="-1">(</button>
-            <button class="nonAlpha leftparen" tabindex="-1">)</button>
-            <button class="nonAlpha underscore" tabindex="-1">_</button>
-            <button class="nonAlpha plus" tabindex="-1">+</button>
-            <button id="backspace" class="nonprint backspace" tabindex="-1">Backspace</button>
-          </div>
-          <div class="keybrd-row top-items">
-            <button class="nonAlpha accent" tabindex="-1">`</button>
-            <button class="nonAlpha one" tabindex="-1">1</button>
-            <button class="nonAlpha two" tabindex="-1">2</button>
-            <button class="nonAlpha three" tabindex="-1">3</button>
-            <button class="nonAlpha four" tabindex="-1">4</button>
-            <button class="nonAlpha five" tabindex="-1">5</button>
-            <button class="nonAlpha six" tabindex="-1">6</button>
-            <button class="nonAlpha seven" tabindex="-1">7</button>
-            <button class="nonAlpha eight" tabindex="-1">8</button>
-            <button class="nonAlpha nine" tabindex="-1">9</button>
-            <button class="nonAlpha zero" tabindex="-1">0</button>
-            <button class="nonAlpha dash" tabindex="-1">-</button>
-            <button class="nonAlpha equal" tabindex="-1">=</button>
-            <button id="delete" class="nonprint delete" tabindex="-1">Delete</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="`">`</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="1">1</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="2">2</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="3">3</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="4">4</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="5">5</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="6">6</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="7">7</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="8">8</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="9">9</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="0">0</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="-">-</button>
+            <button class="nonAlpha shiftItem" tabindex="-1" value="=">=</button>
+            <!-- <button id="backspace" class="nonprint backspace" tabindex="-1">&#x2190; BkSp</button> -->
+            <button id="backspace" class="nonprint backspace" tabindex="-1">&#x2190;</button>
+            <!-- <button id="delete" class="nonprint delete" tabindex="-1">&#9003; Del</button> -->
+            <button id="delete" class="nonprint delete" tabindex="-1">&#9003;</button>
           </div>
           <div class="keybrd-row top-items">
             <button id="tab" class="nonprint tab" tabindex="-1">Tab</button>
@@ -241,9 +229,9 @@
             <button class="key keyi" value="i" tabindex="-1">I</button>
             <button class="key keyo" value="o" tabindex="-1">O</button>
             <button class="key keyp" value="p" tabindex="-1">P</button>
-            <button id="rtsq" class="nonAlpha rtsq shiftItem" tabindex="-1">[</button>
-            <button id="leftsq" class="nonAlpha leftsq shiftItem" tabindex="-1">]</button>
-            <button id="backslash" class="nonAlpha backslash shiftItem" tabindex="-1">\</button>
+            <button class="nonAlpha rtsq shiftItem" value="[" tabindex="-1">[</button>
+            <button class="nonAlpha leftsq shiftItem" value="]" tabindex="-1">]</button>
+            <button class="nonAlpha backslash shiftItem" value="\" tabindex="-1">\</button>
           </div>
           <div class="keybrd-row top-items">
             <button id="caps" class="nonprint caps caps-off" tabindex="-1">Caps</button>
@@ -256,15 +244,12 @@
             <button class="key keyj" value="j" tabindex="-1">J</button>
             <button class="key keyk" value="k" tabindex="-1">K</button>
             <button class="key keyl" value="l" tabindex="-1">L</button>
-            <button id="semicolon" class="nonAlpha shiftItem" tabindex="-1">;</button>
-            <!-- <button class="nonAlpha colon" tabindex="-1">:</button> -->
-            <button id="quotes" class="nonAlpha shiftItem" tabindex="-1">&#39;</button>
-            <!-- <button class="nonAlpha quotes" tabindex="-1">&quot;</button> -->
-
-            <button id="enter" class="enter nonprint" tabindex="-1">Enter</button>
+            <button class="nonAlpha shiftItem" value=";" tabindex="-1">;</button>
+            <button class="nonAlpha shiftItem" value="&apos;" tabindex="-1">&apos;</button>
+            <button id="enter" class="enter nonprint" tabindex="-1">&#9166; Enter</button>
           </div>
           <div class="keybrd-row top-items">
-            <button id="shiftl" class="nonprint shiftL shift-off" tabindex="-1">Shift</button>
+            <button id="shiftl" class="nonprint shiftL shift-off" tabindex="-1">&#x21e7; Shift</button>
             <button class="key keyz" value="z" tabindex="-1">Z</button>
             <button class="key keyx" value="x" tabindex="-1">X</button>
             <button class="key keyc" value="c" tabindex="-1">C</button>
@@ -272,17 +257,13 @@
             <button class="key keyb" value="b" tabindex="-1">B</button>
             <button class="key keyn" value="n" tabindex="-1">N</button>
             <button class="key keym" value="m" tabindex="-1">M</button>
-            <button id="comma" class="nonAlpha shiftItem" tabindex="-1">,</button>
-            <button id="periodpunc" class="nonAlpha shiftItem" tabindex="-1">.</button>
-            <button id="forwardslash" class="nonAlpha shiftItem" tabindex="-1">/</button>
-            <button id="shiftr" class="nonprint shiftR shift-off" tabindex="-1">Shift</button>
+            <button class="nonAlpha shiftItem" value="," tabindex="-1">,</button>
+            <button class="nonAlpha shiftItem" value="." tabindex="-1">.</button>
+            <button class="nonAlpha shiftItem" value="/" tabindex="-1">/</button>
+            <button id="shiftr" class="nonprint shiftR shift-off" tabindex="-1">&#x21e7; Shift</button>
           </div>
           <div class="keybrd-row top-items">
-            <!-- <button id="ctrlleft" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button> -->
-            <!-- <button class="nonprint alt secondary" tabindex="-1">Alt</button> -->
             <button id="spacebar" class="spacebar nonprint" tabindex="-1">Spacebar</button>
-            <!-- <button class="nonprint alt secondary" tabindex="-1">Alt</button> -->
-            <!-- <button id="ctrlright" class="nonprint ctrl secondary" tabindex="-1">Ctrl</button> -->
           </div>
         </div>
         <!-- nav keys -->
@@ -427,25 +408,6 @@
           future. If you would like to download the files and start using the app, then follow these steps: Go to my
           GitHub repositoy called <a href="https://github.com/Kernix13/WriterAssist" target="_blank">WriterAssist</a>
           and click the green code button and select <strong>Download ZIP</strong>.</p>
-        <!-- <ol class="download-notes">
-          <li>Go to my GitHub repositoy called <a href="https://github.com/Kernix13/WriterAssist"
-              target="_blank">WriterAssist</a>.</li>
-          <li>Click the Green code button and select <strong>Download ZIP</strong>.</li>
-          <img src="https://kernixwebdesign.com/images/dl-code2.PNG" alt="screenshot of the download button">
-          <li>Go to your downloads folder, select the zip file, right-click and choose <strong>Extract All...</strong>
-          </li>
-          <img src="https://kernixwebdesign.com/images/extract.PNG" alt="right-click view to extracl all">
-          <li>Click the Extract button on the popup that appears. This will create a folder in your downloads folder
-            with a name like WriterAssist-master</li>
-          <img src="https://kernixwebdesign.com/images/extract2.PNG" alt="extract popup options">
-          <li>Go into that folder and copy or move the folder inside of that (same name) to a folder such as Documents.
-            Then delete both the
-            folder and zip file from your downloads folder since you don't need them anymore</li>
-          <img src="https://kernixwebdesign.com/images/copy-to.PNG" alt="the copy to dialog popup">
-          <li>Finally, go into the folder you just copied or moved and launch the file named writer-assist.html. You can
-            also delete all of the PNG files since they are just used in this README file.</li>
-          <img src="https://kernixwebdesign.com/images/open.PNG" alt="file to open">
-        </ol> -->
       </div>
     </section>
   </div>
@@ -456,10 +418,8 @@
       <div class="footer-box">
         <ul class="footer-nav">
           <li><a href="https://courageous-cuchufli-816711.netlify.app/" target="_blank">Portfolio Home</a></li>
-          <!-- <li><a href="https://kernixwebdesign.com/" target="_blank">My Website</a></li> -->
           <li><a href="https://github.com/Kernix13/Kernix13/blob/main/resume.pdf" target="_blank">My Resume</a></li>
           <li><a href="https://github.com/Kernix13" target="_blank">GitHub</a></li>
-          <!-- <li><a href="#">Figma</a></li> -->
           <li><a href="https://codepen.io/jim-kernicky/pens/public" target="_blank">Codepen</a></li>
           <li><a href="https://www.freecodecamp.org/fccb4a9d0f6-135f-4a94-97f5-795068269ca7"
               target="_blank">freeCodeCamp</a></li>
@@ -470,10 +430,8 @@
     </div>
   </footer>
 
-  <script src="js/content.js"></script>
-  <script src="js/alpha.js"></script>
-  <script src="js/proper.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/content.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

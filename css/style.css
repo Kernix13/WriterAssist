@@ -7,7 +7,17 @@
 }
 
 :root {
-  --modal-duration: 1000ms;
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --orange: rgb(255, 165, 0);
+  --dark-gray: rgb(51, 51, 51);
+  --light-gray: rgb(204, 204, 204);
+  --light-gray2: #aaa;
+  --desat-orange: rgba(238, 223, 140, 0.322);
+  --dark-blue: rgb(49, 49, 88);
+  --common-border: 1px solid rgba(7, 7, 87, 0.618);
+  --common-border2: 2px solid #888;
+  --common-box-shadow: 0 5px gray;
 }
 
 html {
@@ -15,8 +25,8 @@ html {
 }
 
 body {
-  background-color: #f5f5f5;
-  color: #000;
+  background-color: #e0e7ef;
+  color: var(--black);
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
   text-rendering: optimizeSpeed;
@@ -30,6 +40,7 @@ footer {
   font-family: "Architects Daughter", cursive;
   font-size: 120%;
 }
+
 button {
   font-family: "Roboto", sans-serif;
 }
@@ -41,7 +52,7 @@ h4 {
 a,
 a:visited {
   text-decoration: none;
-  color: #0000cd;
+  color: var(--black)0cd;
 }
 
 a:hover,
@@ -49,29 +60,8 @@ a:focus {
   text-decoration: underline;
 }
 
-.download-notes li {
-  padding: 0.375em 0;
-}
-
-.download-notes img {
-  display: block;
-  margin: 0.75em 0;
-  padding: 0;
-  border: 1px solid #888;
-}
-
-.highlight-text {
-  font-weight: 600;
-  font-style: italic;
-  color: rgb(75, 71, 141);
-  font-family: "Architects Daughter", cursive;
-  font-size: 1.25rem;
-}
-.highlight2 {
-  font-weight: 600;
-  font-style: italic;
-  text-decoration: underline;
-  color: rgb(75, 72, 136);
+ul {
+  list-style: none;
 }
 
 .header,
@@ -96,16 +86,19 @@ a:focus {
 .header p {
   text-align: center;
 }
+
 .header-title {
   text-transform: uppercase;
   font-size: 1.5rem;
   margin: 0;
   padding: 0.5em 0 0;
+  letter-spacing: 0.125em;
 }
 
 .header p {
   margin: 0;
-  padding-bottom: 1.5em;
+  padding: 0.5em 0 1em;
+  letter-spacing: 0.125em;
 }
 
 nav,
@@ -115,21 +108,16 @@ nav,
   align-items: center;
 }
 
-.photo {
-  display: block;
-  width: 3.75em;
-  height: auto;
-  /* background-color: rgba(196, 134, 247, 0.486); */
-}
-
 .logo span {
-  padding-left: 1em;
+  font-weight: 900;
+  color: var(--dark-blue);
+  letter-spacing: 0.25em;
 }
 
 .nav-list {
   display: flex;
   justify-content: flex-end;
-  /* from Kev Powell, the below is normal for a nav ul or maybe just ul */
+
   margin: 0;
   padding: 0;
   list-style: none;
@@ -146,9 +134,10 @@ nav,
   color: rgb(170, 144, 1);
 }
 
-.nav-item + .nav-item {
+.nav-item+.nav-item {
   margin-left: 1.5em;
 }
+
 /* ----------HEADER ABOVE--------------------- */
 main,
 section,
@@ -161,49 +150,43 @@ section,
   margin: 0 auto;
 }
 
-/* .box {
-  background-color: #000;
-  display: block;
-  padding: 4.5em;
-  border: 1px solid #ff0000;
-} */
-
 .alphabet {
   background-color: rgba(0, 0, 0, 0.247);
   display: block;
   padding: 1.5em;
 }
+
 .top-items,
 .keybrd-row {
   list-style: none;
   padding: 0;
 }
 
-.keybrd-box2 > .top-items button,
-.keybrd-box2 > .keybrd-row button {
+.keybrd-box2>.top-items button,
+.keybrd-box2>.keybrd-row button {
   margin: 0.125em;
   padding: 0.25em 0.5em;
 }
 
-.keybrd-box2 > .top-items {
+.keybrd-box2>.top-items {
   display: flex;
   justify-content: center;
 }
 
-.keybrd-box2 > .top-items > button {
+.keybrd-box2>.top-items>button {
   width: 3.75em;
   margin: 0.25em 0.25em;
   font-size: 0.875rem;
 }
 
-.keybrd-box2 > .top-items > .numpad {
+.keybrd-box2>.top-items>.numpad {
   width: 2em;
   font-size: 0.9rem;
   margin: 0.25em 0.5em;
   padding: 0.375em;
 }
 
-.keybrd-box2 > .top-items > .zero2 {
+.keybrd-box2>.top-items>.zero2 {
   width: 5em;
 }
 
@@ -214,12 +197,13 @@ section,
 
   margin: 0.25em;
   padding: 0.375em 0.75em;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid rgba(7, 7, 87, 0.618);
+  color: var(--dark-gray);
+  background-color: var(--white);
+  border: var(--common-border);
   border-radius: 0.25em;
   transition: box-shadow 250ms ease-in-out;
 }
+
 .top-items button,
 .keybrd-row button {
   font-size: 1rem;
@@ -229,20 +213,26 @@ section,
   font-size: 0.9375rem;
 }
 
-.top-items > .secondary {
-  border: none;
-  color: #ccc;
-  background-color: #fff;
+#backspace {
+  font-weight: bold;
 }
-.top-items > .secondary:hover {
+
+.top-items>.secondary {
+  border: none;
+  color: var(--light-gray);
+  background-color: var(--white);
+}
+
+.top-items>.secondary:hover {
   cursor: unset;
-  color: #ccc;
-  background-color: #fff;
+  color: var(--light-gray);
+  background-color: var(--white);
   box-shadow: none;
 }
-.top-items > .secondary:active {
-  color: #ccc;
-  background-color: #fff;
+
+.top-items>.secondary:active {
+  color: var(--light-gray);
+  background-color: var(--white);
   box-shadow: none;
   transform: translateY(0);
 }
@@ -251,8 +241,8 @@ section,
 .keybrd-row button:hover,
 .special-items button:hover {
   cursor: pointer;
-  color: #000;
-  background-color: #ddd;
+  color: var(--black);
+  background-color: var(--light-gray);
   box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
 }
 
@@ -260,16 +250,16 @@ section,
 .keybrd-row .caps-on:hover,
 .keybrd-row .shift-on,
 .keybrd-row .shift-on:hover {
-  background-color: orange;
-  box-shadow: 0 5px gray;
+  background-color: var(--orange);
+  box-shadow: var(--common-box-shadow);
   /* transform: translateY(2px); */
 }
 
 .top-items button:active,
 .keybrd-row button:active,
 .special-items button:active {
-  background-color: orange;
-  box-shadow: 0 5px gray;
+  background-color: var(--orange);
+  box-shadow: var(--common-box-shadow);
   transform: translateY(2px);
 }
 
@@ -285,7 +275,7 @@ section,
   height: 10em;
   font-family: "Roboto", sans-serif;
   margin: 2.5em auto 1.5em;
-  background-color: #fff;
+  background-color: var(--white);
   font-size: 1.125rem;
   color: #222;
   overflow: auto;
@@ -312,10 +302,10 @@ section,
   cursor: pointer;
   display: block;
   position: absolute;
-  background-color: rgba(238, 223, 140, 0.322);
-  color: #000;
+  background-color: var(--desat-orange);
+  color: var(--black);
   padding: 0.25em 0.5em;
-  border: 2px solid #888;
+  border: var(--common-border2);
   border-radius: 0.25em;
 }
 
@@ -336,8 +326,8 @@ section,
 
 .copy-btn:active,
 .clear-btn:active {
-  background-color: orange;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--black);
 }
 
 .two-col {
@@ -351,20 +341,20 @@ section,
 .keybrd-box,
 .keybrd-box2 {
   border: 1px solid #888;
-  background-color: rgba(238, 223, 140, 0.322);
-  color: #fff;
+  background-color: var(--desat-orange);
+  color: var(--black);
   border-radius: 0.375em;
 }
 
 .keybrd-box {
-  width: 81%;
+  width: 77%;
   max-width: 1000px;
   margin: 0 auto 2em;
-  padding: 0.5em 0;
+  padding: 1.5em 0;
 }
 
 .keybrd-box2 {
-  width: 19%;
+  width: 23%;
   height: max-content;
   font-size: 0.5rem;
   margin: 0 auto 0.5em;
@@ -384,105 +374,46 @@ section,
   width: 40%;
 }
 
-/* ==============================================
-styling for the alphabet letters and their mega-menus
-================================================ */
-
-/* this is like the nav tag */
-/* .alphabet {
-  padding-bottom: 0.5em;
-} */
-
-/* alpha-nav is equivalent to the top-level li > a or just li items */
-/* KP has display: inline-block only for positioning reasons, so that they are next to each other but I only have a single item in each and my parent container is display flex */
-/* display: inline-block; */
-
-.alpha-nav {
-  margin-left: 0.5em;
-  padding: 0.125em 0.5em;
-  border: 1px dotted #999;
-  text-align: center;
-}
-
-.alpha-nav a {
-  display: block;
-}
-.alpha-nav a:hover {
-  color: #fff;
-}
-
-.top-words {
+.top-words,
+.noun-words {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
 }
 
-.top-words button {
+.top-words button,
+.noun-words button {
   display: inline-block;
   font-size: 1rem;
   margin: 0.25em;
   padding: 0.375em 0.75em;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid rgba(7, 7, 87, 0.618);
+  color: var(--dark-gray);
+  background-color: var(--white);
+  // border: var(--common-border);
   border-radius: 0.25em;
   transition: box-shadow 250ms ease-in-out;
 }
 
-.top-words button:hover {
+.top-words button:hover,
+.noun-words button:hover {
   cursor: pointer;
-  color: #000;
-  background-color: #eee;
+  color: var(--black);
+  background-color: var(--orange);
   box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
 }
 
-.top-words button:active {
-  background-color: orange;
-  box-shadow: 0 5px gray;
+.top-words button:active,
+.noun-words button:active {
+  background-color: var(--orange);
+  box-shadow: var(--common-box-shadow);
   transform: translateY(2px);
 }
+
 /* -------end Alpha ----------- */
-
-/* -------file upload ----------- */
-.fileupload {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 1em;
-}
-.userinputarea {
-  display: block;
-  margin: 2em auto;
-}
-
-input[type="file"] {
-  color: rgb(161, 7, 7);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.fileupload::file-selector-button {
-  color: blue;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #fff;
-  border: 1px solid #888;
-  border-radius: 0.5em;
-  padding: 0.5em 1em;
-  margin-right: 0.5em;
-  transition: background-color 300ms ease-out;
-}
-
-.fileupload::file-selector-button:hover {
-  cursor: pointer;
-  background-color: #ddd;
-}
 
 /* -------------notes and docs----------------------- */
 .notes {
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .border {
@@ -503,8 +434,8 @@ input[type="file"] {
 
 footer {
   text-align: center;
-  background-color: rgb(49, 49, 88);
-  color: #fff;
+  background-color: var(--dark-blue);
+  color: var(--white);
   padding: 1em 0 0;
 }
 
@@ -531,14 +462,17 @@ footer h3 {
   padding-left: 0.5em;
   transition: transform 250ms ease-out;
 }
+
 .footer-nav li:hover {
   transform: translateY(-0.25em);
 }
+
 .footer-nav a {
   font-size: 1.25rem;
-  color: white;
+  color: var(--white);
   transition: color 250ms ease-out;
 }
+
 .footer-nav a:hover {
   text-decoration: none;
   color: rgb(240, 213, 62);
@@ -551,18 +485,16 @@ footer h3 {
 }
 
 /* ================================= */
-.notes-docs {
-  width: 85%;
-  max-width: 1200px;
-}
-
 .main-nav {
   margin-bottom: 1em;
   padding: 1em 0 0;
 }
+
 .main-nav ul {
   display: flex;
   flex-wrap: wrap;
+  // justify-content: space-between;
+  gap: 0.25em;
   width: 100%;
   margin: 0 auto;
   padding: 0;
@@ -571,21 +503,27 @@ footer h3 {
   list-style: none;
 }
 
+.main-nav li button {
+  font-size: 1rem;
+}
+
 .main-nav li {
   display: inline-block;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid rgba(7, 7, 87, 0.618);
   border-radius: 0.25em;
   transition: box-shadow 250ms ease-out;
-  margin: 0 0.75em 0.5em 0;
+  margin: 0 0.25em 0.5em 0;
+}
+
+.main-nav li.active button:hover {
+  background-color: var(--orange);
+  color: var(--black);
 }
 
 .main-nav li:hover {
   text-decoration: none;
-  color: #000;
-  background-color: #ddd;
-  box-shadow: 0.125em -0.125em 0.25em rgba(7, 7, 87, 0.75);
+  // background-color: var(--orange);
+  color: var(--black);
+  // box-shadow: 0.125em -0.125em 0.25em rgba(7, 7, 87, 0.25);
 }
 
 .main-nav .multi {
@@ -602,7 +540,7 @@ footer h3 {
 .submenu {
   position: absolute;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--light-gray2);
   width: 100%;
   display: none;
   padding: 0.5em 0.25em 0;
@@ -610,26 +548,25 @@ footer h3 {
 }
 
 /* consider removing href from all alpha letters or changing the a tag to button */
-.main-nav li:hover a:hover {
-  cursor: default;
-}
-
-.main-nav li:hover .submenu {
-  display: block;
-  cursor: default;
-}
-
-.submenu a:hover {
+.main-nav li:hover {
   cursor: pointer;
-  text-decoration: none;
-  color: #000;
-  background-color: #eee;
-  box-shadow: 0.125em 0.125em 0.25em rgba(7, 7, 87, 0.95);
+}
+
+.main-nav li.active>button {
+  background-color: var(--orange);
+}
+
+.main-nav li:hover .submenu.show {
+  display: block;
+}
+
+.main-nav li.active {
+  background-color: var(--orange);
 }
 
 .submenu li a:active {
-  background-color: orange;
-  box-shadow: 0 5px gray;
+  background-color: var(--orange);
+  box-shadow: var(--common-box-shadow);
   transform: translateY(2px);
 }
 
@@ -646,9 +583,9 @@ footer h3 {
   font-size: 1rem;
   /* margin-bottom: 0.5em; */
   padding: 1rem 0;
-  background-color: rgba(238, 223, 140, 0.322);
-  color: #000;
-  border: 2px solid #888;
+  background-color: var(--desat-orange);
+  color: var(--black);
+  border: var(--common-border2);
   transition: background-color 250ms linear;
   border-radius: 0.25em;
 }
@@ -657,23 +594,24 @@ footer h3 {
   background-color: rgba(246, 190, 36, 0.445);
 }
 
-.panel-inactive {
+.inactive {
   display: none;
   overflow: hidden;
   opacity: 0;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
-.panel-active {
+.panel {
   overflow: inherit;
   opacity: 1;
-  animation: opac 1000ms forwards;
+  animation: active 1000ms forwards;
 }
 
-@keyframes opac {
+@keyframes active {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -685,7 +623,7 @@ footer h3 {
   background-color: transparent;
   border: 0;
   border-radius: 5px;
-  color: #000;
+  color: var(--black);
   cursor: pointer;
   padding: 1em 2em;
   border: 0.25em solid rgba(0, 128, 0, 0.75);
@@ -714,7 +652,7 @@ footer h3 {
 }
 
 .modal {
-  background-color: #fff;
+  background-color: var(--white);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   overflow: hidden;
@@ -724,12 +662,12 @@ footer h3 {
   max-width: 100%;
   width: 25em;
   animation-name: modalopen;
-  animation-duration: var(--modal-duration);
+  animation-duration: 1000ms;
 }
 
 .modal-header {
   background-color: #708090;
-  color: #fff;
+  color: var(--white);
   padding: 15px;
 }
 
@@ -758,7 +696,7 @@ footer h3 {
 .close-btn {
   background: transparent;
   cursor: pointer;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   color: #fff;
   font-size: 25px;
   position: absolute;
@@ -780,9 +718,11 @@ footer h3 {
   .two-col {
     flex-direction: column;
   }
+
   .keybrd-box {
     width: 100%;
   }
+
   .keybrd-box2 {
     width: 22%;
     height: max-content;
@@ -793,6 +733,7 @@ footer h3 {
 }
 
 @media (max-width: 1000px) {
+
   .top-items button,
   .keybrd-row button {
     font-size: 0.875rem;
@@ -800,6 +741,7 @@ footer h3 {
 }
 
 @media (max-width: 900px) {
+
   .top-items button,
   .keybrd-row button,
   .special-items button {

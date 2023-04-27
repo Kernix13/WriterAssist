@@ -25,12 +25,5 @@ ehthumbs_vista.db
 *.tmp
 
 # Personal project files
-upload.html
 JS_NOTES.md
 NOTES.md
-/js/proper_bkup.js
-/js/alpha_bkup.js
-/js/upload.js
-/css/upload.css
-/images
-writer-assist.html
