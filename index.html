@@ -5,8 +5,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
   <!-- change file names to writerassist.css and writerassist.js -->
   <link rel="stylesheet" href="./css/style.css" />
   <title>Writer Assist</title>
@@ -199,19 +197,19 @@
       <div class="two-col">
         <div id="keyboard" class="keybrd-box">
           <div class="keybrd-row top-items">
-            <button class="nonAlpha shiftItem" tabindex="-1" value="`">`</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="1">1</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="2">2</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="3">3</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="4">4</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="5">5</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="6">6</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="7">7</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="8">8</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="9">9</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="0">0</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="-">-</button>
-            <button class="nonAlpha shiftItem" tabindex="-1" value="=">=</button>
+            <button id="backtick" class="nonAlpha shiftItem" tabindex="-1" value="`">`</button>
+            <button id="one" class="nonAlpha shiftItem" tabindex="-1" value="1">1</button>
+            <button id="two" class="nonAlpha shiftItem" tabindex="-1" value="2">2</button>
+            <button id="three" class="nonAlpha shiftItem" tabindex="-1" value="3">3</button>
+            <button id="four" class="nonAlpha shiftItem" tabindex="-1" value="4">4</button>
+            <button id="five" class="nonAlpha shiftItem" tabindex="-1" value="5">5</button>
+            <button id="six" class="nonAlpha shiftItem" tabindex="-1" value="6">6</button>
+            <button id="seven" class="nonAlpha shiftItem" tabindex="-1" value="7">7</button>
+            <button id="eight" class="nonAlpha shiftItem" tabindex="-1" value="8">8</button>
+            <button id="nine" class="nonAlpha shiftItem" tabindex="-1" value="9">9</button>
+            <button id="zero" class="nonAlpha shiftItem" tabindex="-1" value="0">0</button>
+            <button id="dash" class="nonAlpha shiftItem" tabindex="-1" value="-">-</button>
+            <button id="equals" class="nonAlpha shiftItem" tabindex="-1" value="=">=</button>
             <!-- <button id="backspace" class="nonprint backspace" tabindex="-1">&#x2190; BkSp</button> -->
             <button id="backspace" class="nonprint backspace" tabindex="-1">&#x2190;</button>
             <!-- <button id="delete" class="nonprint delete" tabindex="-1">&#9003; Del</button> -->
@@ -229,9 +227,9 @@
             <button class="key keyi" value="i" tabindex="-1">I</button>
             <button class="key keyo" value="o" tabindex="-1">O</button>
             <button class="key keyp" value="p" tabindex="-1">P</button>
-            <button class="nonAlpha rtsq shiftItem" value="[" tabindex="-1">[</button>
-            <button class="nonAlpha leftsq shiftItem" value="]" tabindex="-1">]</button>
-            <button class="nonAlpha backslash shiftItem" value="\" tabindex="-1">\</button>
+            <button id="leftsq" class="nonAlpha rtsq shiftItem" value="[" tabindex="-1">[</button>
+            <button id="rtsq" class="nonAlpha leftsq shiftItem" value="]" tabindex="-1">]</button>
+            <button id="backslash" class="nonAlpha backslash shiftItem" value="\" tabindex="-1">\</button>
           </div>
           <div class="keybrd-row top-items">
             <button id="caps" class="nonprint caps caps-off" tabindex="-1">Caps</button>
@@ -244,8 +242,8 @@
             <button class="key keyj" value="j" tabindex="-1">J</button>
             <button class="key keyk" value="k" tabindex="-1">K</button>
             <button class="key keyl" value="l" tabindex="-1">L</button>
-            <button class="nonAlpha shiftItem" value=";" tabindex="-1">;</button>
-            <button class="nonAlpha shiftItem" value="&apos;" tabindex="-1">&apos;</button>
+            <button id="semicolon" class="nonAlpha shiftItem" value=";" tabindex="-1">;</button>
+            <button id="quotes" class="nonAlpha shiftItem" value="&apos;" tabindex="-1">&apos;</button>
             <button id="enter" class="enter nonprint" tabindex="-1">&#9166; Enter</button>
           </div>
           <div class="keybrd-row top-items">
@@ -257,9 +255,9 @@
             <button class="key keyb" value="b" tabindex="-1">B</button>
             <button class="key keyn" value="n" tabindex="-1">N</button>
             <button class="key keym" value="m" tabindex="-1">M</button>
-            <button class="nonAlpha shiftItem" value="," tabindex="-1">,</button>
-            <button class="nonAlpha shiftItem" value="." tabindex="-1">.</button>
-            <button class="nonAlpha shiftItem" value="/" tabindex="-1">/</button>
+            <button id="comma" class="nonAlpha shiftItem" value="," tabindex="-1">,</button>
+            <button id="period" class="nonAlpha shiftItem" value="." tabindex="-1">.</button>
+            <button id="forwardslash" class="nonAlpha shiftItem" value="/" tabindex="-1">/</button>
             <button id="shiftr" class="nonprint shiftR shift-off" tabindex="-1">&#x21e7; Shift</button>
           </div>
           <div class="keybrd-row top-items">
@@ -315,18 +313,17 @@
   <div class="notes-container">
     <section id="notes" class="notes">
       <div class="container border technical">
-        <h2>Important notes about using this app</h2>
-        <p>This single-page app is for anyone with reduced fine motor controls, assuming they have better control of
-          positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions that often
-          result in a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral
+        <h2>Notes for users of this app</h2>
+        <p>This app is for anyone with reduced fine motor controls, assuming they have better control of
+          positioning a mouse pointer than clicking individual keys on a keyboard. Diseases and conditions associated
+          with a loss of fine motor skills include infection, head trauma, multiple sclerosis, stroke, cerebral
           palsy, Parkinson's, brain tumors, neuropathy, and spinal injuries.</p>
-        <p>Ideally, a friend or family can create a file of text to populate the Writing Assistant page for someone who
-          could benefit from the app. This file should contain the most used words and phrases for someone who has
-          reduced motor control. This way they will be able to communicate with loved ones much easier, especially if
-          they also have trouble speaking.</p>
-        <p>There are similar notes in my README.md file which you can find in the GitHub repository for this app. If you
-          are a developer and would like to make edits to the app, then you can download or clone it from my <a
-            href="https://github.com/Kernix13/WriterAssist" target="_blank">GitHub repo</a>.</p>
+        <p>Currently, I have hard-coded the most common phrases and words in English and the keyboard is set up with a
+          US format. Ideally, a friend or family member can create a file of the user's most used words and phrases,
+          although they would have
+          to overwrite the current data in <code>content.js</code>. I will eventually add a file upload option to
+          populate the alphabetical
+          words and common phrases sections.</p>
 
         <h3>General Notes:</h3>
         <ul>
@@ -336,18 +333,21 @@
           <li>The text area has a clear button that will delete everything in the text field. Clicking that button opens
             a popup asking to confirm the deletion. The popup confirmation is in case you clicked the clear button by
             accident. The text area also has a copy button to copy the contents into your clipboard. You can then paste
-            the text into another program.</li>
+            the text into a document or email program.</li>
           <li>All buttons have a change in color when you hover over them to know that you are "over the target", so to
             speak. They also turn orange when you click them.</li>
           <li>All words are designed to add a space before the word. Conversely, all characters on the keyboard do not
-            add a space. So if you will be typing out a word, use the Spacebar key on the virtual keyboard before typing
+            add a space, so if you will be typing out a word, use the Spacebar key on the virtual keyboard before typing
             the word.</li>
+          <li>Clicking an alphabetical word or a phrase from the Common Phrases section automatically closes that menu.
+            After clicking a letter menu, you only have to hover over it to show it again. Click that letter again to
+            stop that behavior.</li>
         </ul>
         <hr />
 
         <h3>Alphabetical words:</h3>
         <ul>
-          <li>If you hover over the buttons for each letter of the alphabet, you'll see between 20 to 100+ words. I
+          <li>If you click the buttons for each letter of the alphabet, you'll see between 20 to 100+ words. I
             added the most commonly used words that were 4 letters or greater, though for a few letters the cutoff is 3
             letters.</li>
           <li>Ideally, you want long words that are most often used by the user. The list shouldn’t be so long that you
@@ -365,48 +365,48 @@
         <hr />
 
         <h3>Virtual Keyboard and main text area:</h3>
-        <p>Use the keyboard for words not in the two sections above or for numbers and symbols. The keys have hover and
-          click changes like the buttons above. And pay attention to the functionality of the "special" keys: Backspace,
+        <p>Use the keyboard for words that are not in the two sections above or for numbers and symbols. The keys have
+          hover and
+          click changes like the buttons above. There is full functionality for the non-character keys: Backspace,
           Delete, Tab, Caps, Enter, Shift, and Spacebar.</p>
         <ul>
           <li>I omitted the Insert key as I find it an annoyance rather than a helpful key. I also moved the Delete key
             to the main keyboard section.</li>
-          <li>Place your cursor anywhere in the text field to add any of the characters or the keys like Delete, Enter,
-            or the arrow keys. You can also insert works or phrases at the location of your cursor.</li>
+          <li>Place your cursor anywhere in the text field to add any of the words or characters, or to use the keys
+            like Delete, Enter,
+            or the arrow keys. You can also insert words or phrases at the location of your cursor.</li>
           <li>I have the Ctrl and Alt keys disabled as they are not needed for basic email or document writing. I also
             hid the buttons for arrow up, page up, arrow down, and page down as I don’t think they are needed, though I
-            may add them in later.</li>
-          <li>The Home, End, right and left arrow keys are functional. However, the Home key takes you to the beginning
+            may add them later.</li>
+          <li>The Home, End, Right, and Left Arrow keys (<em>navigation keys</em>) are functional. However, the Home key
+            takes you to the beginning
             of the text area, as opposed to the beginning of each line. The End key takes you to the end of the text
             area instead of the end of each line.</li>
-          <li>I added the nav keys and number pad to the left of the main keyboard section. The nav keys are close
+          <li>I added the navigation keys and number pad to the left of the main keyboard section. The nav keys are
+            close
             together for ease of use, and the number pad is to make entering multiple numbers easier (phone #'s,
             addresses, etc.)</li>
           <li>Both the Caps key and Shift keys will stay highlighted until you click them a second time. All words and
             letters will be capitalized while the Caps key is on.</li>
-          <li>Hitting the Shift key toggles the 8 double-character keys that are below the top row on a standard
-            keyboard. Or specifically, square and curly brackets, back slash and pipe, colon and semi-colonm, single and
-            double quotes, comma and less than sign, period and greater than sign, and forward slash and question mark.
+          <li>Hitting the Shift key toggles the 21 double-character keys that are on a standard US
+            keyboard.
           </li>
-          <li>As you can see, I decided to create a new row for the double-character keys that are above the top row of
-            letters.</li>
           <li>All words or letters that are the first in the text area, or are the first after you hit enter, or that
             follow a period, exclamation, or question mark will automatically be capitalized. Use the Caps key for all
             other capital letters.</li>
-          <li><strong>Tip</strong>: I have a few free browser extensions added to my Chrome and Brave web browsers. One
-            that may help you is the spelling and grammar checker called Grammarly. I highly recommend that you add that
+          <li><strong>Tip</strong>: I highly recommend that you add the Grammarly Chrome
             extension to your browser. It will put a red underline under spelling and grammar errors in the text box.
             Just click the suggested replacement to make the change. Or click 'Dismiss' to remove the red highlighting.
-            You would do that for acronyms, technical jargon, slang, etc.</li>
+          </li>
         </ul>
         <hr />
 
-        <h3>Downloading the app to desktop or laptop</h3>
+        <h3>Downloading the app to a desktop or laptop</h3>
         <p>This app/tool will go away at some point. So download it or lose it! All you need to do is download the files
-          and open writer-assist.html to start using the app.</p>
-        <p>The keyboard and words are for American English keyboard. I hope to have other language options in the
+          and open <code>index.html</code> to start using the app.</p>
+        <p>The keyboard and words are for an American English keyboard. I hope to have other language options in the
           future. If you would like to download the files and start using the app, then follow these steps: Go to my
-          GitHub repositoy called <a href="https://github.com/Kernix13/WriterAssist" target="_blank">WriterAssist</a>
+          GitHub repository called <a href="https://github.com/Kernix13/WriterAssist" target="_blank">WriterAssist</a>
           and click the green code button and select <strong>Download ZIP</strong>.</p>
       </div>
     </section>
@@ -430,8 +430,7 @@
     </div>
   </footer>
 
-  <script src="./js/content.js"></script>
-  <script src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

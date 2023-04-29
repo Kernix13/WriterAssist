@@ -14,6 +14,7 @@
   --light-gray: rgb(204, 204, 204);
   --light-gray2: #aaa;
   --desat-orange: rgba(238, 223, 140, 0.322);
+  --desat-orange2: rgba(238, 223, 140, 0.25);
   --dark-blue: rgb(49, 49, 88);
   --common-border: 1px solid rgba(7, 7, 87, 0.618);
   --common-border2: 2px solid #888;
@@ -60,20 +61,19 @@ a:focus {
   text-decoration: underline;
 }
 
-ul {
+ul.noun-words {
   list-style: none;
 }
 
 .header,
 .container,
+.notes-container,
 .footer-container {
   width: 85%;
   max-width: 1100px;
 }
 
 .notes-container {
-  width: 80%;
-  max-width: 1100px;
   margin: 0 auto 3em;
 }
 
@@ -183,7 +183,7 @@ section,
   width: 2em;
   font-size: 0.9rem;
   margin: 0.25em 0.5em;
-  padding: 0.375em;
+  padding: 0.375rem;
 }
 
 .keybrd-box2>.top-items>.zero2 {
@@ -347,14 +347,14 @@ section,
 }
 
 .keybrd-box {
-  width: 77%;
+  width: 78%;
   max-width: 1000px;
   margin: 0 auto 2em;
-  padding: 1.5em 0;
+  padding: 1.625em 0;
 }
 
 .keybrd-box2 {
-  width: 23%;
+  width: 22%;
   height: max-content;
   font-size: 0.5rem;
   margin: 0 auto 0.5em;
@@ -414,6 +414,7 @@ section,
 /* -------------notes and docs----------------------- */
 .notes {
   background-color: var(--white);
+  border: 1px solid #bbb;
 }
 
 .border {
@@ -728,8 +729,10 @@ footer h3 {
     height: max-content;
     font-size: 0.5rem;
     margin: 0 auto 0.5em;
-    padding: 0;
+    padding: 1em;
   }
+
+
 }
 
 @media (max-width: 1000px) {
@@ -747,6 +750,15 @@ footer h3 {
   .special-items button {
     margin: 0.25em;
     padding: 0.25em 0.5em;
+  }
+
+  .keybrd-box2 {
+    padding: 2em 10em;
+  }
+
+  .keybrd-box2>.top-items>.numpad,
+  .keybrd-box2>.top-items>button {
+    padding: 0.5rem;
   }
 }
 
