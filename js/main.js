@@ -68,15 +68,19 @@ textBtns.map((item) => {
             const len = textBox.value.length;
             const punc = textBox.value;
             const first = word.charAt(0);
+            const x = cursorPosition(textBox);
             // const remainder = word.slice(1);
             const remainder = word.substring(1);
             if ([".", "?", "!", "\n"].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == "") {
-                textBox.value = textBox.value + " " + first.toUpperCase() + remainder;
+
+                textBox.value = textBox.value.slice(0, x) + " " + first.toUpperCase() + remainder + textBox.value.slice(x);
+                
                 textBox.focus();
                 return textBox.value;
             }
             else {
-                textBox.value = textBox.value + " " + word;
+
+                textBox.value = textBox.value.slice(0, x) + " " + word + textBox.value.slice(x);
                 textBox.focus();
                 return textBox.value;
             }
@@ -118,7 +122,9 @@ special.map(item => {
         panel.classList.toggle("inactive");
         const favs = e.target;
         const userFavs = favs.value;
-        textBox.value = textBox.value + " " + userFavs;
+        const x = cursorPosition(textBox);
+
+        textBox.value = textBox.value.slice(0, x) + " " + userFavs + textBox.value.slice(x);
         textBox.focus();
         return textBox.value;
     });
@@ -150,6 +156,7 @@ function addLetters() {
                 const len = textBox.value.length;
                 const punc = textBox.value;
                 const x = cursorPosition(textBox);
+                
                 if ([".", "?", "!", "\n"].includes(punc.charAt(len - 1)) || textBox.value.charAt(0) == "") {
                     textBox.value = textBox.value.slice(0, x) + " " + letterkey.toUpperCase() + textBox.value.slice(x);
                     textBox.focus();
